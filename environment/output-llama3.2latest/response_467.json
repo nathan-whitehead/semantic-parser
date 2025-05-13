@@ -1,8 +1,0 @@
-{
-  "task_id": 467,
-  "code": "python\ndef candidate(n):\n    # Check if input is an integer\n    if not isinstance(n, int):\n        raise TypeError(\"Input must be an integer.\")\n\n    # Convert decimal to octal using built-in oct() function and remove '0o' prefix\n    if n < 0:\n        # Handle negative numbers by converting to positive first\n        return '-' + oct(-n)[2:]  \n    else:\n        # Return the octal representation directly without adding leading zeros\n        return oct(n)[2:]",
-  "explanation": "Explanation\n-----------\n\nThe provided code attempts to convert decimal numbers to octal numbers using the built-in `oct()` function. However, it fails when the input is negative or has a value greater than 255 (the maximum value for an octal number). The issue lies in the incorrect use of `zfill(3)` which adds leading zeros to the result even if the length of the octal representation would be less than 3.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
-  "success": false
-}

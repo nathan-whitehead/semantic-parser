@@ -1,8 +1,0 @@
-{
-  "task_id": 482,
-  "code": "import re\n\ndef candidate(s):\n    # Define the regex pattern: one uppercase letter followed by lower case letters\n    pattern = r'[A-Z][a-z]+'\n    \n    # Use the findall function to find all matches of the pattern in the string\n    match = re.search(pattern, s)\n    \n    # Return 'Yes' if a match exists and 'No' otherwise\n    return 'Yes' if match else 'No'",
-  "explanation": "**Explanation**\nThe original code attempts to find sequences of one upper case letter followed by lower case letters using regex. However, the issue lies in returning a boolean value instead of a string. The `re.search` function returns a match object if any match is found, but it does not return 'Yes' or 'No'. Instead, we should return 'Yes' if a match exists and 'No' otherwise.\n\n**python**",
-  "num_iterations": 3,
-  "error_msg": null,
-  "success": true
-}

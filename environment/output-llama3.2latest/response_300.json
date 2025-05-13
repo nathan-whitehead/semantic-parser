@@ -1,8 +1,0 @@
-{
-  "task_id": 300,
-  "code": "def candidate(n):\n    # Initialize count variable\n    count = 0\n    \n    # Generate all possible binary sequences of length 2n\n    for i in range(2 ** (2 * n)):\n        bin_seq = format(i, 'b').zfill(2 * n)\n        \n        # Check if the sum of the first n bits is equal to the sum of the last n bits\n        if sum(int(bit) for bit in bin_seq[:n]) == sum(int(bit) for bit in bin_seq[n:]):\n            count += 1\n    \n    return count",
-  "explanation": "**Explanation**\nThis function takes an integer `n` as input and returns the count of all binary sequences of length 2n where the sum of the first n bits is equal to the sum of the last n bits. The approach used here is to use two nested loops to generate all possible binary sequences of length 2n, and then check if the sum of the first n bits is equal to the sum of the last n bits for each sequence.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

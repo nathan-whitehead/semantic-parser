@@ -1,8 +1,0 @@
-{
-  "task_id": 865,
-  "code": "def candidate(n, lst):\n    \"\"\"\n    Return a list with each element from the input list repeated n times.\n    \n    Args:\n        n (int): The number of times to repeat each element.\n        lst (list): The input list containing elements to be repeated.\n    \n    Returns:\n        list: A new list where each element from the input list is repeated n times.\n    \"\"\"\n    result = []\n    for element in lst:\n        # Use list multiplication instead of recursive call\n        result.extend([element] * n)\n    return result",
-  "explanation": "Explanation\n------------\n\nThe code provided attempts to print a list using the map function. However, it fails when encountering an integer value because integers are not iterable. The code also has some unnecessary complexity due to handling iterables recursively.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 18, in <module>\n    assert candidate([1, 2, 3, 4, 5, 6, 7],3)==[3, 6, 9, 12, 15, 18, 21]\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 13, in candidate\n    for element in lst:\n                   ^^^\nTypeError: 'int' object is not iterable\n\n",
-  "success": false
-}

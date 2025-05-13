@@ -1,8 +1,0 @@
-{
-  "task_id": 641,
-  "code": "def candidate(n):\n    \"\"\"\n    Calculate the nth nonagonal number.\n    \n    Parameters:\n    n (int): The position of the nonagonal number to calculate.\n    \n    Returns:\n    int: The nth nonagonal number.\n    \"\"\"\n    # Correct formula for nonagonal numbers\n    if not isinstance(n, int) or n < 1:\n        raise ValueError(\"n must be a positive integer\")\n    \n    return (n * (n + 1) * (2 * n - 1)) // 6 + n - 1",
-  "explanation": "Explanation\n------------\n\nThe provided code seems to be calculating the nth nonagonal number. However, there is a mistake in the calculation formula and also no validation for negative inputs.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 17, in <module>\n    assert candidate(10) == 325\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

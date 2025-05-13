@@ -1,8 +1,0 @@
-{
-  "task_id": 398,
-  "code": "def candidate(nums):\n    # Helper function to calculate the sum of digits for a single number\n    def sum_of_digits(n):\n        return sum(int(digit) for digit in str(abs(n)))\n\n    # Initialize an empty list to store the results\n    result = []\n\n    # Iterate over each number in the input list\n    for num in nums:\n        # Calculate the sum of digits with correct handling for negative numbers\n        if num < 0:\n            result.append(-sum_of_digits(-num))\n        else:\n            result.append(sum_of_digits(num))\n\n    # Return the list of sums of digits\n    return result",
-  "explanation": "Explanation\n-----------\n\nThe code has a logical error. The sum of digits for negative numbers is incorrect because it's taking the absolute value of the number before calculating the sum of its digits. To fix this, we need to handle both positive and negative numbers correctly.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 20, in <module>\n    assert candidate([10,2,56])==14\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

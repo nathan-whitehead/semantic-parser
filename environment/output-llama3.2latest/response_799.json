@@ -1,8 +1,0 @@
-{
-  "task_id": 799,
-  "code": "python\ndef candidate(n, shifts):\n    \"\"\"\n    Left rotate the bits of a given number.\n\n    Parameters:\n    n (int): The input number.\n    shifts (int): The number of positions to shift.\n\n    Returns:\n    int: The left rotated number.\n    \"\"\"\n    # Calculate the effective shift by taking modulo of 8 (number of bits)\n    effective_shifts = shifts % 8\n    \n    # Perform left rotation by shifting the bits\n    rotated_n = n << effective_shifts | n >> (8 - effective_shifts)\n    \n    # Apply correct masking based on the number of valid positions in the rotation\n    mask = (1 << shifts) - 1\n    return rotated_n & mask",
-  "explanation": "Explanation\n-----------\n\nThe original code had a syntax error where it was trying to run the function as if it were a script. The corrected version will define the `candidate` function properly and remove any unnecessary comments.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
-  "success": false
-}

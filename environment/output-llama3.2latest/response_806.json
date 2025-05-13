@@ -1,8 +1,0 @@
-{
-  "task_id": 806,
-  "code": "def candidate(s):\n    \"\"\"\n    Find maximum run of uppercase characters in the given string.\n\n    Args:\n        s (str): Input string\n\n    Returns:\n        int: Maximum run of uppercase characters\n    \"\"\"\n    max_run = 0\n    current_run = 0\n    \n    # Iterate through each character in the input string\n    for char in s:\n        # Check if the character is uppercase\n        if char.isupper():\n            # If it's uppercase, increment the current run counter\n            current_run += 1\n            # Update max_run if the current run is longer\n            max_run = max(max_run, current_run)\n        else:\n            # If it's not uppercase, reset the current run counter\n            current_run = 0\n    \n    return max_run",
-  "explanation": "**Explanation**\nThe function `candidate` uses a simple iteration approach to traverse through the input string, keeping track of the maximum run encountered so far. It maintains a variable `max_run` to store this information and updates it whenever a longer run is found. The function returns the value of `max_run`.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

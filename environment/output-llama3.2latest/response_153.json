@@ -1,8 +1,0 @@
-{
-  "task_id": 153,
-  "code": "def candidate(a, b, c):\n    # Calculate the x-coordinate of the vertex\n    if a == 0:\n        raise ValueError(\"Parabola is not quadratic\")\n    \n    vertex_x = -b / (2 * a)\n    \n    # Calculate the y-coordinate of the vertex by plugging it back into the original equation\n    vertex_y = a * (vertex_x ** 2) + b * vertex_x + c\n    \n    return vertex_x, vertex_y",
-  "explanation": "**Explanation**\nThe function `candidate` calculates the vertex of a parabola given its equation in the form `y = ax^2 + bx + c`. It uses the formula for the x-coordinate of the vertex, which is `-b / 2a`, to find the location of the vertex. The y-coordinate can be found by plugging this value back into the original equation.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

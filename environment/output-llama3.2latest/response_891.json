@@ -1,8 +1,0 @@
-{
-  "task_id": 891,
-  "code": "def candidate(a, b):\n    # Check if both inputs are integers\n    if not isinstance(a, int) or not isinstance(b, int):\n        raise TypeError(\"Both inputs must be integers\")\n    \n    # Compare the lengths of the numbers\n    return len(str(abs(a))) == len(str(abs(b)))",
-  "explanation": "**Explanation**\nThis function checks if two numbers have the same number of digits by comparing their lengths. It uses the built-in `len()` function to count the number of digits in each number and then compares these counts using a conditional statement.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

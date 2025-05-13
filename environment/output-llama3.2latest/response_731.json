@@ -1,8 +1,0 @@
-{
-  "task_id": 731,
-  "code": "# python\nimport math\n\ndef candidate(radius, height):\n    # Calculate the slant height using Pythagorean theorem\n    slant_height = math.sqrt(radius ** 2 + height ** 2)\n    \n    # Compute the lateral surface area of the cone\n    lateral_surface_area = math.pi * radius * slant_height\n    \n    return lateral_surface_area",
-  "explanation": "**Explanation**\nThe function will take as input the radius and height of the cone, calculate the slant height using Pythagoras theorem, then use it to compute the lateral surface area. The calculation involves only basic mathematical operations, making it straightforward to implement.",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

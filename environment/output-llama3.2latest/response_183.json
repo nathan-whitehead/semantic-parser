@@ -1,8 +1,0 @@
-{
-  "task_id": 183,
-  "code": "def candidate(nums, k):\n    # Check if input is valid (list of integers)\n    if not isinstance(nums, list) or not all(isinstance(num, int) for num in nums):\n        raise ValueError(\"Input must be a list of integers\")\n\n    # Create a dictionary to store elements and their indices\n    num_dict = {}\n    \n    # Initialize an empty set to store distinct pairs\n    pairs = set()\n    \n    # Iterate over the list of numbers with their indices\n    for i, num in enumerate(nums):\n        # Calculate the complement of the current number (num - k) if it exists\n        complement = num + k\n        \n        # Check if the complement is already in the dictionary and not the same as the current element\n        if complement in num_dict and num != complement:\n            # Add the pair to the set, sorted to avoid duplicates\n            pairs.add(tuple(sorted((complement, num))))\n        \n        # Store the current number and its index in the dictionary\n        num_dict[num] = i\n    \n    # Return all distinct pairs with a difference of k\n    return list(pairs)",
-  "explanation": "**Explanation**\nThe original code does not take into account the input list `nums` in its definition. It's a good practice to include all parameters in the function signature, and it is also recommended to handle potential edge cases by validating the input.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 28, in <module>\n    assert candidate([1, 5, 3, 4, 2], 5, 3) == 2\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: candidate() takes 2 positional arguments but 3 were given\n\n",
-  "success": false
-}

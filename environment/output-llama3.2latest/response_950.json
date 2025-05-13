@@ -1,8 +1,0 @@
-{
-  "task_id": 950,
-  "code": "def candidate(year):\n    # Define the Chinese Zodiac animals and their corresponding years\n    zodiac_animals = {\n        1: \"Rat\", 2: \"Ox\", 3: \"Tiger\", 4: \"Rabbit\", \n        5: \"Dragon\", 6: \"Snake\", 7: \"Horse\", 8: \"Goat\", \n        9: \"Monkey\", 10: \"Rooster\", 11: \"Dog\", 12: \"Pig\"\n    }\n\n    # Calculate the correct year by finding the remainder when divided by 4\n    # and then adding the remainder of (year-4) divided by 3, to get the \n    # Chinese Zodiac sign based on the birth year.\n    zodiac_sign = [(5+i, month) for i, month in enumerate(['Mouse', 'Rooster', 'Dog', 'Pig', 'Rat', 'Ox', 'Tiger', 'Hare', 'Tiger', 'Horse', 'Sheep', 'Monkey'], 1)][((year-4)%12 + 1)]\n\n    # Return the corresponding animal for the correct year\n    return zodiac_animals[zodiac_sign[0]]",
-  "explanation": "Explanation\n----------\n\nThe code provided calculates the Chinese Zodiac animal for a given year by adjusting the input year to fall within the range of 1-12, which are the possible years in the cycle. However, this approach is incorrect as it does not properly calculate the Chinese Zodiac sign based on the birth year.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 17, in <module>\n    assert candidate(1997)==('Ox')\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

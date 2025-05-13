@@ -1,8 +1,0 @@
-{
-  "task_id": 327,
-  "code": "def candidate(a, b, c):\n    # Check if any two sides have equal length\n    return a == b or a == c or b == c",
-  "explanation": "**Explanation**\nThe function takes three sides of a triangle as input and checks if it's an isosceles triangle by comparing the lengths of all pairs of sides. If any two sides have equal length, then the triangle is isosceles. The function returns True if the triangle is isosceles and False otherwise.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

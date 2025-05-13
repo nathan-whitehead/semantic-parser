@@ -1,8 +1,0 @@
-{
-  "task_id": 84,
-  "code": "def candidate(n):\n    # Base cases for recursion\n    if n == 1:\n        return 0\n    elif n == 2:\n        return 1\n    \n    prev_prev_term = 0\n    prev_term = 1\n\n    for i in range(3, n + 1):\n        next_term = prev_term + prev_prev_term\n        # Update prev_prev_term and prev_term correctly\n        prev_prev_term, prev_term = prev_term, next_term\n    \n    return prev_term",
-  "explanation": "Explanation\n-----------\nThe code provided attempts to implement the Newman-Conway sequence, but it has a logical error in updating the `prev_prev_term` and `prev_term` variables. The issue lies in the fact that the update operation is swapped, causing incorrect results.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 18, in <module>\n    assert candidate(10) == 6\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

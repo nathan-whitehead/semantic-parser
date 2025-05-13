@@ -1,8 +1,0 @@
-{
-  "task_id": 316,
-  "code": "def candidate(nums, target):\n    \"\"\"\n    Find the index of the last occurrence of a given number in a sorted array.\n    \n    Args:\n        nums (list): A sorted list of integers.\n        target (int): The target number to be found.\n\n    Returns:\n        int: The index of the last occurrence of the target number, or -1 if not found.\n    \"\"\"\n    left, right = 0, len(nums) - 1\n    # Initialize result as -1 in case target is not found\n    result = -1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        \n        # If the middle element matches the target, update result and move to the right half\n        if nums[mid] == target:\n            result = mid\n            left = mid + 1\n            \n        # If the middle element is greater than the target, move to the left half\n        elif nums[mid] > target:\n            right = mid - 1\n            \n        # If the middle element is less than the target, move to the right half\n        else:\n            left = mid + 1\n    \n    return result",
-  "explanation": "# Explanation\nThe code attempts to find the index of the last occurrence of a target number in a sorted array using a modified binary search approach. However, it contains incorrect logic that causes the result to be off by one position. The issue lies in the line `right = mid - 1` when the middle element matches the target, which is incorrect because we want to continue searching from the middle index instead of moving left.\n\n# python",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

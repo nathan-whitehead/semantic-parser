@@ -1,8 +1,0 @@
-{
-  "task_id": 361,
-  "code": "def candidate(lst):\n    \"\"\"\n    Removes empty lists from a given list of lists.\n    \n    Args:\n        lst (list): A list of lists that may contain empty sublists or non-list elements.\n    \n    Returns:\n        list: A new list with all empty sublists and non-list elements removed.\n    \"\"\"\n    result = []\n    for item in lst:\n        # Check if the item is a list\n        if isinstance(item, list):\n            filtered_item = [x for x in item if isinstance(x, list) or (isinstance(x, (int, str)) and x)]\n            if filtered_item:\n                result.extend(candidate(filtered_item))\n        elif isinstance(item, (int, str)):\n            # If it's a non-list element, append it to the result list\n            result.append(item)\n    return result",
-  "explanation": "**Explanation**\nThe code provided attempts to remove empty lists from a given list of lists recursively. However, it does not handle the case where an item is a non-list element correctly and has nested sublists that need to be filtered. Additionally, there are duplicate function calls in the recursive case which can lead to performance issues.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 23, in <module>\n    assert candidate([[], [], [], 'Red', 'Green', [1,2], 'Blue', [], []])==['Red', 'Green', [1, 2], 'Blue']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

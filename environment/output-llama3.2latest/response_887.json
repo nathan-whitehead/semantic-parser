@@ -1,8 +1,0 @@
-{
-  "task_id": 887,
-  "code": "def candidate(n):\n    # Perform bitwise AND operation between n and 1\n    # The result will be 0 if n is even and non-zero if n is odd\n    result = n & 1\n    \n    # Check the result to determine if n is odd or not\n    # If result is not zero, then n is odd, otherwise it's even\n    return result != 0",
-  "explanation": "**Explanation**\nThe function uses bitwise operators to determine if a given number is odd. It works by performing a bitwise AND operation between the number and 1, then checking the result. If the result is 0, the number is even, otherwise it's odd.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

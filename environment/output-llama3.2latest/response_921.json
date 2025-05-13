@@ -1,8 +1,0 @@
-{
-  "task_id": 921,
-  "code": "def candidate(input_tuple, n):\n    \"\"\"\n    Chunk a tuple into smaller tuples of size n.\n\n    Args:\n        input_tuple (tuple): The input tuple to be chunked.\n        n (int): The desired size of each chunk.\n\n    Returns:\n        list: A list of chunks, where each chunk is a tuple of size n.\n\n    Raises:\n        ValueError: If the input tuple is empty or if n is less than 1.\n    \"\"\"\n    # Check for invalid input\n    if not input_tuple or n < 1:\n        raise ValueError(\"Input tuple cannot be empty and n must be greater than 0\")\n\n    # Calculate the number of chunks needed\n    num_chunks = -(-len(input_tuple) // n)\n\n    # Use list comprehension to create a new list with chunked elements\n    return [input_tuple[i:i+n] for i in range(0, len(input_tuple), n)]",
-  "explanation": "**Explanation**\nThe code provided calculates the number of chunks needed to divide a tuple into smaller tuples of size n. However, it does not define the function itself, resulting in a `NameError`. Additionally, there's no error handling or validation for invalid input.\n\n**python**",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

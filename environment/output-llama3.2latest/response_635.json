@@ -1,8 +1,0 @@
-{
-  "task_id": 635,
-  "code": "import heapq\n\ndef candidate(nums):\n    # Create a copy of the input list to avoid modifying it in-place\n    nums_copy = nums.copy()\n    \n    # Convert the list into a min-heap using heapq.heapify()\n    heapq.heapify(nums_copy)\n    \n    # Initialize an empty list to store the popped values\n    popped_values = []\n    \n    # Continue popping off the smallest value from the heap until it's empty\n    while nums_copy:\n        # Pop off the smallest value from the heap and append it to the list of popped values\n        popped_values.append(heapq.heappop(nums_copy))\n    \n    # Return the list of popped values\n    return popped_values",
-  "explanation": "**Explanation**\nThe `candidate` function will take an input list of numbers, sort them in ascending order using the built-in `heapq.heapify()` function, which turns the list into a min-heap. Then it pops off the smallest value from the heap and returns it. This process is repeated until all values have been popped from the heap.\n\n**Python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

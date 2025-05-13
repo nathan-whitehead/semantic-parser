@@ -1,8 +1,0 @@
-{
-  "task_id": 917,
-  "code": "import re\n\ndef candidate(s):\n    # Regular expression pattern to match sequences of one or more uppercase or lowercase letters\n    pattern = r\"[a-zA-Z]+\"\n    \n    # Find all matches in the input string\n    matches = re.findall(pattern, s)\n    \n    # Initialize an empty list to store the result\n    result = []\n    \n    # Iterate over each match\n    for match in matches:\n        # Check if the match consists of only one uppercase letter followed by lowercase letters\n        if len(match) > 1 and match[0].isupper() and match[1:].islower():\n            # If it does, append a message to the result list\n            result.append(\"Found a match!\")\n    \n    # Return the list of results or an empty list if no match is found\n    return result if any(result) else []",
-  "explanation": "**Explanation**\nThe code provided does not handle the case where an uppercase letter is at the end of the string. The regular expression pattern only matches sequences that start with an uppercase letter and continue with lowercase letters. However, in the test case \"AaBbGg\", there are two uppercase letters 'G' which should also be considered as a match.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 23, in <module>\n    assert candidate(\"AaBbGg\")==('Found a match!')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

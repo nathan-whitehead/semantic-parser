@@ -1,8 +1,0 @@
-{
-  "task_id": 789,
-  "code": "def candidate(num_sides, side_length):\n    \"\"\"\n    Calculate the perimeter of a regular polygon.\n    \n    Parameters:\n    num_sides (int): Number of sides of the polygon.\n    side_length (float): Length of each side of the polygon.\n    \n    Returns:\n    float: Perimeter of the polygon.\n    \"\"\"\n    # Check for invalid input\n    if num_sides <= 0 or side_length <= 0:\n        raise ValueError(\"Number of sides and side length must be positive.\")\n    \n    # Calculate perimeter using formula (n * s) where n is number of sides and s is side length\n    perimeter = num_sides * side_length\n    \n    return perimeter",
-  "explanation": "**Explanation**\nThe function will take as input the number of sides and the length of each side of a regular polygon. It calculates the perimeter by multiplying the number of sides by the length of each side. The result is returned without any additional values.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

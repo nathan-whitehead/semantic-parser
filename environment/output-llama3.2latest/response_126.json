@@ -1,8 +1,0 @@
-{
-  "task_id": 126,
-  "code": "def candidate(a, b):\n    # Initialize a set to store unique common divisors\n    common_divisors = set()\n    \n    # Iterate over all numbers from 1 to 'a'\n    for i in range(1, a + 1):\n        # Check if 'i' is a divisor of both 'a' and 'b'\n        if a % i == 0 and b % i == 0:\n            # Add 'i' to the set of common divisors\n            common_divisors.add(i)\n    \n    # Return the sum of common divisors\n    return sum(common_divisors)",
-  "explanation": "Explanation\n-----------\n\nThe `candidate` function calculates the sum of common divisors of two given numbers. It iterates through all possible divisors for each number, checks if they are also divisors of the other number, and sums them up.\n\nPython",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

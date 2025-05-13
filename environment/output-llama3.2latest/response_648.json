@@ -1,8 +1,0 @@
-{
-  "task_id": 648,
-  "code": "def candidate(lst):\n    # Check if the input list is empty or contains only one element\n    if len(lst) < 2:\n        return lst\n\n    for i in range(0, len(lst), 2):\n        # Swap values at every n-th index with (n+1)-th index using tuple packing\n        # Handle cases where current and next index are out of range\n        if i + 1 < len(lst):\n            lst[i], lst[i + 1] = lst[i + 1], lst[i]\n    \n    return lst",
-  "explanation": "**Explanation**\nThe provided code attempts to solve the problem by iterating over every other index in the list and swapping its value with the adjacent one. However, this approach is incomplete as it does not handle cases where there are an odd number of elements or missing values. The current implementation also fails to pass the given test case.\n\n**python**",
-  "num_iterations": 5,
-  "error_msg": null,
-  "success": true
-}

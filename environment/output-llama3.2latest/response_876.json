@@ -1,8 +1,0 @@
-{
-  "task_id": 876,
-  "code": "import math\n\ndef candidate(a, b):\n    # Calculate the gcd of a and b using the built-in function\n    gcd = math.gcd(a, b)\n    \n    # Calculate the lcm based on the formula: lcm(a, b) = |a*b| / gcd(a, b)\n    lcm = abs(a * b) // gcd\n    \n    return lcm",
-  "explanation": "**Explanation**\nThis function calculates the least common multiple (LCM) of two positive integers using their greatest common divisor (GCD). The approach involves first finding the GCD of the two numbers, then calculating the LCM based on this value. This method is efficient as it avoids unnecessary calculations.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 182,
-  "code": "import re\n\ndef candidate(s):\n    # Use regex patterns to extract uppercase, lowercase and special characters/numeric values\n    uppercase = [char for char in s if char.isupper()]\n    lowercase = [char for char in s if char.islower()]\n    \n    # Extract numeric values using an alternative regex pattern\n    all_chars = re.findall(r'[^\\w\\s]', s)\n    \n    # Correctly handle the case where a single character is both uppercase and lowercase\n    special_chars_and_numeric_values = [char for char in all_chars if not (char.isdigit() or char.islower())]\n    \n    return ''.join(uppercase), ''.join(lowercase), ''.join(special_chars_and_numeric_values), ''.join([char for char in s if not (char.isdigit() or char.isupper())])",
-  "explanation": "Explanation\n-----------\n\nThe original code attempts to extract uppercase letters, lowercase letters, special characters and numeric values from a given string using list comprehensions. However, it does not correctly handle the case where a single character is both uppercase and lowercase (e.g., \"I\" in the test case). Additionally, the function returns four separate strings instead of returning all characters as their respective types.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(\"ThisIsGeeksforGeeks\") == (['T', 'I', 'G', 'G'], ['h', 'i', 's', 's', 'e', 'e', 'k', 's', 'f', 'o', 'r', 'e', 'e', 'k', 's'], [], [])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

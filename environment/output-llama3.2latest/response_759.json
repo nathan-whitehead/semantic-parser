@@ -1,8 +1,0 @@
-{
-  "task_id": 759,
-  "code": "# python\ndef candidate(num):\n    # Check if num is a float or int (not just any number)\n    if isinstance(num, (float, int)):\n        # Round num to two decimal places and check its precision\n        return len(str(round(num, 2)).split('.')[1]) == 2 \n    else:\n        raise TypeError('num must be a number')",
-  "explanation": "Explanation\nThe original code checks if the input is a float or int and then splits the string representation of the number into two parts. However, this approach does not check for floating point precision correctly. The corrected function will now use Python's built-in `round` function to achieve the desired output.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 10, in <module>\n    assert candidate('123.11')==True\n           ~~~~~~~~~^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 8, in candidate\n    raise TypeError('num must be a number')\nTypeError: num must be a number\n\n",
-  "success": false
-}

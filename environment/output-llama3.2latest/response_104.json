@@ -1,8 +1,0 @@
-{
-  "task_id": 104,
-  "code": "def candidate(lst):\n    # Use sorted function with lambda function as key\n    return [sorted(sublist) for sublist in lst]",
-  "explanation": "**Explanation**\nThe provided function uses the `sorted` function with a lambda function as the key. The lambda function extracts each string from a sublist and returns it, which allows the `sorted` function to sort on the entire sublists. This approach is concise and efficient.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

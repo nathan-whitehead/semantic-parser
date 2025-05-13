@@ -1,8 +1,0 @@
-{
-  "task_id": 115,
-  "code": "def candidate(lst):\n    # Check if all dictionaries in the list are empty\n    return all(len(d) == 0 for d in lst)",
-  "explanation": "**Explanation**\nThis function checks if all dictionaries in a given list are empty. It does this by iterating over each dictionary in the list, checking its size (i.e., whether it's empty), and returning True as soon as it finds an empty dictionary or False when it has checked all dictionaries.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

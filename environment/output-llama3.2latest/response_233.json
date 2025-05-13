@@ -1,8 +1,0 @@
-{
-  "task_id": 233,
-  "code": "import math\n\ndef candidate(r, h):\n    # Check if radius and height are non-negative\n    if r < 0 or h <= 0:\n        raise ValueError(\"Radius must be positive and height must be greater than zero\")\n    \n    # Calculate the lateral surface area using the formula 2\u03c0rh + 2\u03c0r^2\n    lateral_surface_area = 2 * math.pi * r * (h + r)\n    \n    return lateral_surface_area",
-  "explanation": "Explanation\n================\n\nThe given code attempts to calculate the lateral surface area of a cylinder using the formula 2\u03c0rh, where r is the radius and h is the height. However, the issue lies in the calculation of the lateral surface area itself. The correct formula should be 2\u03c0rh for the curved surface area, but since we are considering both top and bottom surfaces (lateral), it's actually 2\u03c0rh + 2\u03c0r^2.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 13, in <module>\n    assert candidate(10,5)==314.15000000000003\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

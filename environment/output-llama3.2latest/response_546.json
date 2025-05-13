@@ -1,8 +1,0 @@
-{
-  "task_id": 546,
-  "code": "# python\ndef candidate(string, char):\n    # Initialize the result variable to -1, indicating not found\n    result = -1\n    \n    # Find the index of the last occurrence of the target character\n    for i in range(len(string)):\n        if string[i] == char:\n            result = len(string) - i\n    \n    # If the character is not found return -1\n    if result == -1:\n        return -1\n\n    # Return the result\n    return result",
-  "explanation": "Explanation\n-----------\n\nThe code provided has a logical error. The issue is with the loop starting index being `len(string) - 1` instead of `0`. This means that when `char` is found at index `i`, it will also be counted as an occurrence before `char` itself. Also, since Python uses zero-based indexing, if we find the character at index `n-1`, its corresponding actual position in string is `(n-1)`. So to get the last occurrence of a character we should iterate until we reach our target character, and then iterate again from start until that point.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 18, in <module>\n    assert candidate(\"hello world\",'l')==10\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

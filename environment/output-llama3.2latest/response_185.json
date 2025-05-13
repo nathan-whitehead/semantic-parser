@@ -1,8 +1,0 @@
-{
-  "task_id": 185,
-  "code": "import math\n\ndef candidate(a, b, c):\n    \"\"\"\n    Calculate the focus of a parabola defined by y = ax^2 + bx + c.\n\n    Parameters:\n    a (float): The coefficient of the squared term.\n    b (float): The coefficient of the linear term.\n    c (float): The constant term.\n\n    Returns:\n    tuple: A tuple containing the x and y coordinates of the focus.\n    \"\"\"\n    # Check if 'a' is zero to avoid division by zero\n    if a == 0:\n        raise ValueError(\"The parabola has no focus\")\n\n    # Calculate the focal length using the formula x = -b / (2 * sqrt(a))\n    focal_length_x = -b / (2 * math.sqrt(abs(a)))  \n    # Since this is a parabola, the y-coordinate of the focus is c/a\n    focal_length_y = c / a\n    \n    return (focal_length_x, focal_length_y)",
-  "explanation": "Explanation\n-----------\nThe code provided has an issue with the calculation of the focal length `x`. The formula is incorrect; it should be `-b / (2 * math.sqrt(a))` instead of `-b / (2 * math.sqrt(abs(a)))`, which would always yield a positive value. This change will ensure that the function produces accurate results.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 26, in <module>\n    assert candidate(5,3,2)==(-0.3, 1.6)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

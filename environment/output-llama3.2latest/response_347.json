@@ -1,8 +1,0 @@
-{
-  "task_id": 347,
-  "code": "def candidate(length, width):\n    # Calculate the minimum side length of the rectangle\n    min_side_length = min(length, width)\n\n    count = 0\n\n    # Iterate over all possible square sizes from 1 to the minimum side length\n    for side_length in range(1, min_side_length + 1):\n        # Calculate the number of squares that can fit along both the length and width\n        num_squares_len = length // side_length if length >= side_length else 0\n        num_squares_width = width // side_length if width >= side_length else 0\n\n        # Increment the count by the product of lengths and widths only if it's a perfect square\n        if num_squares_len > 0 and num_squares_width > 0:\n            count += num_squares_len * num_squares_width\n\n    return count",
-  "explanation": "**Explanation**\nThe provided code attempts to calculate the total number of squares that can fit within a given rectangle. However, it incorrectly increments the count when both `num_squares_len` and `num_squares_width` are zero, which occurs when the square size is greater than the minimum side length of the rectangle. This issue leads to incorrect results.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate(4,3) == 20\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

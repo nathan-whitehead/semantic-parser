@@ -1,8 +1,0 @@
-{
-  "task_id": 174,
-  "code": "# python\ndef candidate(pairs):\n    \"\"\"\n    Group a sequence of key-value pairs into a dictionary of lists.\n    \n    Args:\n        pairs (list): A list of tuples, where each tuple contains a key-value pair.\n        \n    Returns:\n        dict: A dictionary where keys are unique and values are lists of corresponding values.\n    \"\"\"\n    result = {}\n    for key, value in pairs:\n        # Use the key to get or create a list in the dictionary\n        if key not in result:\n            result[key] = []\n        # Append the value to the existing list\n        result[key].append(value)\n    return result",
-  "explanation": "**Explanation**\nThe `candidate` function groups a sequence of key-value pairs into a dictionary of lists. It iterates over the input sequence, assigning each key-value pair to an existing list in the dictionary or creating a new list if one does not exist. The function returns the resulting dictionary of lists.",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

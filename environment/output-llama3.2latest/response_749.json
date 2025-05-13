@@ -1,8 +1,0 @@
-{
-  "task_id": 749,
-  "code": "def candidate(lst):\n    # Filter out non-numeric strings and store just the numeric strings in a list\n    numeric_data = [num for num in lst if isinstance(num, str) and num.isdigit()]\n    \n    # Sort the list of numbers numerically\n    sorted_numbers = sorted(numeric_data)\n    \n    # Return the sorted list of numbers as a list\n    return sorted_numbers",
-  "explanation": "Explanation\n================\nThe provided code attempts to filter out non-numeric strings from the input list and sort the remaining numbers numerically. However, it incorrectly filters out numeric strings and stores them along with their corresponding numbers instead of filtering them out.\n\nCode\n======",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 11, in <module>\n    assert candidate( ['4','12','45','7','0','100','200','-12','-500'])==[-500, -12, 0, 4, 7, 12, 45, 100, 200]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

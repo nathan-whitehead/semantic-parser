@@ -1,8 +1,0 @@
-{
-  "task_id": 222,
-  "code": "def candidate(tup):\n    # Get the data type of the first element\n    elem_type = type(tup[0])\n    \n    # Check if all elements have the same data type\n    for elem in tup:\n        if type(elem) != elem_type:\n            return False\n    \n    return True",
-  "explanation": "**Explanation**\nThe function checks if all elements in a given tuple have the same data type. It uses Python's built-in `type()` function to get the data type of each element and then compares these types using the `set()` function, which returns unique elements in an iterable. If all elements have the same type, it returns True; otherwise, it returns False.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

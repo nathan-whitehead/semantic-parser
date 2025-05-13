@@ -1,8 +1,0 @@
-{
-  "task_id": 782,
-  "code": "def candidate(nums):\n    # Initialize sum of all odd length subarrays\n    total_sum = 0\n    \n    # Iterate over possible start positions for subarrays\n    for i in range(len(nums)):\n        # Calculate number of elements in current subarray\n        n = (i + 1) // 2\n        \n        # Check if the subarray has at least 3 elements and is within bounds\n        if 2 * n <= len(nums):\n            # Slice array to get current subarray and add to sum\n            start_idx = i\n            end_idx = min(i + 2 * n - 1, len(nums) - 1)\n            total_sum += sum(nums[start_idx:end_idx+1])\n    \n    return total_sum",
-  "explanation": "**EXPLANATION**\nThe code attempts to calculate the sum of all odd length subarrays by iterating over possible start positions and checking if the subarray has at least 3 elements. However, it incorrectly calculates the end index for each subarray, resulting in an out-of-bounds error.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate([1,2,4]) == 14\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

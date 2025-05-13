@@ -1,8 +1,0 @@
-{
-  "task_id": 173,
-  "code": "import re\n\ndef candidate(s):\n    # Use regular expression to find one or more non-alphanumeric characters \n    # \\W matches any non-alphanumeric character (equivalent to [^a-zA-Z0-9_])\n    return re.sub(r'[^a-zA-Z0-9]', '', s)",
-  "explanation": "Explanation\n-----------\n\nThe given code uses regular expressions to remove non-alphanumeric characters from the input string. However, it doesn't handle spaces correctly because `\\s` in `re.sub()` matches any whitespace character (space, tab, newline, etc.), not just space. The issue arises when we have strings like \"python  @#&^%$*program123\" which are supposed to return \"pythonprogram123\". We need to modify the code so that it only removes non-alphanumeric characters without spaces.\n\nPython",
-  "num_iterations": 5,
-  "error_msg": null,
-  "success": true
-}

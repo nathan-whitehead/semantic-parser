@@ -1,8 +1,0 @@
-{
-  "task_id": 965,
-  "code": "def candidate(s):\n    \"\"\"\n    Converts a camel case string to snake case string.\n    \n    Args:\n        s (str): The input camel case string.\n    \n    Returns:\n        str: The equivalent snake case string.\n    \"\"\"\n    result = []\n    for i, c in enumerate(s):\n        if c.isupper():\n            if i > 0 and s[i-1].islower():\n                result.append('_')\n            result.append(c.lower())\n        else:\n            result.append(c)\n    return ''.join(result)",
-  "explanation": "**Explanation**\nThe `candidate` function takes a camelCase string as input and returns its equivalent snake_case string. It uses a list comprehension to iterate over each character in the input string, converting it from uppercase to lowercase when it is an uppercase letter and appending an underscore before it.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

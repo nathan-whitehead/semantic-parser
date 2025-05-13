@@ -1,8 +1,0 @@
-{
-  "task_id": 904,
-  "code": "def candidate(n):\n    # Check if n is divisible by 2\n    return n % 2 == 0",
-  "explanation": "Explanation\n-----------\n\nThis function uses a simple conditional statement to check if the input number is divisible by 2, which is the definition of an even number. The approach is straightforward and easy to understand. No additional libraries or data structures are required for this problem.\n\n\npython",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

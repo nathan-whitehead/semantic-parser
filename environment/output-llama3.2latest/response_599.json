@@ -1,8 +1,0 @@
-{
-  "task_id": 599,
-  "code": "def candidate(n):\n    # Calculate the sum of the first n natural numbers using the formula: n * (n + 1) / 2\n    total_sum = n * (n + 1) // 2\n    \n    # Calculate the average by dividing the sum by n\n    average = total_sum / n\n    \n    # Return both the sum and the average as a tuple\n    return total_sum, average",
-  "explanation": "**Explanation**\nThe function will calculate the sum and average of the first `n` natural numbers. It uses the formula for the sum of an arithmetic series, which is `n * (n + 1) / 2`, and then divides by `n` to get the average.\n\n**Python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

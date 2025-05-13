@@ -1,8 +1,0 @@
-{
-  "task_id": 871,
-  "code": "def candidate(s1, s2):\n    # Check if both strings have the same length\n    if len(s1) != len(s2):\n        return False\n\n    # Concatenate one string and its rotation by n places\n    def is_rotation(s1, s2):\n        return s1 in (s2 + s2)\n\n    # Use the helper function to check for rotations\n    return is_rotation(s1, s2)",
-  "explanation": "**Explanation**\nThis function checks if two input strings are rotations of each other. A rotation is a rearrangement of characters where every character in one string is shifted to its corresponding position in another string. This function achieves this by comparing the concatenation of each string with itself, effectively checking for all possible rotations.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

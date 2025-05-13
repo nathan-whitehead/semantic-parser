@@ -1,8 +1,0 @@
-{
-  "task_id": 948,
-  "code": "def candidate(tup, index):\n    # Check if the index is within bounds\n    if not isinstance(index, int) or index < 0:\n        return tup\n    \n    # Ensure the index does not exceed the tuple's length\n    index = min(index, len(tup))\n    \n    return tup[index]",
-  "explanation": "**Explanation**\nThe original code attempts to handle invalid indices by raising an `IndexError`. However, this approach does not ensure that the returned value is the correct item from the tuple. The corrected function now returns the entire tuple if the index is out of bounds.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 12, in <module>\n    assert candidate((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\", \"e\"),-4)==('u')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

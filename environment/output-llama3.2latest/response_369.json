@@ -1,8 +1,0 @@
-{
-  "task_id": 369,
-  "code": "def candidate(length, width, height):\n    \"\"\"\n    Calculate the total surface area of a cuboid.\n\n    Parameters:\n        length (float): The length of the cuboid.\n        width (float): The width of the cuboid.\n        height (float): The height of the cuboid.\n\n    Returns:\n        float: The total surface area of the cuboid.\n    \"\"\"\n    # Calculate the areas of the top and bottom faces\n    top_bottom_area = 2 * length * width\n    \n    # Calculate the lateral surface area using the correct formula\n    lateral_surface_area = 2 * (length * width + length * height + width * height)\n    \n    # Return the total surface area by adding the areas of top, bottom and lateral faces\n    return top_bottom_area + lateral_surface_area",
-  "explanation": "Explanation\n-----------\n\nThe original code was designed to calculate the total surface area of a cuboid. However, it contained an error in the calculation of the lateral surface area. The correct formula for the lateral surface area of a cuboid is 2 * (length * width + length * height + width * height). Additionally, the top and bottom faces were not being accounted for correctly. To fix these issues, we need to correct the calculations and return the total surface area.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate(8,5,6)==156\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

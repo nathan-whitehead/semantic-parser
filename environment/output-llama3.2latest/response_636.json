@@ -1,8 +1,0 @@
-{
-  "task_id": 636,
-  "code": "def candidate(a, b, c):\n    \"\"\"\n    Checks if roots of a quadratic equation are reciprocal of each other or not.\n    \n    Args:\n        a (float): Coefficient of the squared term.\n        b (float): Coefficient of the linear term.\n        c (float): Constant term.\n    \n    Returns:\n        bool: True if the roots are reciprocal of each other, False otherwise.\n    \"\"\"\n    # Calculate the discriminant\n    d = b**2 - 4*a*c\n    \n    # Check if roots are real and distinct\n    if d > 0:\n        # Calculate the roots using the quadratic formula\n        root1 = (-b + d**0.5) / (2 * a)\n        root2 = (-b - d**0.5) / (2 * a)\n        \n        # Check if one root is the reciprocal of the other\n        return (root1 == 1 and root2 != 1/ root1) or \\\n               (root2 == 1 and root1 != 1/root2)\n    elif d == 0:\n        # Roots are real and equal\n        return True\n    else:\n        # Roots are complex, they cannot be reciprocal of each other\n        return False",
-  "explanation": "**Explanation**\nThe code provided attempts to check if the roots of a quadratic equation are reciprocal of each other. However, it contains an error in its return statement when one root is the reciprocal of the other. The correct approach should be that one root is 1/other root and not both being equal or both being equal to 1.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 32, in <module>\n    assert candidate(2,0,2) == \"Yes\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

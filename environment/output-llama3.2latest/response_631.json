@@ -1,8 +1,0 @@
-{
-  "task_id": 631,
-  "code": "import re\n\ndef candidate(s):\n    # Use regex to replace all whitespace characters (spaces, tabs, newlines) with underscores\n    s = re.sub(r'\\s', '_', s)\n    \n    # Then, replace all underscores with whitespace characters followed by any number of non-whitespace characters\n    s = re.sub(r'_', r' \\S*', s)\n    \n    return s",
-  "explanation": "Explanation\n-----------\n\nThe error occurs because the character class `\\w` includes whitespace characters. This causes an infinite loop when trying to replace underscores with whitespace followed by non-whitespace characters.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 12, in <module>\n    assert candidate('Jumanji The Jungle') == 'Jumanji_The_Jungle'\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 8, in candidate\n    s = re.sub(r'_', r' \\S*', s)\n  File \"/usr/local/lib/python3.13/re/__init__.py\", line 208, in sub\n    return _compile(pattern, flags).sub(repl, string, count)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/re/__init__.py\", line 377, in _compile_template\n    return _sre.template(pattern, _parser.parse_template(repl, pattern))\n                                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/re/_parser.py\", line 1076, in parse_template\n    raise s.error('bad escape %s' % this, len(this)) from None\nre.PatternError: bad escape \\S at position 1\n\n",
-  "success": false
-}

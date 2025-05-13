@@ -1,8 +1,0 @@
-{
-  "task_id": 800,
-  "code": "def candidate(s):\n    # Initialize an empty string to store the result\n    result = \"\"\n\n    # Iterate over each character in the input string\n    for char in s:\n        # Check if the character is a whitespace\n        if not char.isspace():\n            # If not, add it to the result string\n            result += char\n\n    # Return the resulting string with all whitespaces removed\n    return result",
-  "explanation": "**Explanation**\nThe function takes a string as input and returns the string with all whitespaces removed. The approach used is to iterate over each character in the string, checking if it's a whitespace. If not, the character is added to the result string. This process continues until all characters have been checked.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

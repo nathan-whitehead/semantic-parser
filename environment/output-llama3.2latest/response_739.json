@@ -1,8 +1,0 @@
-{
-  "task_id": 739,
-  "code": "def candidate(n):\n    # Initialize the counter for the smallest triangular number and its value\n    i = 0\n    while True:\n        # Calculate the next triangular number\n        triangular_num = (i * (i + 1)) // 2\n        \n        # Check if it has n digits\n        if len(str(triangular_num)) == n:\n            # Return the index of the smallest triangular number with n digits\n            return i  \n        i += 1\n        \n    # If no triangular number with n digits is found, return None\n    return None",
-  "explanation": "Explanation\n-----------\n\n\nThe original code attempts to find the smallest triangular number with n digits by iterating over increasing values of i and calculating the corresponding triangular numbers. However, the issue arises when it tries to return `i - 1`, which is incorrect because Python uses zero-based indexing. The correct approach is to add a counter variable that increments with each iteration and returns its value.\n\nCode\n-----",
-  "num_iterations": 4,
-  "error_msg": null,
-  "success": true
-}

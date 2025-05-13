@@ -1,8 +1,0 @@
-{
-  "task_id": 803,
-  "code": "def candidate(n):\n    # Check if n is a non-negative integer\n    if not isinstance(n, int) or n < 0:\n        raise ValueError(\"Input must be a non-negative integer\")\n\n    # Calculate the square root of n\n    sqrt_n = n ** 0.5\n\n    # Check if the square root is an integer\n    return sqrt_n == int(sqrt_n)",
-  "explanation": "**Explanation**\nThe provided Python function checks whether a given number is a perfect square or not. It uses the mathematical property that a number is a perfect square if its square root is an integer. The function takes an integer as input and returns `True` if it's a perfect square, otherwise it returns `False`.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

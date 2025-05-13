@@ -1,8 +1,0 @@
-{
-  "task_id": 356,
-  "code": "# python\ndef candidate(angle1, angle2):\n    # Check if the input angles are valid (i.e., between 0 and 180)\n    if not (0 <= angle1 <= 180) or not (0 <= angle2 <= 180):\n        raise ValueError(\"Angles must be between 0 and 180 degrees\")\n\n    # Calculate the third angle\n    angle3 = 180 - angle1 - angle2\n\n    return angle3",
-  "explanation": "**Explanation**\nThe `candidate` function takes two known angles of a triangle and returns the third angle. This is possible because the sum of all three angles in a triangle is always 180 degrees. The function uses simple arithmetic to calculate the missing angle.",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

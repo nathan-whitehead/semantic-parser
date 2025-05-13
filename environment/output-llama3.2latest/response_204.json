@@ -1,8 +1,0 @@
-{
-  "task_id": 204,
-  "code": "def candidate(string, char):\n    \"\"\"\n    Counts the occurrence of a given character in a string.\n    \n    Parameters:\n    string (str): The input string.\n    char (str): The character to be searched.\n    \n    Returns:\n    int: The number of occurrences of the specified value in the string.\n    \"\"\"\n    return string.count(char)",
-  "explanation": "**Explanation**\nThe original code was attempting to use a nested function approach but did not correctly return the result of the inner function. Additionally, it did not define the `candidate` function outside of itself.\n\n**python**",
-  "num_iterations": 3,
-  "error_msg": null,
-  "success": true
-}

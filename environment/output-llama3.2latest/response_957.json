@@ -1,8 +1,0 @@
-{
-  "task_id": 957,
-  "code": "def candidate(n):\n    # Initialize the position of the rightmost set bit to 0\n    pos = -1\n    \n    # Loop until n becomes zero\n    while n:\n        # Check if the least significant bit is set (i.e., n & 1 == 1)\n        if n & 1:\n            # If it's set, update the position\n            pos = n.bit_length() - 1\n        \n        # Right shift n to move it one place to the right (divide by 2)\n        n >>= 1\n    \n    return pos",
-  "explanation": "**Explanation**\nThe provided code attempts to find the position of the rightmost set bit in a given number `n`. However, it contains a logical error and an undefined variable. The function should loop until `n` becomes zero but currently breaks out of the loop as soon as it finds a set bit.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 17, in <module>\n    assert candidate(12) == 3\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

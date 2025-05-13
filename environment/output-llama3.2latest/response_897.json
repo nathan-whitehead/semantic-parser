@@ -1,8 +1,0 @@
-{
-  "task_id": 897,
-  "code": "def candidate(sentence, word):\n    # Convert both the sentence and word to lowercase for comparison\n    sentence = sentence.lower()\n    word = word.lower()\n\n    # Split the sentence into words\n    words = sentence.split()\n\n    # Check if the target word is in the list of words\n    return word in words",
-  "explanation": "**Explanation**\nThe function will take two parameters: the sentence and the word. It will then split the sentence into words and check if the target word is among them. If it is, the function returns `True`; otherwise, it returns `False`.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

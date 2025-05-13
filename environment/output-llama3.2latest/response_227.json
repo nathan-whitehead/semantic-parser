@@ -1,8 +1,0 @@
-{
-  "task_id": 227,
-  "code": "# python\ndef candidate(a, b, c):\n    # Return the minimum value between a, b, and c\n    return min(a, b, c)",
-  "explanation": "**Explanation**\nThis function will take three numbers as input and return their minimum value. It uses Python's built-in min() function to achieve this, which returns the smallest item in an iterable or the smallest of two or more arguments.\n\nThe approach used here is straightforward: simply pass the three numbers to the min() function, and it will return the smallest one.",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

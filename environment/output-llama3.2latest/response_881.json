@@ -1,8 +1,0 @@
-{
-  "task_id": 881,
-  "code": "python\ndef candidate(lst):\n    # Check if lst is a list\n    if not isinstance(lst, list):\n        raise TypeError(\"Input must be a list\")\n\n    # Initialize variables to store sums of first even and odd numbers\n    even_sum = 0\n    odd_sum = 0\n\n    # Iterate over each element in the input list\n    for num in lst:\n        # If number is even, add it to even sum; if number is odd, add it to odd sum\n        if num % 2 == 0:\n            # Check if we have already found an even number\n            if not even_sum:\n                even_sum = num\n        else:\n            # Check if we have already found an odd number\n            if not odd_sum:\n                odd_sum = num\n\n    # Return the total sum of both sums\n    return even_sum + odd_sum",
-  "explanation": "Explanation\n-----------\n\nThe original code attempts to find the sum of first even and odd numbers in a given list. However, the issue lies in the fact that it's adding all even numbers to `even_sum` and all odd numbers to `odd_sum`, which is not the intended approach. The correct approach would be to add only the first even number and the first odd number separately.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
-  "success": false
-}

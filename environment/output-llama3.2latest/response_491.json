@@ -1,8 +1,0 @@
-{
-  "task_id": 491,
-  "code": "python\nimport math\n\ndef candidate(a, r, n):\n    # Check if the series is geometric progression\n    if r != 1:\n        # Calculate the sum using the formula for the sum of a finite geometric series when r != 1\n        S = a * (1 - r ** n) / (1 - r)\n        return int(S)\n\n    # If r is 1, the sum is simply a times n plus a divided by 2\n    else:\n        return a * n + a // 2",
-  "explanation": "Explanation\n------------\n\nThe provided code attempts to calculate the sum of a geometric progression series. However, it contains an issue with variable naming and indentation. The function also has different conditions for calculating the sum based on the common ratio (r) being equal or not equal to 1.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
-  "success": false
-}

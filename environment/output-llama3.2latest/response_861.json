@@ -1,8 +1,0 @@
-{
-  "task_id": 861,
-  "code": "from itertools import permutations\n\ndef candidate(strings, target):\n    # Convert the target string into a sorted version of its characters\n    target_sorted = \"\".join(sorted(target))\n    \n    # Use a lambda function to filter out strings that are not anagrams\n    return list(filter(lambda s: \"\".join(sorted(s)) == target_sorted, strings))\n\n# Example usage:\nstrings = [\"listen\", \"silent\", \"enlist\", \"tinsel\"]\ntarget = \"listen\"\nprint(candidate(strings, target))",
-  "explanation": "**Explanation**\nThe problem is asking us to write a Python function that takes a target string and a list of strings as input, and returns all the strings from the list that are anagrams of the target string. We will use a lambda function to define this operation. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

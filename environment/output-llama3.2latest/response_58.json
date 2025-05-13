@@ -1,8 +1,0 @@
-{
-  "task_id": 58,
-  "code": "def candidate(a: int, b: int) -> bool:\n    # Check if a or b is zero\n    if a == 0 or b == 0:\n        return False\n    \n    # Calculate the product of a and b\n    product = a * b\n    \n    # Return True if the product is negative, False otherwise\n    return product < 0",
-  "explanation": "**Explanation**\nThis function checks if two integers have opposite signs by comparing their product with 0. If the product is 0, it means one of the numbers is zero and they don't have opposite signs. Otherwise, if the product is negative, it means they have opposite signs.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

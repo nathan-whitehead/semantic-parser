@@ -1,8 +1,0 @@
-{
-  "task_id": 382,
-  "code": "def candidate(nums):\n    \"\"\"\n    This function calculates the number of rotations in a circularly sorted array.\n    \n    Args:\n        nums (list): The input list containing the circularly sorted array.\n        \n    Returns:\n        int: The number of rotations in the array.\n    \"\"\"\n    # Find the first element that does not match its position\n    for i in range(len(nums)):\n        if nums[i] != i:\n            break\n    \n    # If no such element is found, the array is linearly sorted and has no rotations\n    if i == len(nums) - 1:  \n        return 0\n    \n    # Calculate the number of rotations using binary search\n    left, right = i + 1, len(nums) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == i + 1 and nums[(mid % len(nums))] == i: \n            return right - mid + 1 \n        elif nums[mid] > i + 1:\n            right = mid - 1\n        else:\n            left = mid + 1\n    \n    # If the loop ends without finding a rotation, there is no rotation\n    return 0",
-  "explanation": "Explanation\n------------\n\nThe code provided has a logical error in the binary search loop. The line `if nums[mid] > i + 1:` should be `if nums[mid] < i + 1:` because we want to find the number of rotations, not non-rotations.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 34, in <module>\n    assert candidate([8, 9, 10, 1, 2, 3, 4, 5, 6, 7]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

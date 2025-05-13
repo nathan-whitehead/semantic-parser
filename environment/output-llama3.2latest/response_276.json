@@ -1,8 +1,0 @@
-{
-  "task_id": 276,
-  "code": "import math\n\ndef candidate(radius, height):\n    # Check if inputs are valid (non-negative numbers)\n    if radius < 0 or height < 0:\n        raise ValueError(\"Radius and height must be non-negative.\")\n    \n    # Calculate the volume of the cylinder using the formula V = \u03c0r\u00b2h \n    # Use the exact value of pi for precision.\n    return math.pi * (radius ** 2) * height",
-  "explanation": "Explanation\nThe original code attempts to calculate the volume of a cylinder using the formula V = \u03c0r\u00b2h. However, it does not handle cases where the input values are negative or non-numeric. The error message indicates that the function is returning an incorrect result due to precision issues.\n\npython",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 12, in <module>\n    assert candidate(10,5)==1570.7500000000002\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

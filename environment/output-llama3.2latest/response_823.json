@@ -1,8 +1,0 @@
-{
-  "task_id": 823,
-  "code": "import re\n\ndef candidate(string, substring):\n    \"\"\"\n    Checks if the given string starts with a substring using regex.\n    \n    Args:\n        string (str): The input string to check.\n        substring (str): The substring to look for at the start of the string.\n        \n    Returns:\n        str: 'string doesnt start with the given substring' if the string does not start with the substring, otherwise an empty string\n    \"\"\"\n    # Create a regular expression pattern that matches the substring\n    # Use ^ to match the start of the string\n    pattern = re.compile(\"^\" + substring)\n    \n    # Check if the string starts with the substring using the match method\n    if pattern.match(string):\n        return \"\"\n    else:\n        return 'string doesnt start with the given substring'",
-  "explanation": "**Explanation**\nThe issue in the provided code is that it returns a boolean value (`True` or `False`) but instead of returning a boolean, it should return `'string doesnt start with the given substring'` when the string does not start with the substring. Also, the `if pattern.search(string)` statement will always be true because we are checking if there's any occurrence of the substring at the start of the string, so we can just check if the `pattern.match(string)` returns `None`. \n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 25, in <module>\n    assert candidate(\"Hi there how are you Hi alex\", \"Hi\") == 'string starts with the given substring'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

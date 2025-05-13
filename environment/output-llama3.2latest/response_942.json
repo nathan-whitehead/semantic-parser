@@ -1,8 +1,0 @@
-{
-  "task_id": 942,
-  "code": "def candidate(list1, list2):\n    # Check if list1 is not empty\n    if len(list1) == 0:\n        return False\n    \n    for element in list1:\n        # Check if the current element exists in list2\n        if element in list2:\n            # If found, immediately return True\n            return True\n    # If no elements were found, return False\n    return False",
-  "explanation": "**Explanation**\nThis function checks for the presence of an element in a given list. It iterates over each element in the list and checks if it exists in another given list. If an element is found, the function immediately returns True; otherwise, it continues checking until all elements have been checked.\n\n**Python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

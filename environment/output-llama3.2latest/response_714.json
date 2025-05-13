@@ -1,8 +1,0 @@
-{
-  "task_id": 714,
-  "code": "def candidate(n):\n    # Helper function to check if a number is prime\n    def is_prime(p):\n        if p < 2:\n            return False\n        for i in range(2, int(p**0.5) + 1):\n            if p % i == 0:\n                return False\n        return True\n\n    # Find distinct powers of prime factors\n    factors = set()\n    \n    i = 2\n    while i * i <= n:  # updated condition\n        if is_prime(i):\n            factor_count = 0\n            num = n\n            while num % i == 0:\n                num //= i\n                factor_count += 1\n            if factor_count > 0:\n                factors.add((i, factor_count))\n        i += 1\n\n    # If the remaining number is a prime greater than sqrt(n), add it to set\n    if n > 1 and is_prime(n):\n        factors.add((n, 1))\n\n    # Return the count of distinct exponents\n    return len(factors)",
-  "explanation": "Explanation\n-----------\n\nThe code provided has a logical error. The condition `if i * i == num:` is incorrect as it will break the loop when the square of prime number is found, but we should continue to check if there are any more powers of that prime.\n\nThe corrected code checks for all possible factors and updates the set accordingly.\n\nExplanation\n-----------\n \nTo solve this problem correctly, we need to iterate through all numbers from 2 to n. We also need to check whether a number is prime or not.\n \nHere's how you can modify your code:",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 33, in <module>\n    assert candidate(24) == 3\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

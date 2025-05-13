@@ -1,8 +1,0 @@
-{
-  "task_id": 192,
-  "code": "def candidate(s):\n    # Check if the string has at least one letter\n    has_letter = any(char.isalpha() for char in s)\n    \n    # Check if the string has at least one number\n    has_number = any(char.isdigit() for char in s)\n    \n    # Return True if both conditions are met, False otherwise\n    return has_letter and has_number",
-  "explanation": "**Explanation**\nThe `candidate` function checks if a given string contains at least one letter and one number. It uses Python's built-in string methods, such as `isalpha()` and `isdigit()`, to achieve this. The approach is simple and efficient, making it suitable for most use cases.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

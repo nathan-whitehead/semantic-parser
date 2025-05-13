@@ -1,8 +1,0 @@
-{
-  "task_id": 172,
-  "code": "def candidate(s):\n    \"\"\"\n    Finds the number of occurrences of 'std' in the given string, \n    regardless of case.\n    \n    Parameters:\n    s (str): The input string to search for 'std'.\n    \n    Returns:\n    int: The number of occurrences of 'std' in the string.\n    \"\"\"\n    # Convert the string to lower case to ignore case sensitivity\n    s_lower = s.lower()\n    # Use a loop to iterate over each character in the string\n    # and check if it matches 'std'\n    std_count = 0\n    for i in range(len(s)):\n        if s_lower[i:i+3] == 'std':\n            std_count += 1\n    return std_count",
-  "explanation": "**Explanation**\nThe original code provided does not meet the required specifications as it uses a function called `find_std_occurrences` instead of `candidate`. The test cases also rely on the function being named `candidate`.\n\nTo correct this, we need to rename the function from `find_std_occurrences` to `candidate` and add an indented block inside the function where our code will be placed. \n\n**python**",
-  "num_iterations": 5,
-  "error_msg": null,
-  "success": true
-}

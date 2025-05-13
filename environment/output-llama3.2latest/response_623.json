@@ -1,8 +1,0 @@
-{
-  "task_id": 623,
-  "code": "from functools import reduce\n\ndef candidate(lst, n):\n    # Use a lambda function with map to calculate the power of each element in the list\n    return list(map(lambda x: x ** n, lst))",
-  "explanation": "Explanation\n------------\n\nThe provided code defines a function `candidate` that takes a list `lst` and an integer `n`. It uses a list comprehension with a lambda function to calculate the power of each element in the list. However, this approach has two issues: it returns a list of lambdas instead of applying the exponentiation to each element individually, and it does not handle nested calls correctly.\n\nCode\n-----",
-  "num_iterations": 4,
-  "error_msg": null,
-  "success": true
-}

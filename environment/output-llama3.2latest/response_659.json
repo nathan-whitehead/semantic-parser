@@ -1,8 +1,0 @@
-{
-  "task_id": 659,
-  "code": "def candidate(numbers):\n    # Create an empty dictionary to store seen numbers and their counts\n    seen = {}\n\n    # Initialize an empty list to store duplicates\n    duplicates = []\n\n    # Iterate over the input list of numbers\n    for num in numbers:\n        # If we've seen this number before, increment its count\n        if num in seen:\n            seen[num] += 1\n        # If we haven't seen it before, mark it as having a count of 1\n        else:\n            seen[num] = 1\n\n    # Iterate over the dictionary to find duplicates (numbers with counts > 1)\n    for num, count in seen.items():\n        if count > 1:\n            duplicates.append(num)\n\n    # Return the list of duplicates\n    return duplicates",
-  "explanation": "**Explanation**\nThe `candidate` function uses a dictionary to store the numbers we have seen so far and their counts. It then iterates over the input list, incrementing the count for each number it encounters. If the count becomes greater than 1, it means we've found a duplicate, so we add it to the output list.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

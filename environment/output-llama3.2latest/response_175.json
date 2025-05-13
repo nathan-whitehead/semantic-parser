@@ -1,8 +1,0 @@
-{
-  "task_id": 175,
-  "code": "def candidate(s):\n    # Initialize an empty stack to store opening parentheses\n    stack = []\n    \n    # Iterate over each character in the input string\n    for char in s:\n        # If the character is an opening parenthesis, push it onto the stack\n        if char == '(':\n            stack.append(char)\n        # If the character is a closing parenthesis, check if the stack is empty\n        elif char == ')':\n            # If the stack is empty, there's no matching opening parenthesis, so return False\n            if not stack:\n                return False\n            # Otherwise, pop the opening parenthesis from the stack\n            else:\n                stack.pop()\n    # After iterating over the entire string, if the stack is empty, all parentheses were matched\n    return not stack",
-  "explanation": "**Explanation**\nThe `candidate` function is designed to validate whether a given string of parentheses is balanced and correctly nested. It uses a stack data structure to keep track of the opening parentheses, checking each closing parenthesis against the corresponding opening one. If all parentheses are properly matched, the function returns True; otherwise, it returns False.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

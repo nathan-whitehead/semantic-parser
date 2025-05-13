@@ -1,8 +1,0 @@
-{
-  "task_id": 516,
-  "code": "# Explanation:\n# This function implements the radix sort algorithm, which sorts a list of integers by sorting each digit \n# one by one from least significant digit to most.\n# Radix sort works by grouping numbers based on their digits and then recursively sorting these groups.\n\ndef candidate(nums):\n    # Find the maximum number to determine the number of digits\n    max_num = max(nums)\n    \n    # Initialize the place value (starting from the least significant digit)\n    place_value = 1\n    \n    # Continue until all digits are processed\n    while max_num // place_value > 0:\n        # Create buckets for each digit\n        buckets = [[] for _ in range(10)]\n        \n        # Distribute numbers into their corresponding buckets based on the current digit\n        for num in nums:\n            bucket_index = (num // place_value) % 10\n            buckets[bucket_index].append(num)\n        \n        # Collect the sorted numbers from each bucket\n        nums = []\n        for bucket in buckets:\n            nums.extend(bucket)\n        \n        # Move to the next digit\n        place_value *= 10\n    \n    return nums",
-  "explanation": "**Radix Sort Function**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

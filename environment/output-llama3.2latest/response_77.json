@@ -1,8 +1,0 @@
-{
-  "task_id": 77,
-  "code": "def candidate(n):\n    # Convert the number into a list of digits for easier manipulation\n    digits = [int(d) for d in str(abs(n))]\n\n    # Initialize variables to store the sums of even and odd digits\n    even_sum = 0\n    odd_sum = 0\n\n    # Iterate over each digit in the list\n    for digit in digits:\n        # Check if the digit is even or odd, add it to the corresponding sum\n        if digit % 2 == 0:\n            even_sum += digit\n        else:\n            odd_sum += digit\n\n    # Return the absolute difference between the sums of even and odd digits\n    return abs(even_sum - odd_sum) if n >= 0 else abs(odd_sum - even_sum)",
-  "explanation": "**EXPLANATION**\nThe original code attempts to calculate the difference between the sum of even and odd digits in a given number. However, it incorrectly returns `False` when both sums are equal, which is not the expected behavior. The test case provided is also causing an assertion error because the function is returning the absolute difference, but it's checking if the result is `False`.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 20, in <module>\n    assert candidate(12345) == False\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 110,
-  "code": "def candidate(start_range, end_range, num_list):\n    # Convert start_range and end_range to tuples for correct conversion to sets\n    start_range_set = set(range(start_range[0], start_range[1] + 1))\n    end_range_set = set(range(end_range[0], end_range[1] + 1))\n\n    # Find the intersection of the two ranges\n    missing_ranges = (start_range_set - end_range_set) | (end_range_set - start_range_set)\n\n    return [(min(missing_range), max(missing_range)) for missing_range in missing_ranges]",
-  "explanation": "**Explanation**\nThe code was attempting to extract missing ranges from a given list with start and end range values. However, it contained an error in the line where it converted the start and end ranges to sets for efficient lookups. The issue was that it attempted to concatenate a tuple with an integer, which is not allowed in Python.\n\nTo fix this, we need to modify the code to correctly convert the start and end range values to sets.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 11, in <module>\n    assert candidate([(6, 9), (15, 34), (48, 70)], 2, 100) == [(2, 6), (9, 100), (9, 15), (34, 100), (34, 48), (70, 100)]\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 3, in candidate\n    start_range_set = set(range(start_range[0], start_range[1] + 1))\n                                                ~~~~~~~~~~~~~~~^~~\nTypeError: can only concatenate tuple (not \"int\") to tuple\n\n",
-  "success": false
-}

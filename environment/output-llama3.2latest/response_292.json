@@ -1,8 +1,0 @@
-{
-  "task_id": 292,
-  "code": "def candidate(dividend: int, divisor: int) -> int:\n    \"\"\"\n    Calculate the quotient of two numbers.\n\n    Args:\n        dividend (int): The number being divided.\n        divisor (int): The number by which we are dividing.\n\n    Returns:\n        int: The quotient of the two numbers.\n    \"\"\"\n    # Check if the divisor is zero to avoid division by zero error\n    if divisor == 0:\n        raise ValueError(\"Cannot divide by zero\")\n\n    # Use simple division to calculate the quotient\n    quotient = dividend // divisor\n\n    return quotient",
-  "explanation": "**Explanation**\nThis function calculates the quotient of two numbers. It takes two arguments, `dividend` and `divisor`, and returns their quotient as an integer. The approach used is simple division.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

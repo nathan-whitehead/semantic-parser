@@ -1,8 +1,0 @@
-{
-  "task_id": 824,
-  "code": "def candidate(nums):\n    # Initialize an empty list to store odd numbers\n    odds = []\n    \n    # Iterate over each number in the input list\n    for num in nums:\n        # Check if the number is even (remainder when divided by 2 is 0)\n        if num % 2 != 0:\n            # If not even, append it to the output list\n            odds.append(num)\n    \n    # Return the list of odd numbers\n    return odds",
-  "explanation": "**Explanation**\nThe provided Python function will take a list of integers as input and return a new list containing only the odd numbers. The approach is to use a for loop to iterate over each number in the input list, check if it's even using the modulus operator, and if not, append it to the output list.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 588,
-  "code": "def candidate(arr):\n    # Check if array is empty\n    if not arr:\n        return \"Array cannot be empty\"\n\n    # Initialize max and min values with first element of the array\n    max_val = arr[0]\n    min_val = arr[0]\n\n    # Iterate through the array to find max and min values\n    for num in arr:\n        # Update max value if current number is larger\n        if num > max_val:\n            max_val = num\n        # Update min value if current number is smaller\n        elif num < min_val:\n            min_val = num\n\n    # Return the difference between max and min values\n    return max_val - min_val",
-  "explanation": "**Explanation**\nThis function calculates the difference between the largest and smallest values in an array. It does this by first finding the maximum and minimum values, then returning their difference.\n\n**Python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

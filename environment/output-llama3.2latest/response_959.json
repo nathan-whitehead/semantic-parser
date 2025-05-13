@@ -1,8 +1,0 @@
-{
-  "task_id": 959,
-  "code": "def candidate(lst):\n    # Check if the list is empty\n    if not lst:\n        raise ValueError(\"Cannot calculate average of an empty list\")\n    \n    # Calculate the sum of all elements in the list\n    total = sum(lst)\n    \n    # Calculate the average by dividing the sum by the number of elements\n    avg = total / len(lst)\n    \n    return avg",
-  "explanation": "**Explanation**\nThis function calculates the average of a given list. It takes a list as input and returns the average value. The average is calculated by summing up all elements in the list and then dividing by the number of elements.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

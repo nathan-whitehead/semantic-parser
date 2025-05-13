@@ -1,8 +1,0 @@
-{
-  "task_id": 141,
-  "code": "def candidate(lst):\n    \"\"\"\n    Sorts a list of elements using pancake sort.\n\n    Args:\n        lst (list): The list to be sorted.\n\n    Returns:\n        list: The sorted list.\n    \"\"\"\n\n    # Make a copy of the original list\n    lst = lst.copy()\n\n    while len(lst) > 1:\n        # Find the index of the maximum element in the entire list\n        max_idx = lst.index(max(lst))\n\n        # If the maximum element is not at the beginning of the list, flip it to the top\n        if max_idx != len(lst) - 1:\n            # Flip the maximum element to the top of the list\n            lst[:max_idx + 1] = reversed(lst[:max_idx + 1])\n            lst[max_idx + 1:] = reversed(lst[max_idx + 1:])\n\n    return lst",
-  "explanation": "Explanation\n-----------\n\nThe provided code attempts to implement the pancake sort algorithm, which is a sorting algorithm that operates on arrays of integers by repeatedly finding the maximum element in the array and flipping all elements in the array so that they are at the top. However, there are several issues with the implementation:\n\n*   The `temp` list is not necessary and can be replaced with direct assignment to `lst`.\n*   The recursive calls for flipping the maximum element in the unsorted part of the list do not terminate correctly.\n*   The code does not handle the case when the input list contains duplicate elements.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Execution timed out after 15 seconds. The code may contain an infinite loop or faulty recursion.",
-  "success": false
-}

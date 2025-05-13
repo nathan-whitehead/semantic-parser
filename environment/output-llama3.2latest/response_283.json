@@ -1,8 +1,0 @@
-{
-  "task_id": 283,
-  "code": "def candidate(n):\n    # Convert the integer into a string to count digit occurrences\n    str_n = str(abs(n))  # abs to handle negative numbers\n    \n    # Create a dictionary to store digit frequencies\n    freq_dict = {}\n    \n    # Count occurrences of each digit\n    for char in str_n:\n        if char == '0':  # Skip zero as it's not considered greater than itself\n            continue\n        if int(char) in freq_dict:  # Increment count if digit already exists\n            freq_dict[int(char)] += 1\n        else:\n            freq_dict[int(char)] = 1\n    \n    # Check if all digits meet the condition\n    for char in str_n:\n        if abs(freq_dict.get(int(char), 0)) > int(char):\n            return False\n    \n    return True",
-  "explanation": "**Explanation**\nThis function checks if the frequency of each digit in an integer is less than or equal to the digit itself. It does this by converting the integer into a string, then counting the occurrences of each digit using a dictionary. The function returns True if all digits meet the condition and False otherwise.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

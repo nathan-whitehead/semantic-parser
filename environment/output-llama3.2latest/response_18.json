@@ -1,8 +1,0 @@
-{
-  "task_id": 18,
-  "code": "def candidate(s1, s2):\n    # Convert the second string into a set for efficient lookups\n    seen = set(s2)\n    \n    # Use a list comprehension to filter out characters in s1 that are present in seen\n    return ''.join([c for c in s1 if c not in seen])",
-  "explanation": "**Explanation**\nThe function will use a set data structure to efficiently check for presence of characters. It will iterate over the first string and remove characters that are present in the second string.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

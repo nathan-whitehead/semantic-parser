@@ -1,8 +1,0 @@
-{
-  "task_id": 653,
-  "code": "from collections import defaultdict\n\ndef candidate(pairs):\n    \"\"\"\n    Group a sequence of key-value pairs into a dictionary of lists.\n    \n    Args:\n        pairs (iterable): An iterable of tuples, where each tuple contains a key and a value.\n    \n    Returns:\n        dict: A dictionary where each key is a unique element from the tuples and its corresponding value is a list of elements from the same tuple.\n    \"\"\"\n    result = defaultdict(list)\n    for key, *values in pairs:\n        # Convert the values to a list\n        result[key].extend(values)\n    # Return the resulting dictionary\n    return dict(result)",
-  "explanation": "Explanation\n-----------\n\nThe generated code attempts to group a sequence of key-value pairs into a dictionary of lists using the `defaultdict` from the `collections` module. However, it lacks a function definition for the name `candidate`. The code also contains an incorrect iteration over the tuples, resulting in a `NameError` when trying to access the `candidate` function.\n\nCode\n-----",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

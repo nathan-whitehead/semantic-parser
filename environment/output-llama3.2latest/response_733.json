@@ -1,8 +1,0 @@
-{
-  "task_id": 733,
-  "code": "def candidate(nums, target):\n    \"\"\"\n    Find the index of the first occurrence of a given number in a sorted array.\n    \n    Args:\n        nums (list): A sorted list of numbers.\n        target (int): The target value to be searched.\n        \n    Returns:\n        int: The index of the first occurrence of the target value. If not found, returns -1.\n    \"\"\"\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            # Check if it's the first occurrence\n            if mid == 0 or nums[mid - 1] != target:\n                return mid\n            right = mid - 1\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
-  "explanation": "Explanation\n----------\n\nThe original code attempts to find the index of the first occurrence of a target value in a sorted array. However, it contains an issue where the function `candidate` is called before it's defined. To fix this, we need to move the definition of the `candidate` function above the test cases.\n\nCode",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

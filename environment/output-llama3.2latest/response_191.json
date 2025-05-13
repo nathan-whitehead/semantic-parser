@@ -1,8 +1,0 @@
-{
-  "task_id": 191,
-  "code": "def candidate(month_name):\n    # List of month names that have 30 or 31 days\n    months_with_30_days = ['April', 'June', 'September', 'November']\n    # Check if the given month name is in the list\n    return month_name.capitalize() in months_with_30_days",
-  "explanation": "**Explanation**\nThe original code only checks if the word 'thirty' is present in the month name. However, this approach will fail for months like March, which contains 31 days despite not having 'thirty' in its name. We need to improve the function to also check for other words that are associated with 30 or 31 days.\n\n**python**",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

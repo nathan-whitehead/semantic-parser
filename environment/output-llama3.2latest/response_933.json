@@ -1,8 +1,0 @@
-{
-  "task_id": 933,
-  "code": "import re\n\ndef candidate(s):\n    # Split the string into words based on camel case (uppercase letter followed by a lowercase letter)\n    words = re.sub(r'(?<!^)(?=[A-Z])', ' ', s).split()\n\n    # Convert each word to snake case and join them together with underscores\n    return '_'.join(word.lower() for word in words)",
-  "explanation": "Explanation\n-----------\n\nThe code provided uses a regex pattern to replace all uppercase letters followed by lowercase letters with an underscore and the lowercase version. However, this approach does not correctly handle camel case strings because it only replaces individual characters, not groups of letters separated by spaces.\n\nCode",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

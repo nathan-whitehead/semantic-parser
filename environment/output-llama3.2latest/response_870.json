@@ -1,8 +1,0 @@
-{
-  "task_id": 870,
-  "code": "# Define the sum of positive numbers using lambda function\ncandidate = lambda lst: sum(num for num in lst if num > 0)",
-  "explanation": "Explanation\n==========\n\nThe code provided attempts to use a lambda function to calculate the sum of positive numbers in a given list. However, it incorrectly uses `python` as the variable name for the function, which causes a `NameError`. To fix this, we need to define the function correctly and remove any unnecessary variables.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": null,
-  "success": true
-}

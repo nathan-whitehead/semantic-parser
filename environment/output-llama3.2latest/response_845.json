@@ -1,8 +1,0 @@
-{
-  "task_id": 845,
-  "code": "def candidate(n):\n    # Calculate factorial recursively\n    def factorial(x):\n        if x == 0 or x == 1:\n            return 1\n        else:\n            return x * factorial(x-1)\n\n    # Calculate the number of digits in the factorial\n    num_digits = 0\n    fact_value = factorial(n)\n    \n    # Count the number of digits\n    while fact_value > 0:\n        num_digits += 1\n        fact_value //= 10\n    \n    return num_digits",
-  "explanation": "**Explanation**\nThis function calculates the number of digits in the factorial of a given number. It uses a recursive approach to calculate the factorial and then counts the number of digits using a loop. The result is returned as an integer.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

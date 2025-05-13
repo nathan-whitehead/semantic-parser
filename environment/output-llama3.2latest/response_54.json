@@ -1,8 +1,0 @@
-{
-  "task_id": 54,
-  "code": "def candidate(arr):\n    # Find the minimum and maximum values in the array\n    min_val = min(arr)\n    max_val = max(arr)\n\n    # Create a count array to store the occurrences of each value\n    count_arr = [0] * (max_val - min_val + 1)\n\n    # Count the occurrences of each value in the input array\n    for num in arr:\n        count_arr[num - min_val] += 1\n\n    # Modify the count array to store the cumulative counts\n    for i in range(1, len(count_arr)):\n        count_arr[i] += count_arr[i - 1]\n\n    # Construct the sorted array using the count array\n    sorted_arr = [0] * len(arr)\n    for num in arr:\n        sorted_arr[count_arr[num - min_val] - 1] = num\n        count_arr[num - min_val] -= 1\n\n    return sorted_arr",
-  "explanation": "**Explanation**\nThe provided Python function implements the counting sort algorithm to sort an array. The approach used is to first count the occurrences of each unique element in the array and then construct a new sorted array based on these counts. This method is suitable for sorting arrays with small ranges of integers or characters.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

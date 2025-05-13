@@ -1,8 +1,0 @@
-{
-  "task_id": 190,
-  "code": "def candidate(x1, y1, x2, y2):\n    \"\"\"\n    Calculate the number of integral co-ordinates that lie inside a square.\n    \n    Args:\n        x1 (int): The lower bound of the square's x-axis.\n        y1 (int): The lower bound of the square's y-axis.\n        x2 (int): The upper bound of the square's x-axis.\n        y2 (int): The upper bound of the square's y-axis.\n    \n    Returns:\n        int: The number of integral co-ordinates inside the square.\n    \"\"\"\n    # Calculate the total area of the square\n    total_area = (x2 - x1 + 1) * (y2 - y1 + 1)\n    \n    # Subtract any points on the edges or outside the square from this total\n    inner_area = total_area - ((x2 - x1) + (y2 - y1))\n    \n    return inner_area",
-  "explanation": "# Explanation\nThe original code attempts to count the number of integral co-ordinates inside a square by iterating over all possible x and y values within the square. However, this approach is inefficient as it considers every single point in the square, not just those that actually lie within it. A better approach would be to calculate the total area of the square and then subtract any points on the edges or outside the square from this total.\n\n# python",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate(1,1,4,4) == 4\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

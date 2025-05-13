@@ -1,8 +1,0 @@
-{
-  "task_id": 692,
-  "code": "def candidate(n):\n    # Initialize result variable to 1\n    result = 1\n    \n    # Loop from 2 to n (inclusive)\n    for i in range(2, n + 1):\n        # Multiply result by current number and update result\n        result *= i\n        # If last two digits of result are 00, break loop\n        if result % 100 == 0:\n            break\n    \n    # Return the last two digits of result\n    return result % 100",
-  "explanation": "**Explanation**\nThis function calculates the last two digits of the factorial of a given number. It uses an iterative approach to calculate the factorial and then finds the remainder when divided by 100 to get the last two digits. This is because the factorial of any number greater than or equal to 10 will end in at least two zeros, so we only need to consider numbers up to 10.\n\n**Python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

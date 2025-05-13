@@ -1,8 +1,0 @@
-{
-  "task_id": 570,
-  "code": "def candidate(words, char):\n    # Iterate through each word and return words that do NOT contain the given character\n    return [word for word in words if char not in word]",
-  "explanation": "**Explanation**\nThe original code attempts to remove words containing a specific character by iterating through each word and checking if the character exists anywhere in the word using the `in` operator. However, this approach fails because the `in` operator expects a string as its left operand, not a list. To fix this issue, we need to modify the condition to check if the character is in the word.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 5, in <module>\n    assert candidate(['Red color', 'Orange#', 'Green', 'Orange @', \"White\"],['#', 'color', '@'])==['Red', '', 'Green', 'Orange', 'White']\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 3, in candidate\n    return [word for word in words if char not in word]\n                                      ^^^^^^^^^^^^^^^^\nTypeError: 'in <string>' requires string as left operand, not list\n\n",
-  "success": false
-}

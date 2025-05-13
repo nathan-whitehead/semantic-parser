@@ -1,8 +1,0 @@
-{
-  "task_id": 658,
-  "code": "def candidate(lst):\n    # Create an empty dictionary to store the count of each element\n    counts = {}\n    \n    # Iterate over each element in the list\n    for elem in lst:\n        # If the element is already in the dictionary, increment its count\n        if elem in counts:\n            counts[elem] += 1\n        # If the element is not in the dictionary, add it with a count of 1\n        else:\n            counts[elem] = 1\n    \n    # Find the key with the maximum value in the dictionary\n    max_key = max(counts, key=counts.get)\n    \n    return max_key",
-  "explanation": "**Explanation**\nThis function finds the item with maximum occurrences in a given list. It uses a dictionary to store the count of each element in the list and then returns the key with the maximum value. The approach is simple and efficient, with a time complexity of O(n), where n is the number of elements in the list.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

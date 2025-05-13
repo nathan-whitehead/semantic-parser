@@ -1,8 +1,0 @@
-{
-  "task_id": 55,
-  "code": "def candidate(a, r, n):\n    \"\"\"\n    Calculate the nth term of a geometric series.\n\n    Args:\n        a (float): First term of the series.\n        r (float): Common ratio of the series.\n        n (int): Position of the term to be calculated.\n\n    Returns:\n        float: The nth term of the geometric series.\n    \"\"\"\n\n    # Check if inputs are valid\n    if not isinstance(a, (int, float)) or not isinstance(r, (int, float)):\n        raise ValueError(\"First term and common ratio must be numbers\")\n    if n < 1:\n        raise ValueError(\"Position must be a positive integer\")\n\n    # Calculate the nth term using the formula for geometric sequences\n    if r == 0:\n        return a\n    elif n == 1:\n        return a\n    else:\n        return a * (r ** (n - 1))",
-  "explanation": "**Explanation**\nThe provided code is almost correct but has a bug. The issue lies in the calculation of the nth term of the geometric series. The formula used is `a * r ** (n - 1)`, which will not work when n = 1 because it will divide by zero when calculating `(n - 1)`.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 28, in <module>\n    assert candidate(1,5,2)==16\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

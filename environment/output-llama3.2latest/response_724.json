@@ -1,8 +1,0 @@
-{
-  "task_id": 724,
-  "code": "def candidate(base, power):\n    \"\"\"\n    Calculate the sum of all digits of base to the specified power.\n\n    Args:\n        base (int): The base number.\n        power (int): The power to which the base is raised.\n\n    Returns:\n        int: The sum of all digits of base^power.\n    \"\"\"\n    total = 0\n    # Calculate base^power and convert it to string\n    product_str = str(base ** power)\n    \n    for digit in product_str:\n        # Add each digit to the total\n        total += int(digit)\n        \n    return total",
-  "explanation": "Explanation\n-----------\n\nThe given code calculates the sum of all digits of a base to the specified power. However, it only considers the last digit of the product and does not account for carry-over when multiplying two numbers together. This results in incorrect calculations for powers greater than 1.\n\nCode\n----",
-  "num_iterations": 4,
-  "error_msg": null,
-  "success": true
-}

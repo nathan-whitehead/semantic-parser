@@ -1,8 +1,0 @@
-{
-  "task_id": 685,
-  "code": "def candidate(n):\n    def is_prime(num):\n        \"\"\"Check if a number is prime\"\"\"\n        if num < 2:\n            return False\n        for i in range(2, int(num ** 0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    total = 0\n    for i in range(2, n + 1):\n        if is_prime(i):\n            total += i\n    return total",
-  "explanation": "**Explanation**\nThis function uses a helper function called `is_prime` to check if each number is prime. It then sums up all the prime numbers between 1 and n (inclusive) using a loop.\nThe approach is to iterate through all numbers from 2 to n, checking if they are prime, and adding them to the sum if they are.\nThis function assumes that n is a positive integer.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

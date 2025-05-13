@@ -1,8 +1,0 @@
-{
-  "task_id": 878,
-  "code": "python\ndef has_k_elements(input_tuple, k):\n    # Check if the input is a tuple\n    if not isinstance(input_tuple, tuple):\n        raise ValueError(\"Input must be a tuple\")\n    \n    # Count the number of elements in the tuple\n    num_elements = len(input_tuple)\n    \n    # Return True if the number of elements matches k, False otherwise\n    return num_elements == k\n```",
-  "explanation": "Explanation\n----------\n\nThe provided function is used to check if a given tuple contains exactly k elements. It takes two parameters: the input tuple and the expected number of elements, k. The approach involves using Python's built-in len() function to count the number of elements in the tuple, then comparing it with k.",
-  "num_iterations": 6,
-  "error_msg": "  File \"/home/runner/sandbox/temp_code.py\", line 12\n    ```\n    ^\nSyntaxError: invalid syntax\n\n",
-  "success": false
-}

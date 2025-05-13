@@ -1,8 +1,0 @@
-{
-  "task_id": 926,
-  "code": "import math\n\ndef candidate(n, k):\n    \"\"\"\n    Calculate the n-th encounter number for a given k.\n\n    Args:\n        n (int): The encounter number.\n        k (int): The number of encounters.\n\n    Returns:\n        int: The n-th encounter number.\n    \"\"\"\n    # Calculate the binomial coefficient using factorials\n    def factorial(x):\n        \"\"\"Calculate the factorial of x\"\"\"\n        if x == 0 or x == 1:\n            return 1\n        else:\n            return x * factorial(x-1)\n    \n    # Initialize the result\n    result = 0\n\n    # Iterate over all possible values of i from 0 to k-1\n    for i in range(k):\n        # Calculate the binomial coefficient using factorials\n        term = (factorial(n-i-1) * factorial(i)) // factorial(2*i+1)\n        \n        # Update the result\n        result += ((-1)**i) * term\n\n    return int(result)",
-  "explanation": "Explanation\n-----------\n\nThe provided code attempts to calculate the n-th encounter number for a given k using a simple iterative approach. However, the calculation is incorrect and does not accurately represent the formula for encounter numbers.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 35, in <module>\n    assert candidate(7, 2) == 924\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

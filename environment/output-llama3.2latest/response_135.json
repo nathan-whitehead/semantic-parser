@@ -1,8 +1,0 @@
-{
-  "task_id": 135,
-  "code": "def candidate(n):\n    \"\"\"\n    Calculate the nth hexagonal number.\n    \n    A hexagonal number is a figurate number that represents a hexagon. \n    It can be represented by the formula H_n = 3n^2 - 3n + 1, where n is the index of the sequence.\n    \n    Args:\n        n (int): The position of the hexagonal number in the sequence.\n\n    Returns:\n        int: The nth hexagonal number if n is a positive integer, otherwise None.\n    \"\"\"\n    # Check if n is a positive integer\n    if not isinstance(n, int) or n <= 0:\n        return None\n\n    # Calculate the nth hexagonal number using the correct offset\n    return 3*n**2 - 3*n + 1",
-  "explanation": "**Explanation**\nThe original code had a correct formula for calculating the nth hexagonal number. However, it did not account for non-integer inputs. The error message was caused by passing an integer value that resulted in a zero output.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 21, in <module>\n    assert candidate(10) == 190\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

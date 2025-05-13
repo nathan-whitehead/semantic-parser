@@ -1,8 +1,0 @@
-{
-  "task_id": 766,
-  "code": "def candidate(lst):\n    \"\"\"\n    Iterate over all pairs of consecutive items in a given list.\n    \n    Args:\n        lst (list): The input list containing elements to be paired.\n        \n    Yields:\n        tuple: A pair of consecutive elements from the input list.\n    \"\"\"\n\n    # Check if the input list is empty\n    if not lst:\n        return\n\n    # Iterate directly over the elements of the input list\n    for i in range(len(lst) - 1):\n        # Yield a tuple containing the current item and its next neighbor\n        yield (lst[i], lst[i + 1])\n\n# Handle the last element separately to ensure it's included in the output\nfor i, x in enumerate(lst[:-1]):\n    yield (x, lst[i+1])",
-  "explanation": "**Explanation**\nThe original code attempts to iterate over consecutive pairs in a list but has several issues. The main problem is that it doesn't handle the last element correctly and includes unnecessary `None` values. Additionally, there's no error handling for cases where the input list might be empty or contain non-integer values.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "  File \"/home/runner/sandbox/temp_code.py\", line 23\n    yield (x, lst[i+1])\n    ^^^^^^^^^^^^^^^^^^^\nSyntaxError: 'yield' outside function\n\n",
-  "success": false
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 944,
-  "code": null,
-  "explanation": null,
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate(\"there are 70 flats in this apartment\")==10\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

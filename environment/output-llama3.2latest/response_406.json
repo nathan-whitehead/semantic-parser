@@ -1,8 +1,0 @@
-{
-  "task_id": 406,
-  "code": "def candidate(n):\n    # Check if n is not an integer\n    if not isinstance(n, int):\n        raise TypeError(\"Input must be an integer\")\n\n    # Handle edge cases where n is 0 or negative\n    if n == 0:\n        return \"Even\"\n    elif n < 0:\n        return \"Odd\"\n\n    # Check the parity of n using the modulus operator (%)\n    # Return a boolean indicating even or odd parity\n    return n % 2 == 0",
-  "explanation": "Explanation\n-----------\n\nThe provided function is incorrect because it incorrectly returns a string instead of just the parity. Additionally, when n is 0 or negative, it should return \"Even\" but currently only does so for negative values.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(12) == \"Even Parity\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

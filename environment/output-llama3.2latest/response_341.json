@@ -1,8 +1,0 @@
-{
-  "task_id": 341,
-  "code": "def candidate(iterable):\n    \"\"\"\n    Convert an iterable into an ordered tuple.\n    \n    Args:\n        iterable: An iterable containing elements to be converted to a tuple.\n    \n    Returns:\n        A tuple of the input iterable's elements, sorted and ordered.\n    \"\"\"\n    # Check if the input is indeed an iterable\n    if not hasattr(iterable, '__iter__'):\n        raise TypeError(\"Input must be an iterable.\")\n    \n    # Convert the iterable into a list to preserve order\n    ordered_list = list(iterable)\n    \n    # Sort the list in ascending order\n    ordered_list.sort()\n    \n    # Convert the sorted list into a tuple\n    ordered_tuple = tuple(ordered_list)\n    \n    return ordered_tuple",
-  "explanation": "**Explanation**\nThe function will take an iterable as input and return an ordered tuple of its elements. It uses Python's built-in `tuple` function to create a tuple from the input iterable, and the `sorted` function to ensure the elements are in order.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

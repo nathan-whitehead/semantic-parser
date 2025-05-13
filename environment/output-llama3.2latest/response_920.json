@@ -1,8 +1,0 @@
-{
-  "task_id": 920,
-  "code": "def candidate(tuples_list):\n    # Use a list comprehension with a conditional statement to filter out tuples with all None values\n    return [t for t in tuples_list if not any(x is None for x in t) and len(t) > 0]",
-  "explanation": "Explanation\n-----------\n\nThe generated code is attempting to filter out tuples with all None values using a list comprehension. However, the issue lies in the comparison operator `not any(x is None for x in t)`, which will evaluate to True as soon as it finds a non-None value in the tuple, resulting in incorrect filtering.\n\nCode",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 5, in <module>\n    assert candidate([(None, 2), (None, None), (3, 4), (12, 3), (None, )] ) == '[(None, 2), (3, 4), (12, 3)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

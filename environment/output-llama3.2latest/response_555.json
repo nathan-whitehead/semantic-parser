@@ -1,8 +1,0 @@
-{
-  "task_id": 555,
-  "code": "# python\ndef candidate(n):\n    # Calculate sum of cubes using the formula\n    sum_cubes = ((n * (n + 1)) // 2) ** 2\n    \n    # Calculate sum of first n natural numbers\n    sum_natural = n * (n + 1) // 2\n    \n    # Return difference between sum of cubes and sum of natural numbers\n    return sum_cubes - sum_natural",
-  "explanation": "Explanation:\nThe given problem can be solved by calculating the sum of cubes of the first n natural numbers using the formula $1^3 + 2^3 + ... + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2$, and then subtracting the sum of the first n natural numbers which is given by $\\frac{n(n+1)}{2}$.",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

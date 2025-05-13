@@ -1,8 +1,0 @@
-{
-  "task_id": 486,
-  "code": "import math\n\ndef candidate(n, p, r):\n    # Validate input parameters\n    if not (0 <= p <= 1) or (not isinstance(p, (int, float)) and not p.is_integer()):\n        raise ValueError(\"p must be between 0 and 1\")\n    if not (isinstance(r, int) and 0 <= r <= n):\n        raise ValueError(f\"r must be an integer between 0 and {n}\")\n\n    # Apply binomial probability formula\n    combination = math.comb(int(n), int(r))\n    probability = combination * (p ** r) * ((1 - p) ** (n - r))\n    \n    return probability",
-  "explanation": "**Explanation**\nThe provided code attempts to calculate the binomial probability. However, it contains a logical error in its validation of the input parameter 'p'. The condition `if not (0 <= r <= n)` is incorrect as it should be `if not (0 <= r <= n) or not isinstance(r, int)` to check if 'r' is an integer. Additionally, the code does not handle floating-point numbers correctly.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(10, 5, 1.0/3) == 0.13656454808718185\n           ~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 6, in candidate\n    raise ValueError(\"p must be between 0 and 1\")\nValueError: p must be between 0 and 1\n\n",
-  "success": false
-}

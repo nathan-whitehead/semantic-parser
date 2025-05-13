@@ -1,8 +1,0 @@
-{
-  "task_id": 762,
-  "code": "def candidate(month_number):\n    # List of months that have 30 days\n    thirty_days_months = [4, 6, 9, 11]\n    \n    # Check if the given month number is in the list\n    return month_number in thirty_days_months",
-  "explanation": "**Explanation**\nThis function checks if a given month number contains 30 days. It uses a simple if statement to compare the month number with the list of months that have 30 days. If the month is in the list, it returns True; otherwise, it returns False.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

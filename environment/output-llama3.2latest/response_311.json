@@ -1,8 +1,0 @@
-{
-  "task_id": 311,
-  "code": "def candidate(n):\n    # Calculate the position of the leftmost unset bit\n    pos = -1\n    \n    # Loop until we find the first unset bit\n    while n:\n        # Find the position of the next set bit (0-indexed)\n        pos = n.bit_length() - 1\n        \n        # If there are no more bits, raise an error\n        if not n:\n            break\n        \n        # Calculate the rightmost set bit using bitwise AND operation with a mask\n        first_bit = ~n & ((1 << pos) - 1)\n        \n        # Check if the found bit is unset (i.e., it's a zero)\n        if first_bit != n and (first_bit & first_bit) == first_bit:\n            break\n    \n    # Return the leftmost unset bit\n    return first_bit if first_bit else n",
-  "explanation": "**Explanation**\nThe generated code is attempting to find the leftmost unset bit in a binary number. However, it contains an incorrect calculation for the rightmost set bit and incorrectly returns the original number with the found unset bit set.\n\nTo fix this issue, we need to recalculate the rightmost set bit using bitwise operations correctly and return only the leftmost unset bit.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 24, in <module>\n    assert candidate(10) == 14\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

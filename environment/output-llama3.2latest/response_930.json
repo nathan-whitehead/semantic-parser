@@ -1,8 +1,0 @@
-{
-  "task_id": 930,
-  "code": null,
-  "explanation": null,
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 18, in <module>\n    assert candidate(\"a0c\") == 'Found a match!'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

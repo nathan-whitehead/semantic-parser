@@ -1,8 +1,0 @@
-{
-  "task_id": 773,
-  "code": "def candidate(string, substrings):\n    # Initialize an empty dictionary to store the results\n    result = {}\n    \n    # Iterate over each substring\n    for substring in substrings:\n        # Use str.find() method to find all occurrences of the substring\n        indices = [i for i in range(len(string)) if string.startswith(substring, i)]\n        \n        # If the substring was found, add it to the result dictionary\n        if indices:\n            result[substring] = {\"occurrence\": len(indices), \"positions\": indices}\n    \n    return result",
-  "explanation": "Explanation\n-----------\n\nThe given code attempts to find the occurrence and position of substrings within a string. However, it has an incorrect assumption that `str.startswith()` will return all occurrences of a substring starting at each index. Instead, it should be used with a fixed start index or a different approach.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate('python programming, python language','python')==('python', 0, 6)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

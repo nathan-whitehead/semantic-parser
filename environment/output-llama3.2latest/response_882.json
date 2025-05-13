@@ -1,8 +1,0 @@
-{
-  "task_id": 882,
-  "code": "# python\ndef candidate(length, width):\n    \"\"\"\n    Calculate the perimeter of a parallelogram.\n\n    Args:\n        length (float): The length of the parallelogram.\n        width (float): The width of the parallelogram.\n\n    Returns:\n        float: The calculated perimeter of the parallelogram.\n    \"\"\"\n    # Calculate the perimeter using the correct formula\n    perimeter = 2 * (length + width)\n    \n    # Return the calculated perimeter as a floating point value\n    return perimeter",
-  "explanation": "Explanation\n------------\n\nThe provided code calculates the perimeter of a parallelogram using the formula `2 * (length + width)`. However, the issue lies in the return type of the function. The calculated perimeter is being returned as an integer, but it should be a float because the input values can be non-integer.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate(10,20)==400\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 675,
-  "code": "def candidate(num1, num2, low=0, high=None):\n    \"\"\"\n    Adds two integers and returns 20 if the sum is between the given range.\n\n    Args:\n        num1 (int): The first integer to add.\n        num2 (int): The second integer to add.\n        low (int, optional): The lower bound of the range. Defaults to 0.\n        high (int, optional): The upper bound of the range. Defaults to None.\n\n    Returns:\n        int: The sum of the two numbers or 20 if it falls within the range.\n    \"\"\"\n    total = num1 + num2\n    if low <= total <= high:\n        return 20\n    else:\n        return total",
-  "explanation": "Explanation\n-----------\n\n\nThe `candidate` function takes three parameters: two integers and an optional range. It first adds the two integers together, then checks if the result falls within the specified range. If it does, the function returns 20; otherwise, it returns the sum of the two numbers.\n\n\npython",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

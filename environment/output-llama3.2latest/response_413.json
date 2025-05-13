@@ -1,8 +1,0 @@
-{
-  "task_id": 413,
-  "code": null,
-  "explanation": null,
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 30, in <module>\n    assert candidate([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,0)==['Greyson Fulton', 'Brady Kent', 'Wyatt Knott', 'Beau Turnbull']\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 11, in candidate\n    raise ValueError(f\"Invalid index: {n} for list with {total_elements} elements\")\nValueError: Invalid index: 0 for list with 12 elements\n\n",
-  "success": false
-}

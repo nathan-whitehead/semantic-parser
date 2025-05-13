@@ -1,8 +1,0 @@
-{
-  "task_id": 271,
-  "code": "def candidate(n):\n    # Initialize total_sum as 0\n    total_sum = 0\n    \n    # Iterate over the range from 2 to 2n\n    for i in range(2, 2*n+1, 2):\n        # Calculate the fifth power of each even number and add it to total_sum\n        total_sum += i ** 5\n\n    return total_sum",
-  "explanation": "**Explanation**\nThe function will calculate the sum of the fifth power of the first n even natural numbers. It uses a for loop to iterate over the range from 2 to 2n, and calculates the fifth power of each even number using exponentiation operator (**). The result is accumulated in a variable `total_sum`.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 379,
-  "code": "def candidate(length, width, height):\n    # Calculate the surface area using the formula 2lw + 2lh + 2wh\n    surface_area = 2 * (length * width) + 2 * (length * height) + 2 * (width * height)\n    \n    # Return the calculated surface area\n    return surface_area",
-  "explanation": "**Explanation**\nThe function will take three parameters: length, width, and height, which represent the dimensions of a cuboid. The approach is to use the formula for the surface area of a cuboid: 2lw + 2lh + 2wh, where l, w, and h are the length, width, and height respectively.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

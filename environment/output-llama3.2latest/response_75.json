@@ -1,8 +1,0 @@
-{
-  "task_id": 75,
-  "code": "def candidate(tuples_list, k):\n    # Filter out empty tuples and tuples with non-integer elements\n    filtered_tuples = [tup for tup in tuples_list if all(i % 1 == 0 and i % k == 0 for i in tup)]\n    \n    # Use list comprehension to filter tuples where not all elements are divisible by k\n    result = [tup for tup in filtered_tuples if len(set(tup)) == len(tup) and all(i % k == 0 for i in tup)]\n\n    return result",
-  "explanation": "Explanation\n-----------\n\nThe code uses a list comprehension with a generator expression to iterate over the tuples in the input list. However, it does not handle cases where the tuple is empty or contains non-integer elements, which can cause a TypeError when trying to apply the modulo operator. Additionally, it attempts to return a single string value instead of a list of tuples.\n\nPython",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 10, in <module>\n    assert candidate([(6, 24, 12), (7, 9, 6), (12, 18, 21)], 6) == '[(6, 24, 12)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 287,
-  "code": "def candidate(n):\n    \"\"\"\n    Calculate the sum of squares of first n even natural numbers.\n    \n    Args:\n    n (int): The number of even natural numbers to consider.\n    \n    Returns:\n    int: The sum of squares of first n even natural numbers.\n    \"\"\"\n    # Use list comprehension and a step size of 2 to generate the desired range\n    # square each number in the range, then return the sum\n    \n    return sum(i ** 2 for i in range(2, n + 1, 2))",
-  "explanation": "**Explanation**\nThe provided code is almost correct but has a mistake in the range. The `range` function generates numbers starting from 0 by default. Since we want to consider only even natural numbers, we should start the range from 2 instead of 2.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(2) == 20\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

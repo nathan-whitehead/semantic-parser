@@ -1,8 +1,0 @@
-{
-  "task_id": 632,
-  "code": "def candidate(nums):\n    # Use list comprehension to separate non-zero and zero elements\n    non_zeros = [num for num in nums if num != 0]\n    zeros = [num for num in nums if num == 0]\n\n    # Combine the two lists\n    return non_zeros + zeros",
-  "explanation": "**Explanation**\nThis function will take a list of integers as input and return a new list where all zeros have been moved to the end. The approach used here is to use list comprehension to create a new list that includes all non-zero elements from the original list, followed by all zero elements.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

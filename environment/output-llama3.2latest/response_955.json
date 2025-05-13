@@ -1,8 +1,0 @@
-{
-  "task_id": 955,
-  "code": "def candidate(n):\n    # Check if n is less than 1\n    if n < 1:\n        return False\n    \n    sum_divisors = 0\n    for i in range(1, n // 2 + 1): \n        # Check if i is a divisor of n and add it to the sum\n        if n % i == 0:\n            sum_divisors += i\n    \n    # If the sum of divisors is greater than n, then n is abundant\n    return sum_divisors > n",
-  "explanation": "**Explanation**\nAn abundant number is a positive integer for which the sum of its proper divisors (excluding the number itself) is greater than the number. This function checks if a given number is abundant by iterating through all numbers from 1 to half of the input number, checking if it's a divisor, and adding up the smaller divisor if true.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

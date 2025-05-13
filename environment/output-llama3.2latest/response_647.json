@@ -1,8 +1,0 @@
-{
-  "task_id": 647,
-  "code": "def candidate(s):\n    # Initialize the result list with the first character of the input string\n    result = [s[0]]\n    \n    # Iterate over each character in the input string (starting from the second character)\n    for char in s[1:]:\n        # Check if the current character is uppercase and the last substring does not end with an uppercase letter\n        if char.isupper() and not result[-1].isupper():\n            # Yield the current substring up to the previous non-uppercase character\n            yield from result\n            # Append the current character to the result list\n            result.append(char)\n        else:\n            # Append the current character to the last substring\n            result[-1] += char\n    \n    # Yield any remaining substrings after iterating over all characters\n    yield from result",
-  "explanation": "**Explanation**\nThe provided function uses Python's built-in `split()` method in combination with a generator expression to split a string into substrings based on occurrences of uppercase letters. It iterates over each character in the input string, and when it encounters an uppercase letter, it yields the current substring up to that point. This approach ensures that the resulting substrings do not contain any uppercase letters.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 20, in <module>\n    assert candidate(\"PythonProgramLanguage\")==['Python','Program','Language']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

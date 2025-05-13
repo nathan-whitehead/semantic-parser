@@ -1,8 +1,0 @@
-{
-  "task_id": 251,
-  "code": "def candidate(lst, elem):\n    # Initialize an empty list to store the result\n    result = []\n    \n    # Iterate over each element in the original list\n    for i, _ in enumerate(lst):\n        # Insert the new element before the current one\n        result.append(elem)\n        result.append(lst[i])\n        \n    # Return the modified list\n    return result",
-  "explanation": "**Explanation**\nThe function will take two parameters: a list and an element. It iterates over the list, inserting the element before each existing element. This is achieved using list methods such as `insert()` which shifts all subsequent elements down by one position when an element is inserted at a given index.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

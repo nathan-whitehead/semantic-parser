@@ -1,8 +1,0 @@
-{
-  "task_id": 855,
-  "code": "def candidate(n):\n    # Check if n has even parity by finding its remainder when divided by 2\n    return n % 2 == 0",
-  "explanation": "**Explanation**\nThe `candidate` function checks if the parity of a given integer is even. It uses the modulo operator (`%`) to find the remainder when the number is divided by 2, and then checks if this remainder is 0 (indicating even parity). If it's not 0, the function immediately returns False; otherwise, it returns True.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

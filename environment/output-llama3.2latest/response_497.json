@@ -1,8 +1,0 @@
-{
-  "task_id": 497,
-  "code": "import math\n\ndef candidate(radius, height):\n    # Calculate the slant height of the cone using Pythagoras theorem\n    slant_height = math.sqrt(height**2 + radius**2)\n    \n    # Calculate the surface area of the cone\n    surface_area = math.pi * radius * (radius + slant_height)\n    \n    return surface_area",
-  "explanation": "**Explanation**\nThis function calculates the surface area of a cone using its radius and height. The formula for the surface area of a cone is \u03c0r(r + \u221a(h^2 + r^2)), where r is the radius and h is the height. This function takes these values as input and returns the calculated surface area.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 119,
-  "code": "def candidate(nums):\n    # Initialize result variable with 0 and create a hashmap to store counts of numbers\n    count_map = {}\n    \n    # Iterate over the array and update counts in the hashmap using bitwise XOR operation\n    for num in nums:\n        if num in count_map:\n            count_map[num] ^= 1\n        else:\n            count_map[num] = 1\n    \n    # Return result (the number that appears only once) after iterating over entire array\n    for key, value in count_map.items():\n        if value == 1:\n            return key",
-  "explanation": "**Explanation**\nThe code was attempting to use bitwise XOR operation to find the element that appears only once in a sorted array. However, it had issues with handling multiple occurrences of the same number and did not pass the test due to incorrect parameter handling.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 17, in <module>\n    assert candidate([1,1,2,2,3],5) == 3\n           ~~~~~~~~~^^^^^^^^^^^^^^^\nTypeError: candidate() takes 1 positional argument but 2 were given\n\n",
-  "success": false
-}

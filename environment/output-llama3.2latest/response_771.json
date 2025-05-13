@@ -1,8 +1,0 @@
-{
-  "task_id": 771,
-  "code": "def candidate(s):\n    # Dictionary mapping closing brackets to opening ones\n    bracket_map = {')': '(', '}': '{', ']': '['}\n    \n    # Stack to store the opening brackets\n    stack = []\n    \n    # Iterate over each character in the string\n    for char in s:\n        # If it's an opening bracket, push it onto the stack\n        if char in bracket_map.values():\n            stack.append(char)\n        # If it's a closing bracket, check if the stack is empty or its top doesn't match\n        elif char in bracket_map.keys():\n            if not stack or stack.pop() != bracket_map[char]:\n                return False\n    \n    # If the stack is empty after iterating over the entire string, it's balanced\n    return not stack",
-  "explanation": "**Explanation**\nThe function will take an expression as input and return True if it's balanced, False otherwise. It uses a stack data structure to keep track of the opening brackets and checks if they match with the corresponding closing brackets.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

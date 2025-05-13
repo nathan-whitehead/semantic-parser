@@ -1,8 +1,0 @@
-{
-  "task_id": 617,
-  "code": "def candidate(d):\n    # Define the directions\n    directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n    \n    # Initialize a set to store the visited points\n    visited = {(0, 0)}\n    \n    # Create a queue for BFS and enqueue the starting point (0, 0)\n    queue = [(0, 0, 0)]  # (x, y, jumps)\n    \n    while queue:\n        x, y, jumps = queue.pop(0)\n        \n        # If we reached the target point, return the number of jumps\n        if x == d and y == 0:\n            return jumps\n        \n        # Explore all possible directions from the current point\n        for dx, dy in directions:\n            nx, ny = x + dx, y + dy\n            \n            # Check if the new point is within the plane boundaries\n            if (nx, ny) not in visited and -d <= nx <= d and -d <= ny <= d:\n                queue.append((nx, ny, jumps + 1))\n                visited.add((nx, ny))\n                \n    # If we couldn't reach the target point, return -1\n    return -1",
-  "explanation": "Explanation\n-----------\n\nThe original code attempts to solve the problem by creating a dynamic programming (DP) table to store the minimum number of jumps required to reach each point in the plane. However, it incorrectly updates the DP values and does not handle the extra positional argument correctly.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 30, in <module>\n    assert candidate(3,4,11)==3.5\n           ~~~~~~~~~^^^^^^^^\nTypeError: candidate() takes 1 positional argument but 3 were given\n\n",
-  "success": false
-}

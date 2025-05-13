@@ -1,8 +1,0 @@
-{
-  "task_id": 362,
-  "code": "def candidate(lst):\n    # Initialize an empty dictionary to store counts\n    counts = {}\n    \n    # Iterate over the list to count occurrences\n    for item in lst:\n        if item in counts:\n            counts[item] += 1\n        else:\n            counts[item] = 1\n    \n    # Find the key with maximum count\n    max_count = max(counts.values())\n    return [item for item, count in counts.items() if count == max_count][0]",
-  "explanation": "**Explanation**\nThis function finds the item with maximum occurrences in a given list. It uses a dictionary to store the counts of each element, and then returns the key with the maximum count.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

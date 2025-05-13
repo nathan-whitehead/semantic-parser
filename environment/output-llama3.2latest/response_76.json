@@ -1,8 +1,0 @@
-{
-  "task_id": 76,
-  "code": "python\ndef candidate(width, height):\n    # Initialize count of squares\n    square_count = 0\n    \n    # Iterate over all possible square sizes from 1 to min(width, height)\n    for size in range(1, min(width, height) + 1):\n        # Calculate the number of squares with current size that fit within width and height\n        num_squares_width = width // size\n        num_squares_height = height // size\n        \n        # Check if the rectangle can be completely covered by squares with current size\n        if num_squares_width * num_squares_height == min(width, height):\n            square_count += (num_squares_width + 1) * (num_squares_height + 1)\n    \n    return square_count",
-  "explanation": "Explanation\n-----------\n\nThe generated code attempts to count the number of squares that can fit within a rectangle by iterating over all possible square sizes and checking if the rectangle can be completely covered. However, the code has several issues: it uses `print` statements which are not allowed in a function, it calculates incorrect values for `num_squares_width` and `num_squares_height`, and it does not check if the result is correct.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
-  "success": false
-}

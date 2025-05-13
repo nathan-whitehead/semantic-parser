@@ -1,8 +1,0 @@
-{
-  "task_id": 130,
-  "code": "import collections\n\ndef candidate(lst):\n    # Create a Counter object to store the frequency of each element in the list\n    freq_counter = collections.Counter(lst)\n    \n    # Find all keys with the maximum value in the Counter object\n    max_freq = max(freq_counter.values())\n    most_frequent_elem_list = [key for key, value in freq_counter.items() if value == max_freq]\n    \n    # Return all elements that have the maximum frequency\n    return most_frequent_elem_list",
-  "explanation": "Explanation\n-----------\n\nThe current implementation has several issues. It only returns the first most frequent element if there are multiple elements with the same maximum frequency, but it does not handle cases where there is a tie for the maximum frequency correctly.\n\nTo fix this issue, we need to return all elements that have the maximum frequency instead of just one. Additionally, we need to modify the function to correctly handle ties by returning all most frequent elements.\n\n\nPython",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 14, in <module>\n    assert candidate([2,3,8,4,7,9,8,2,6,5,1,6,1,2,3,2,4,6,9,1,2])==(2, 5)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 901,
-  "code": "import math\n\ndef candidate(n):\n    # Initialize the result as 1, since 1 is a factor of every number\n    result = 1\n    \n    # Iterate through each number from 2 to n (inclusive)\n    for i in range(2, n + 1):\n        # Calculate the LCM using the formula lcm(a, b) = |a*b| / gcd(a, b)\n        result = abs(result * i) // math.gcd(result, i)\n    \n    return result",
-  "explanation": "**Explanation**\nThe provided function will calculate the smallest multiple that is divisible by all numbers from 1 to `n`. It uses a loop to iterate through each number and finds the least common multiple (LCM) with the previously calculated LCM. This approach ensures that the result is correct even when `n` is large.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

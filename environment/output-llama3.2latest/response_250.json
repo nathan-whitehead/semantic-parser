@@ -1,8 +1,0 @@
-{
-  "task_id": 250,
-  "code": "def candidate(tup, elem):\n    # Initialize a counter variable to store the count of the element\n    count = 0\n    \n    # Iterate over each element in the tuple\n    for i in tup:\n        # Check if the current element matches the target element\n        if i == elem:\n            # Increment the counter if a match is found\n            count += 1\n    \n    # Return the total count of occurrences\n    return count",
-  "explanation": "**Explanation**\nThe `candidate` function is designed to take a tuple and an element as input, and return the number of occurrences of that element in the tuple. It achieves this by using Python's built-in indexing feature to iterate over the elements of the tuple and count the matches. This approach ensures simplicity and efficiency.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

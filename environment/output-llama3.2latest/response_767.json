@@ -1,8 +1,0 @@
-{
-  "task_id": 767,
-  "code": "def candidate(nums, sum_val):\n    \"\"\"\n    Count the number of pairs in nums whose sum is equal to 'sum'.\n\n    Args:\n        nums (list): A list of numbers.\n        sum_val (int): The target sum.\n\n    Returns:\n        int: The count of pairs with sum equal to 'sum'.\n    \"\"\"\n    \n    # Create a dictionary to store the frequency of each number in the array\n    freq = {}\n    \n    # Initialize the count of pairs with sum equal to 'sum'\n    count = 0\n    \n    # Iterate through the list and calculate the complement\n    for num in nums:\n        # Calculate the complement\n        complement = sum_val - num\n        \n        # If the complement exists, update its frequency and calculate the number of pairs\n        if complement in freq:\n            pair_count = min(freq[complement], nums.count(num) // 2)\n            count += pair_count\n            freq[complement] -= pair_count\n    \n    # Return the total count\n    return count",
-  "explanation": "**Explanation**\nThe original code attempts to count the number of pairs in the input list `nums` whose sum is equal to `sum_val`. However, it has a logical error where it increments the count by half of the frequency of each number, which is incorrect. The correct approach would be to iterate through the list and check for each number if its complement (i.e., `sum_val - num`) exists in the dictionary.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 33, in <module>\n    assert candidate([1,1,1,1],4,2) == 6\n           ~~~~~~~~~^^^^^^^^^^^^^^^\nTypeError: candidate() takes 2 positional arguments but 3 were given\n\n",
-  "success": false
-}

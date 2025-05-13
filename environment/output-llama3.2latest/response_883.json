@@ -1,8 +1,0 @@
-{
-  "task_id": 883,
-  "code": "def candidate(lst, m, n):\n    # Use a lambda function to find numbers divisible by both m and n\n    divisible_numbers = lambda num: num % m == 0 and num % n == 0\n    \n    # Apply the divisibility check to each number in the list\n    return [num for num in lst if divisible_numbers(num)]",
-  "explanation": "**Explanation**\nThe given code uses a lambda function to find numbers divisible by two input values `m` and `n`. However, the function is called with the result of the lambda expression, which makes it unclear what `candidate` actually does. We need to rewrite the function to take in the list of numbers and the inputs `m` and `n`, apply the divisibility check using a lambda function, and return the result.\n\n**python**",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

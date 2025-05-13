@@ -1,8 +1,0 @@
-{
-  "task_id": 105,
-  "code": "def candidate(lst):\n    # Initialize a variable to store the count of True values\n    true_count = 0\n    \n    # Iterate over each element in the input list\n    for elem in lst:\n        # Check if the current element is True and increment the counter\n        if elem:\n            true_count += 1\n    \n    # Return the total count of True values\n    return true_count",
-  "explanation": "Explanation\n-----------\n\nThe provided code attempts to count the number of true booleans in a given list. However, it lacks a function definition for the `candidate` function, which is required for the test cases to work. The function should be defined outside any other functions and contain no print statements.\n\nCode",
-  "num_iterations": 2,
-  "error_msg": null,
-  "success": true
-}

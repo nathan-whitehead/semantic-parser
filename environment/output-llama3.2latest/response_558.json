@@ -1,8 +1,0 @@
-{
-  "task_id": 558,
-  "code": "def candidate(a, b):\n    # Calculate the length of the smaller number\n    len_a = len(str(abs(a)))\n    len_b = len(str(abs(b)))\n\n    # Initialize a variable to store the total distance\n    total_distance = 0\n\n    # Iterate over each digit position from least significant to most\n    for i in range(max(len_a, len_b)):\n        # Get the current digits from both numbers (or use 0 if out of bounds)\n        digit_a = (a // 10**i) % 10\n        digit_b = (b // 10**i) % 10\n\n        # Calculate the distance for this position and add it to the total\n        total_distance += abs(digit_a - digit_b)\n\n    return total_distance",
-  "explanation": "**Explanation**\nThe `candidate` function calculates the digit distance between two integers. It does this by summing the absolute difference of each digit at the same position between the two numbers. This approach assumes that both input integers have the same number of digits and are non-negative.\n\n**python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

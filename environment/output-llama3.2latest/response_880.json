@@ -1,8 +1,0 @@
-{
-  "task_id": 880,
-  "code": "def candidate(a, b, c):\n    \"\"\"\n    Calculate the number of real and complex solutions for a quadratic equation.\n    \n    Parameters:\n    a (float): Coefficient of x^2\n    b (float): Coefficient of x\n    c (float): Constant term\n    \n    Returns:\n    str: Number of real and complex solutions\n    \"\"\"\n\n    # Calculate discriminant\n    d = b**2 - 4*a*c\n\n    # Check if there are real roots\n    if d < 0:\n        return \"No real solution\"\n    elif d == 0:\n        return \"1 real and 1 complex solution\"\n    else:\n        # Return the correct number of solutions for non-integer discriminants\n        root = int(d ** 0.5)\n        return f\"{root} real solution\" if d > 0 else f\"{int(-d/2)} real solution\"",
-  "explanation": "Explanation\n-----------\n\nThe original code was attempting to solve a quadratic equation by calculating the discriminant and determining the number of real solutions. However, it had an incorrect return statement for non-integer discriminants, causing the test case to fail.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 27, in <module>\n    assert candidate(2,5,2) == \"2 solutions\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

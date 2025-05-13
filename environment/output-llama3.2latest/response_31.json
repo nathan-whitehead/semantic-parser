@@ -1,8 +1,0 @@
-{
-  "task_id": 31,
-  "code": "import heapq\n\ndef candidate(nums):\n    # Create a dictionary to store the frequency of each integer\n    freq_dict = {}\n    \n    # Count the frequency of each integer\n    for num in nums:\n        if num not in freq_dict:\n            freq_dict[num] = 1\n        else:\n            freq_dict[num] += 1\n    \n    # Convert the dictionary into a list of tuples, where each tuple contains an integer and its frequency\n    freq_list = [(num, count) for num, count in freq_dict.items()]\n    \n    # Sort the frequencies in descending order using the heap queue algorithm\n    return [freq[0] for freq in heapq.nlargest(len(freq_list), freq_list)]",
-  "explanation": "**Explanation**\nThe provided problem is asking us to create a function named `candidate` that takes in several lists of sorted and distinct integers, and returns the top k integers that occur most frequently. We can use a heap queue algorithm (also known as a priority queue) to efficiently find these frequent integers.\n\nWe will first count the frequency of each integer by iterating through all the lists, then we'll sort the frequencies in descending order using the `heapq` module in Python's standard library. Finally, we'll return the top k frequent integers from the sorted list.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 20, in <module>\n    assert candidate([[1, 2, 6], [1, 3, 4, 5, 7, 8], [1, 3, 5, 6, 8, 9], [2, 5, 7, 11], [1, 4, 7, 8, 12]],3)==[5, 7, 1]\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: candidate() takes 1 positional argument but 2 were given\n\n",
-  "success": false
-}

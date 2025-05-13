@@ -1,8 +1,0 @@
-{
-  "task_id": 351,
-  "code": "def candidate(arr, k):\n    \"\"\"\n    Find the first element occurring k times in a given array.\n    \n    Args:\n        arr (list): The input array.\n        k (int): The number of occurrences for the target element.\n    \n    Returns:\n        tuple: A tuple containing the first occurrence index and the value itself.\n    \"\"\"\n    \n    # Create a dictionary to store elements and their counts\n    counts = {}\n    \n    # Iterate over the array and count occurrences of each element\n    for i, num in enumerate(arr):\n        # Increment the count for each occurrence of an element\n        if num in counts:\n            counts[num] += 1\n        else:\n            counts[num] = 1\n    \n    # Find the first element occurring k times\n    for index, (num, count) in enumerate(counts.items()):\n        if count == k:\n            return index, num",
-  "explanation": "Explanation\n-----------\n\nThe code provided attempts to solve the problem of finding the first element occurring k times in a given array. However, it contains several issues that need to be addressed. The main issue is with the function name and the way it's being called.\n\nCode\n----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 29, in <module>\n    assert candidate([0,1,2,3,4,5],6,1) == 0\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: candidate() takes 2 positional arguments but 3 were given\n\n",
-  "success": false
-}

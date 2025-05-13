@@ -1,8 +1,0 @@
-{
-  "task_id": 840,
-  "code": "def candidate(a, b, c):\n    # Calculate the discriminant\n    d = b**2 - 4*a*c\n    \n    # Check if the roots are real\n    if d < 0:\n        return False\n    \n    # Calculate the two roots\n    root1 = (-b + (d ** 0.5)) / (2 * a)\n    root2 = (-b - (d ** 0.5)) / (2 * a)\n    \n    # Check if the roots have opposite signs and are numerically equal but opposite in sign\n    return abs(root1) == abs(root2) and (root1 > 0) != (root2 > 0)",
-  "explanation": "**EXPLANATION**\nThe original code calculates the discriminant and then checks if it's negative. However, this is not necessary as we only need to check if the roots are real. The condition for opposite signs but numerically equal but opposite in sign is also incorrect because it doesn't correctly compare the values of `root1` and `root2`. We should instead compare the absolute values of these two roots.\n\n**python**",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(2,0,-1) == \"Yes\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

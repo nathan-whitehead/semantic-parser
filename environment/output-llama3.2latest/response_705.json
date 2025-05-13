@@ -1,8 +1,0 @@
-{
-  "task_id": 705,
-  "code": "def candidate(lists, key=lambda x: x):\n    \"\"\"\n    Sort a list of lists by length and value.\n\n    Args:\n        lists (list): List of lists to be sorted.\n        key (function, optional): Function to determine sort order. Defaults to lambda x: x.\n\n    Returns:\n        list: A new sorted list of lists.\n    \"\"\"\n    return sorted(lists, key=lambda x: (len(x), key(x)))",
-  "explanation": "**Explanation**\n\nThis function sorts a list of lists based on the length of each inner list and then by the values in the inner lists. It uses the built-in `sorted` function in Python, which returns a new sorted list and leaves the original list unchanged.\n\nThe function takes two parameters: the list of lists to be sorted and an optional parameter to specify how to sort. By default, it sorts based on length (shortest first) and then by value.\n\n**Python**",
-  "num_iterations": 1,
-  "error_msg": null,
-  "success": true
-}

@@ -1,8 +1,0 @@
-{
-  "task_id": 831,
-  "code": "def candidate(arr, num_pairs):\n    # Create a dictionary to store the frequency of each element\n    freq = {}\n    \n    # Count the frequency of each element in the array\n    for num in arr:\n        if num in freq:\n            freq[num] += 1\n        else:\n            freq[num] = 1\n    \n    # Initialize the total number of pairs\n    total_pairs = 0\n    \n    # Calculate the total number of pairs using a different approach\n    for count in freq.values():\n        # For each unique element, calculate the number of pairs with itself and with other equal elements\n        if num_pairs >= (2 * count) * (count - 1):\n            # Calculate the number of pairs with itself\n            self_pairs = ((count * (count - 1)) // 2)\n            # Calculate the number of pairs with other equal elements\n            other_pairs = min(num_pairs - self_pairs, count * (count - 1))\n            total_pairs += other_pairs\n        elif num_pairs > (2 * count):\n            raise ValueError(\"num_pairs should be at least 2*count\")\n    \n    return total_pairs",
-  "explanation": "Explanation\n-----------\n\nThe provided code attempts to calculate the total number of equal element pairs from a given array. However, it contains several issues that prevent it from passing all test cases. The main problem lies in the incorrect calculation approach and the inconsistent usage of variable names.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 29, in <module>\n    assert candidate([1,1,1,1],4) == 6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}

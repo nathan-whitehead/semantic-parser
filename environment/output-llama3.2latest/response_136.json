@@ -1,8 +1,0 @@
-{
-  "task_id": 136,
-  "code": "def candidate(tariff_rate, units_consumed):\n    \"\"\"\n    Calculates the total electricity bill based on the tariff rate and units consumed.\n    \n    Args:\n        tariff_rate (float): The tariff rate per unit in Rs./unit.\n        units_consumed (int): The amount of electricity consumed in units.\n        \n    Returns:\n        float: The total electricity bill in Rs.\n    \"\"\"\n    # Check if both tariff rate and units consumed are provided\n    if not isinstance(tariff_rate, (float, int)) or not isinstance(units_consumed, int):\n        raise ValueError(\"Invalid input data type\")\n    \n    # Check if tariff rate is zero to avoid division by zero error\n    if tariff_rate == 0:\n        return 0\n    \n    # Calculate the total electricity bill using the formula: bill = tariff * units\n    bill = tariff_rate * units_consumed\n    \n    return bill",
-  "explanation": "Explanation\n------------\n\nThe given code attempts to calculate the electricity bill based on the tariff rate and units consumed. However, the issue lies in the function's definition where two arguments (tariff_rate and units_consumed) are not being passed correctly.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 25, in <module>\n    assert candidate(75)==246.25\n           ~~~~~~~~~^^^^\nTypeError: candidate() missing 1 required positional argument: 'units_consumed'\n\n",
-  "success": false
-}

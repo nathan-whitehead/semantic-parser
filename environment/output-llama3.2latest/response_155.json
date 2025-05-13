@@ -1,8 +1,0 @@
-{
-  "task_id": 155,
-  "code": "def candidate(n):\n    # Initialize result as n\n    result = n\n    \n    # Loop through all bits in the number\n    while n > 0:\n        # Get the least significant bit of n (even or odd)\n        bit = n & 1\n        \n        # If the bit is even, toggle it using XOR operation\n        if bit % 2 == 0:\n            result ^= bit << (n.bit_length() - 1)\n        \n        # Right shift n by one bit to move to the next bit\n        n >>= 1\n    \n    return result",
-  "explanation": "Explanation\n-----------\nThe code attempts to toggle all even bits of a given number using bitwise operations. However, the approach is incorrect and leads to the error message. The `even_mask` is set as `0x5555`, which only toggles the least significant two bits (2^0 and 2^1) of the input number `n`. This does not achieve the goal of toggling all even bits.\n\nThe `mask` variable, `(1 << 16) - 1`, is also unnecessary and can be removed. The main issue with the code is that it tries to use bitwise XOR (`^`) operation incorrectly.\n\nCode\n-----",
-  "num_iterations": 6,
-  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate(10) == 0\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
-  "success": false
-}
