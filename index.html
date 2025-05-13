@@ -10,44 +10,187 @@
     <header>
       <h1>Iterative Code Refinement</h1>
       <p>Improving LLM-Generated Code through Execution-Based Validation</p>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#approach">Approach</a>
+          </li>
+          <li>
+            <a href="#evaluation">Evaluation</a>
+          </li>
+          <li>
+            <a href="#tool">Tool</a>
+          </li>
+          <li>
+            <a href="#conclusion">Conclusion</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul>
-        <li>
-          <a href="#introduction">Introduction</a>
-        </li>
-        <li>
-          <a href="#approach">Approach</a>
-        </li>
-        <li>
-          <a href="#evaluation">Evaluation</a>
-        </li>
-        <li>
-          <a href="#conclusion">Conclusion</a>
-        </li>
-      </ul>
-    </nav>
     <main>
       <section id="introduction">
         <h2>Introduction</h2>
-        <p>Large Language Models (LLMs) have demonstrated remarkable capabilities in code generation...</p>
+        <p>Large language models (LLMs) have demonstrated remarkable capabilities in natural language understanding and code generation. As their adoption increases, users seek ways to interact with these models in a more structured and automated manner. One emerging challenge is the need for LLMs to not only generate responses but also verify and refine their outputs based on execution results. This is particularly relevant in environments such as Jupyter Notebooks, where iterative code refinement can be useful for debugging, learning, and experimentation.</p>
+        <p>Currently, existing solutions are unable to autonomously validate generated code and refine outputs iteratively. Current AI coding assistants such as GitHub Copilot and OpenAI's ChatGPT provide valuable suggestions but lack built-in mechanisms for executing code, verifying results, and refining responses dynamically without tedious human intervention. Our approach integrates automated validation to iteratively refine generated code until it satisfies the user's specifications.</p>
+
+        <h3>Example</h3>
+        <p>To illustrate the problem, consider a simple task where a user requests a Python function to compute the Fibonacci sequence up to a given integer <code>n</code>. The user provides the following prompt to the LLM: "Write a Python function that returns a list containing the first <code>n</code> Fibonacci numbers." The LLM then responds with the following output:</p>
+        <pre><code class="language-python">
+def fibonacci(n):
+  fib = [0, 1]
+  for i in range(n-2):
+    fib.append(fib[i] + fib[i+1])
+  return fib
+  </code></pre>
+        <p>While this code is syntactically correct, it will fail for small values of <code>n</code>. (e.g., <code>fibonacci(1)</code> should return <code>[0]</code>, but will instead raise an index error). Without execution-based validation, the user would need to manually inspect and debug the issue, increasing cognitive load on the user, and wasting time.</p>
+        <p>When we apply execution-based refinement, the system will run the generated code to test various inputs, e.g., <code>fibonacci(1)</code>, <code>fibonacci(2)</code>, <code>fibonacci(10)</code>, and detect the error on <code>n=1</code>. The system will then refine the function based on the observed failures by passing the program output back to the LLM. A corrected version will then be generated, such as:</p>
+        <pre><code class="language-python">
+def fibonacci(n):
+  if n <= 0:
+    return []
+  elif n == 1:
+    return [0]
+  fib = [0, 1]
+  for i in range(n-2):
+    fib.append(fib[i] + fib[i+1])
+  return fib
+  </code></pre>
+        <p>This process will then repeat until the code passes test cases (either user-provided or LLM-generated), or until the process times out. In this example, the second function is valid, and so this will be provided to the user.</p>
       </section>
       <section id="approach">
         <h2>Approach</h2>
-        <p>We propose a general framework for iterative code refinement...</p>
+        <p>We propose a general framework for iterative code refinement that integrates language model generation, execution-based validation, and feedback-driven correction. This abstraction is not tied to a specific model, dataset, or implementation, and can be instantiated in multiple environments depending on task complexity, available infrastructure, and domain requirements.</p>
+
+        <h3>Overview of the Refinement Framework</h3>
+        <p>The core idea is to view the process of code generation as an optimization loop over a space of program candidates. The system seeks a program <code>C<sub>n</sub>
+          </code> such that <code>C<sub>n</sub>
+          </code> satisfies a specification <code>S</code> derived from a user prompt <code>P</code>. At each step, the framework evaluates the current candidate's behavior and uses the results to guide the next refinement.</p>
+        <ol>
+          <li>
+            <strong>Code Generation:</strong> A language model generates an initial program candidate <code>C<sub>0</sub>
+            </code> given a natural language task description <code>P</code>.</li>
+          <li>
+            <strong>Execution:</strong> The code <code>C<sub>i</sub>
+            </code> is executed on a predefined set of test cases or inputs derived from specification <code>S</code>.</li>
+          <li>
+            <strong>Validation:</strong> The output of the execution is compared against the expected results in <code>S</code>. If <code>C<sub>i</sub>
+            </code> fails to meet the specification, error information <code>E<sub>i</sub>
+            </code> is extracted.</li>
+          <li>
+            <strong>Refinement:</strong> A new prompt is constructed containing <code>P</code>, <code>C<sub>i</sub>
+            </code>, and <code>E<sub>i</sub>
+            </code>. The model is then asked to generate a refined version <code>C<sub>i+1</sub>
+            </code>.</li>
+          <li>
+            <strong>Iteration:</strong> Steps 2–4 are repeated until <code>C<sub>n</sub>
+            </code> satisfies <code>S</code>, or a maximum iteration limit is reached.</li>
+        </ol>
+
+        <h3>Algorithmic Formulation</h3>
+        <p>The refinement process can be formalized as follows:</p>
+        <pre><code>
+Input: Prompt P, Specification S, LLM M, Max iterations k
+C0 ← M(P)
+for i = 0 to k:
+    Ri ← execute(Ci)
+    if Ri satisfies S:
+        return Ci
+    else:
+        Ei ← extract_errors(Ri)
+        Ci+1 ← M(P, Ci, Ei)
+return FAILURE
+  </code></pre>
+        <p>This loop abstracts away the specific mechanics of code execution and validation, allowing multiple strategies to be applied depending on context. For example, specifications could consist of unit tests, behavior traces, or even human feedback.</p>
+
+        <h3>Feedback Construction</h3>
+        <p>The effectiveness of the refinement depends heavily on the structure and content of the feedback passed to the model. Our framework supports modular feedback construction strategies, which may include:</p>
+        <ul>
+          <li>Raw exception messages (e.g., stack traces or assertion failures)</li>
+          <li>Annotated diffs between expected and observed outputs</li>
+          <li>Natural language summaries of validation failures</li>
+        </ul>
+        <p>The structure of the feedback prompt can be adjusted to guide the model more explicitly depending on the nature of the task or the capability of the LLM.</p>
+
+        <h3>Separation from Implementation</h3>
+        <p>Although our implementation uses specific tools (e.g., Llama 3.2, Docker, Python), the framework does not assume any particular technology stack. Execution may be performed in a sandbox, a virtual machine, or a remote server. Similarly, refinement can be done by any generative model capable of producing code given feedback. We refer the reader to the Implementation section for details of our concrete instantiation.</p>
+
+        <h3>Illustrative Example</h3>
+        <p>Consider a task where the prompt asks for a function that returns the square of an integer. The LLM initially generates a function that returns <code>n * n</code>. During execution, a test case reveals the function raises an error on input type <code>None</code>. This triggers refinement, where the model is given both the original prompt and the observed exception. It then adds a guard clause checking for null input. This showcases how error-driven feedback can incrementally produce robust solutions.</p>
+
+        <h3>Evaluation Considerations</h3>
+        <p>The framework can be evaluated on several axes, including:</p>
+        <ul>
+          <li>
+            <strong>Convergence Rate:</strong> How many iterations are required on average for code to satisfy <code>S</code>.</li>
+          <li>
+            <strong>Correctness:</strong> Final pass rate on a test suite.</li>
+          <li>
+            <strong>Resource Efficiency:</strong> Time and computation consumed across iterations.</li>
+          <li>
+            <strong>Model Robustness:</strong> Sensitivity of success rate to quality of error feedback.</li>
+        </ul>
       </section>
       <section id="evaluation">
         <h2>Evaluation</h2>
-        <p>Key metrics include correctness, convergence rate, and robustness...</p>
-        <img src="figures/iteration_results_hist.pdf" alt="Iteration Results">
+        <p>To evaluate the effectiveness of our iterative code refinement framework, we conducted experiments focusing on the following key metrics:</p>
+        <ul>
+          <li>
+            <strong>Correctness:</strong> The percentage of tasks for which the final generated code passed all test cases, especially compared to those which passed without refinement.</li>
+          <li>
+            <strong>Convergence Rate:</strong> The average number of iterations required for the framework to produce a correct solution.</li>
+          <li>
+            <strong>Robustness:</strong> The framework's ability to handle diverse prompts, including ambiguous or incomplete specifications.</li>
+        </ul>
+
+        <h3>Experimental Setup</h3>
+        <p>We evaluated our framework using the MBPP (Mostly Basic Python Problems) dataset, which consists of 974 Python programming tasks with ground-truth test cases. Each task was provided as a natural language prompt to the LLM, and the framework iteratively refined the generated code until it satisfied the test cases or reached the maximum iteration limit of 5.</p>
+        <p>The experiments were conducted on a local machine with the following specifications:</p>
+        <ul>
+          <li>CPU: Apple M3</li>
+          <li>RAM: 16GB</li>
+          <li>LLM: Llama 3.2 running locally with 3.2 billion parameters</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          <strong>Correctness:</strong> Out of the 974 tasks, the framework successfully generated correct solutions for 45.5% of the tasks. The remaining 54.5% failed mainly due to the weakness of the model being used. However, when comparing the results to the baseline of using the LLM without refinement, the framework improved correctness by 46%. The model was able to generate correct solutions for 27% of tasks without refinement, and 45.5% with refinement. It's also possible that more correct solutions could be generated with more rounds of refinement, but we limited the number of iterations to 5 to avoid excessive computation.</p>
+        <figure>
+          <img src="/assets/images/iteration_results_hist.pdf" alt="Iteration results for the iterative code refinement framework."/>
+          <figcaption>Iteration results for the iterative code refinement framework.</figcaption>
+        </figure>
+        <p>
+          <strong>Convergence Rate:</strong> On average for problems where a solution was found, the framework required 1.97 iterations to produce a correct solution. Tasks with well-defined test cases and detailed prompts converged faster, while tasks with edge cases or ambiguous specifications required more iterations.</p>
+        <figure>
+          <img src="/assets/images/iterations_distribution_box_plot.pdf" alt="Iteration results for the iterative code refinement framework."/>
+          <figcaption>Iteration results for the iterative code refinement framework.</figcaption>
+        </figure>
+        <p>
+          <strong>Robustness:</strong> The framework demonstrated robustness in handling diverse prompts, but performance degraded for tasks with incomplete specifications or highly complex logic. In many cases, the framework often failed to converge within the iteration limit. This would likely improve with a more powerful model, as the LLM used in this experiment was limited to 3.2 billion parameters.</p>
+
+        <h3>Discussion</h3>
+        <p>The results demonstrate that our framework effectively improves the correctness of LLM-generated code through iterative refinement. However, the computational cost and reliance on well-defined test cases highlight areas for future improvement. Optimizing the feedback mechanism and incorporating static analysis techniques could further enhance the framework's efficiency and robustness.</p>
+        <p>Furthermore, the low-budget model used in this experiment was unable to generate correct solutions for many tasks, and so the results may not be representative of the performance of larger models which can handle more complex problems. Future work will explore the use of larger models, as well as the integration of static analysis techniques to improve the framework's performance.</p>
+      </section>
+      <section id="tool">
+        <h2>Tool</h2>
+        <p>The iterative code refinement tool is available for download. It includes the framework for execution-based validation and feedback-driven refinement.</p>
+        <p>To use the tool, you must have docker installed, some version of python installed and have access to the API of some LLM, whether local or cloud-based. Make sure to set the configuration in environment/config.py. Then run the following command:</p>
+        <pre><code>python main.py</code></pre>
+        <a href="/assets/downloads/iterative_code_refinement_tool.zip" download>Download the Tool</a>
       </section>
       <section id="conclusion">
         <h2>Conclusion</h2>
-        <p>Our framework demonstrates the potential to improve correctness...</p>
+        <p>We have presented a framework for iterative code refinement that leverages execution-based validation and feedback-driven correction to improve the correctness of LLM-generated code. By integrating these components, we aim to reduce the reliance on manual verification and enhance the reliability of AI-generated code. Our evaluation on the MBPP dataset demonstrates the framework's potential to improve correctness and convergence rates, while also highlighting challenges related to execution safety, computational cost, and robustness across diverse tasks.</p>
+        <p>Future work will focus on optimizing the framework's performance, exploring the integration of static analysis techniques, and evaluating the approach across a wider range of programming tasks and domains. By addressing these challenges, we aim to advance the automation of code generation and refinement, ultimately bridging the gap between AI-generated code and reliable, executable solutions.</p<
+
       </section>
-    </main>
-    <footer>
-      <p>&copy; 2025 Nathan J. Whitehead</p>
-    </footer>
-  </body>
-</html>
+      </main>
+      <footer>
+        <p>&copy; 2025 Nathan J. Whitehead</p>
+      </footer>
+    </body>
+  </html>
