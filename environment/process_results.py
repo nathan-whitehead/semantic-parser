@@ -126,7 +126,7 @@ def plot_results(results):
     plt.title("Distribution of Successful Iterations")
     plt.xlabel("Number of Iterations")
     plt.ylabel("Count")
-    plt.savefig("successful_iterations_histogram.pdf")
+    plt.savefig("successful_iterations_histogram.pdf", transparent=True)
     plt.close()
 
   # Plot 2: Success rate
@@ -137,7 +137,7 @@ def plot_results(results):
     failure_count = len(results["success"]) - success_count
     plt.pie([success_count, failure_count], labels=labels, autopct='%1.1f%%')
     plt.title("Success Rate")
-    plt.savefig("success_rate_pie_chart.pdf")
+    plt.savefig("success_rate_pie_chart.pdf", transparent=True)
     plt.close()
 
   # Plot 3: Comparison of iterations for successful vs failed attempts
@@ -151,7 +151,7 @@ def plot_results(results):
     plt.bar(labels, means)
     plt.title("Average Iterations by Result")
     plt.ylabel("Average Iterations")
-    plt.savefig("average_iterations_bar_chart.pdf")
+    plt.savefig("average_iterations_bar_chart.pdf", transparent=True)
     plt.close()
 
   # Plot 4: Box plot of iterations
@@ -162,7 +162,7 @@ def plot_results(results):
     plt.xticks([1, 2], ["Successful", "Failed"])
     plt.title("Iterations Distribution by Result")
     plt.ylabel("Number of Iterations")
-    plt.savefig("iterations_distribution_box_plot.pdf")
+    plt.savefig("iterations_distribution_box_plot.pdf", transparent=True)
     plt.close()
 
 

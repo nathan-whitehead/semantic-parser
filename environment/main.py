@@ -91,7 +91,7 @@ def main():
   problems = load_problem_set()
 
   # For development
-  problems = problems[70:]
+  # problems = problems[70]
 
   logging.info(f"Generating code for {len(problems)} problems")
   for problem in problems:
