@@ -1,0 +1,8 @@
+{
+  "task_id": 450,
+  "code": "def candidate(string_list, size):\n    # Initialize an empty list to store the result\n    result = []\n    \n    # Iterate over each string in the input list\n    for string in string_list:\n        # Check if the length of the current string matches the specified size\n        if len(string) == size:\n            # If it does, append the string to the result list\n            result.append(string)\n    \n    # Return the result list\n    return result",
+  "explanation": "**Explanation**\nThe problem requires writing a function that extracts specific sized strings from a given list. This function will take two parameters: a list of strings and a desired string length. It will iterate over the list, check each string's length against the specified size, and return a new list containing only those matching strings.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

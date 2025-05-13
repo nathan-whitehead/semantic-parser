@@ -1,0 +1,8 @@
+{
+  "task_id": 462,
+  "code": "python\nfrom itertools import combinations\n\ndef candidate(lst):\n    # Generate all possible combinations of the elements of a given list\n    result = []\n    for r in range(len(lst) + 1):\n        for combination in combinations(lst, r):\n            result.append(list(combination))\n    \n    return result",
+  "explanation": "Explanation\n-----------\n\nThe code has a logical error. The line `new_p = [element] + list(perm)` can result in duplicate permutations because it uses the original list to create new permutations, which includes duplicates.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
+  "success": false
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 117,
+  "code": "def candidate(input_list):\n    # Initialize an empty list to store converted floats\n    result = []\n\n    for element in input_list:\n        if isinstance(element, tuple) and len(element) == 2:\n            try:\n                # Attempt to convert both values in the tuple to floats and append them to the result list\n                result.append((float(x) for x in element))\n            except ValueError as e:\n                # If a ValueError occurs, skip this element and continue with the next one\n                continue\n        elif isinstance(element, str):\n            try:\n                # Attempt to convert the current element directly to a float and append it to the result list\n                result.append(float(element))\n            except ValueError as e:\n                # If a ValueError occurs, skip this element and continue with the next one\n                continue\n    \n    return result",
+  "explanation": "Explanation\n-----------\n\nThe given code attempts to convert elements in a list to floats, but it does not correctly handle cases where the input is not a tuple. It also incorrectly tries to unpack a single value from an element that was already converted to float.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 23, in <module>\n    assert candidate( [(\"3\", \"4\"), (\"1\", \"26.45\"), (\"7.32\", \"8\"), (\"4\", \"8\")] ) == '[(3.0, 4.0), (1.0, 26.45), (7.32, 8.0), (4.0, 8.0)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

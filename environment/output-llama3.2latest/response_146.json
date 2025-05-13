@@ -1,0 +1,8 @@
+{
+  "task_id": 146,
+  "code": "def candidate(s):\n    # Initialize variable to hold total ASCII value\n    ascii_value = 0\n    \n    # Iterate over each character in the string\n    for char in s:\n        # Convert character to its ASCII value and add it to the total\n        ascii_value += ord(char)\n    \n    # Return the total ASCII value\n    return ascii_value",
+  "explanation": "Explanation\n------------\n\nThe code is attempting to calculate the total ASCII value of characters in a string. However, it has an incorrect assumption about the range of ASCII values and also lacks handling for non-ASCII characters.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 13, in <module>\n    assert candidate(\"python\")==112\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

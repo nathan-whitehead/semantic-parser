@@ -1,0 +1,8 @@
+{
+  "task_id": 498,
+  "code": "def candidate(a: int, b: int) -> int:\n    \"\"\"\n    Calculate the greatest common divisor (GCD) of two positive integers.\n    \n    Args:\n        a (int): The first positive integer.\n        b (int): The second positive integer.\n    \n    Returns:\n        int: The GCD of a and b.\n    \"\"\"\n\n    # Base case: if b is zero, return a\n    while b != 0:\n        # Replace 'a' with 'b' and 'b' with the remainder of 'a' divided by 'b'\n        a, b = b, a % b\n    \n    # At this point, 'a' is the GCD of the original 'a' and 'b'\n    return a",
+  "explanation": "**Explanation**\nThe `candidate` function calculates the greatest common divisor (GCD) of two positive integers using the Euclidean algorithm. This approach is efficient and accurate, making it suitable for finding GCDs of large numbers as well. The function takes two integer arguments and returns their GCD.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 583,
+  "code": "def candidate(n):\n    # Initialize an array to store the Catalan numbers\n    catalan = [0] * (n + 1)\n    \n    # Base cases: C(0) = 1, C(1) = 1\n    catalan[0] = catalan[1] = 1\n    \n    # Calculate the Catalan numbers using dynamic programming\n    for i in range(2, n + 1):\n        catalan[i] = 0\n        for j in range(i):\n            catalan[i] += catalan[j] * catalan[i - j - 1]\n    \n    # Return the nth Catalan number\n    return catalan[n]",
+  "explanation": "**EXPLANATION**\nThe Catalan numbers are a sequence of natural numbers that occur in various counting problems, often involving recursive structures. This function uses dynamic programming to calculate the nth Catalan number efficiently. It initializes an array to store the previously calculated values and then iterates from 0 to n-1 to fill up the array.\n\n**PYTHON**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

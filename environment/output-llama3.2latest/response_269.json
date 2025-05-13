@@ -1,0 +1,8 @@
+{
+  "task_id": 269,
+  "code": "def candidate(char):\n    # Check if char is a string with length 1\n    if not isinstance(char, str) or len(char) != 1:\n        raise ValueError(\"Input must be a single character\")\n\n    # Use ord() to get the ASCII value of the character\n    ascii_value = ord(char)\n\n    return ascii_value",
+  "explanation": "**Explanation**\nThe `candidate` function takes a single argument, `char`, which is a string containing the character for which we want to find the ASCII value. We use the built-in `ord()` function in Python to achieve this. The result is returned by the function.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

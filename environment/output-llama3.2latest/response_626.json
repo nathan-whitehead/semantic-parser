@@ -1,0 +1,8 @@
+{
+  "task_id": 626,
+  "code": "import math\n\ndef candidate(r):\n    # Check if radius is negative, return the maximum possible base length directly\n    if r <= 0:\n        return 0\n    \n    # Calculate the maximum possible length of base for an inscribed triangle using Pythagorean theorem\n    max_base = 2 * r * math.sin(math.pi / 3)\n\n    # Since height of equilateral triangle is sqrt(3)/2 times radius,\n    # calculate area directly using the simplified expression:\n    # Area = (base * height) / 2, but here the base itself is a function of the radius\n    area = max_base ** 2 / (4 * math.tan(math.pi / 3))\n\n    return area",
+  "explanation": "Explanation\n==========\n\nThe code generated is not valid because it raises an error when the radius is less than or equal to zero. The correct approach should check if the radius is negative before calculating the maximum possible length of the base and area of the triangle.\n\nCode\n=====",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate(-1) == -1\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

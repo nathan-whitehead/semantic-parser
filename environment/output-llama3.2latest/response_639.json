@@ -1,0 +1,8 @@
+{
+  "task_id": 639,
+  "code": "def candidate(names):\n    # Filter out names starting with lowercase letters and sum up the length of remaining names\n    return sum(len(name) for name in (name for name in names if name[0].isupper()))",
+  "explanation": "Explanation\n-----------\n\nThis function filters out names starting with a lowercase letter, calculates their lengths, and sums them up. It uses Python's built-in string methods to check if characters are uppercase or lowercase.\n\npython",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

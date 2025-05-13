@@ -1,0 +1,8 @@
+{
+  "task_id": 242,
+  "code": "def candidate(s):\n    # Initialize counter variable to 0\n    total_chars = 0\n    \n    # Iterate over each character in the string\n    for char in s:\n        # Increment the counter by 1 for each character encountered\n        total_chars += 1\n        \n    # Return the total number of characters found\n    return total_chars",
+  "explanation": "**EXPLANATION**\nThe function will take a string as an input and return its length. This is done by simply counting the number of characters in the string, which can be achieved using Python's built-in string methods.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

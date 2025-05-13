@@ -1,0 +1,8 @@
+{
+  "task_id": 711,
+  "code": "import math\n\ndef candidate(n):\n    # Extract digits at even and odd positions\n    even_digits = [int(d) for i, d in enumerate(str(n)) if i % 2 == 0]\n    odd_digits = [int(d) for i, d in enumerate(str(n)) if i % 2 != 0]\n\n    # Calculate products of even and odd digits\n    even_product = math.prod(even_digits) if hasattr(math, 'prod') else math.prod(even_digits)\n    odd_product = math.prod(odd_digits) if hasattr(math, 'prod') else math.prod(odd_digits)\n\n    # Check if products are equal\n    return even_product == odd_product",
+  "explanation": "**Explanation**\nThis function takes an integer as input, finds the product of its digits at even and odd positions, and checks if they are equal. It uses a list comprehension to extract the digits at even and odd positions, then calculates their products using the `math.prod` function for Python 3.8 and later versions, or by multiplying the elements together with the `*` operator for earlier versions. The function returns `True` if the products are equal and `False` otherwise.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

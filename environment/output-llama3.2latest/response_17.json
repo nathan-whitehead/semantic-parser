@@ -1,0 +1,8 @@
+{
+  "task_id": 17,
+  "code": "def candidate(side_length):\n    # Check if side_length is a non-negative number\n    if not isinstance(side_length, (int, float)) or side_length < 0:\n        raise ValueError(\"Side length must be a non-negative number\")\n    \n    # Calculate the perimeter of the square\n    perimeter = side_length * 4\n    \n    return perimeter",
+  "explanation": "**EXPLANATION**\nThe function will calculate the perimeter of a square by multiplying the length of its side by 4. It uses the concept that all sides of a square are equal and therefore, its perimeter can be calculated easily. This function assumes that the input is valid (i.e., a number) and does not include any error checking.\n\n**PYTHON**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

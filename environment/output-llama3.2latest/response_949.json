@@ -1,0 +1,8 @@
+{
+  "task_id": 949,
+  "code": "def candidate(tuple_list):\n    # Function to calculate total digits in a tuple\n    def count_digits(tup):\n        return sum(len(str(i)) for i in tup if isinstance(i, int))\n    \n    # Calculate total digits for each tuple and store in a new list\n    digit_counts = [(count_digits(t), t) for t in tuple_list]\n    \n    # Sort the list of tuples based on total digits\n    sorted_digit_counts = sorted(digit_counts, key=lambda x: x[0])\n    \n    # Return a list of sorted tuples\n    return [t[1] for t in sorted_digit_counts]",
+  "explanation": "**Explanation**\nThe original code has a bug in the `count_digits` function. The issue lies in the fact that it returns 1 when the first element of the tuple is 1, regardless of its actual value. This leads to incorrect counting of total digits in tuples with non-1 as their first element. To fix this, we need to modify the function to correctly count the digits in each tuple.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 15, in <module>\n    assert candidate([(3, 4, 6, 723), (1, 2), (12345,), (134, 234, 34)] ) == '[(1, 2), (12345,), (3, 4, 6, 723), (134, 234, 34)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

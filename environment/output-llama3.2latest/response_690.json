@@ -1,0 +1,8 @@
+{
+  "task_id": 690,
+  "code": "def candidate(lst):\n    # Initialize the list to store products with an empty list\n    products = []\n    \n    # Iterate over each number in the list\n    for num in lst:\n        # Skip empty numbers\n        if num == 0:\n            continue\n        \n        # If this is not the first number and it's different from the previous one,\n        # update the current product\n        if products and num != products[-1]:\n            current_product = 1\n        current_product *= num\n        \n        # Append the current product to the result\n        products.append(current_product)\n    \n    return products",
+  "explanation": "Explanation\n-----------\n\nThe original code has several issues. It is not correctly multiplying consecutive numbers in the list because it stops updating the `current_product` after appending it to the `products` list. Also, it does not handle consecutive duplicates properly.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate([1, 1, 3, 4, 4, 5, 6, 7])==[1, 3, 12, 16, 20, 30, 42]\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 15, in candidate\n    current_product *= num\n    ^^^^^^^^^^^^^^^\nUnboundLocalError: cannot access local variable 'current_product' where it is not associated with a value\n\n",
+  "success": false
+}

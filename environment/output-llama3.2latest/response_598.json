@@ -1,0 +1,8 @@
+{
+  "task_id": 598,
+  "code": "def candidate(num):\n    # Convert the number into a string to easily get the count of digits\n    num_str = str(num)\n    \n    # Calculate the power of the number of digits\n    power = len(num_str)\n    \n    # Initialize sum variable to store the sum of each digit raised to the power\n    total_sum = 0\n    \n    # Iterate over each character in the string representation of the number\n    for digit in num_str:\n        # Convert the character back into an integer and add it to the sum\n        # Times the power, which represents raising it to the power of the number of digits\n        total_sum += int(digit) ** power\n    \n    # Check if the original number is equal to the calculated sum\n    return num == total_sum",
+  "explanation": "**Explanation**\n\nThis function checks if a given number is an Armstrong number, which is a number that is equal to the sum of its own digits each raised to the power of the number of digits. The approach used here is simple and straightforward, it calculates the sum of the digits raised to the power of the number of digits, and compares this with the original number. If they are equal, then the number is an Armstrong number.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

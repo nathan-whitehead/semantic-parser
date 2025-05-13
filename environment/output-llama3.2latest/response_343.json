@@ -1,0 +1,8 @@
+{
+  "task_id": 343,
+  "code": "python\ndef candidate(s):\n    # Initialize counters for digits and letters\n    digit_count = 0\n    letter_count = 0\n    \n    # Iterate over each character in the string\n    for char in s:\n        # Check if the character is a digit\n        if char.isdigit():\n            digit_count += 1\n        # Check if the character is an alphabet (not just English alphabets)\n        elif '\\u0400' <= char < '\\u10ff': \n            letter_count += 1\n    \n    # Return the counts of digits and letters\n    return digit_count, letter_count",
+  "explanation": "Explanation\n-----------\n\nThe code provided counts the number of digits and letters in a string, but it incorrectly handles non-English alphabets. It only checks if a character is an alphabet using `char.isalpha()`, which returns True for any Unicode character that is classified as an alphabet, regardless of its script or language. This causes the function to count certain characters incorrectly.\n\nThe code also fails to return the counts in the correct order, as it first increments the letter count and then the digit count.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
+  "success": false
+}

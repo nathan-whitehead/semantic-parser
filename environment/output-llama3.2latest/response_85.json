@@ -1,0 +1,8 @@
+{
+  "task_id": 85,
+  "code": "import math\n\ndef candidate(r):\n    # Calculate the surface area using the formula 4 * \u03c0 * r^2\n    surface_area = 4 * math.pi * (r ** 2)\n    return surface_area",
+  "explanation": "**Explanation**\nThe function will calculate the surface area of a sphere using the formula `4 * \u03c0 * r^2`, where `r` is the radius of the sphere. The function takes the radius as an input and returns the calculated surface area. This approach assumes that the input radius is a non-negative number.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

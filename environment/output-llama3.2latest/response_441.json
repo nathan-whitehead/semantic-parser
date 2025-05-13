@@ -1,0 +1,8 @@
+{
+  "task_id": 441,
+  "code": "def candidate(side_length):\n    # Calculate the surface area of the cube\n    # using the formula: 6 * (side_length ^ 2)\n    surface_area = 6 * (side_length ** 2)\n    return surface_area",
+  "explanation": "**Explanation**\nThe function will calculate the surface area of a cube by using the formula for the surface area of a cube, which is 6 times the length of one side squared. The input to the function will be the length of one side of the cube. This function assumes that the input is a positive number.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

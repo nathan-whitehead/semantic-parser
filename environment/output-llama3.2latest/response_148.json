@@ -1,0 +1,8 @@
+{
+  "task_id": 148,
+  "code": "def candidate(n):\n    # Function to calculate the sum of digits for a given number\n    def sum_of_digits(num):\n        return sum(int(digit) for digit in str(num))\n\n    max_sum = 0\n    result = []\n    for i in range(1, n // 2 + 1):\n        remaining_sum = sum_of_digits(n - i)\n        \n        if remaining_sum > max_sum:\n            max_sum = remaining_sum\n            result = [(i, n - i)]\n        elif remaining_sum == max_sum and i < n - i:\n            # If the sums are equal, add this partition to the list\n            result.append((i, n - i))\n\n    # Sort the parts in descending order and return them\n    if not result:\n        raise ValueError(\"No valid partition found\")\n    else:\n        return sorted(result, key=lambda x: sum_of_digits(x[0]), reverse=True)",
+  "explanation": "**Explanation**\nThe original code attempts to solve the problem by iterating over all possible first parts of the division and updating the maximum sum and corresponding partition whenever a larger sum is found. However, it fails to consider the case where multiple partitions have the same maximum sum, leading to incorrect results.\n\nThe corrected function uses a different approach, where it generates all possible divisions and then calculates the sum of digits for each part. It keeps track of the partitions with the maximum sum and returns them in descending order.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 24, in <module>\n    assert candidate(35)==17\n           ^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

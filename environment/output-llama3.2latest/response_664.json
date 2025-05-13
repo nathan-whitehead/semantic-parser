@@ -1,0 +1,8 @@
+{
+  "task_id": 664,
+  "code": "def candidate(target):\n    \"\"\"\n    Calculate the average of even numbers up to a given even number.\n\n    Args:\n        target (int): The given even number.\n\n    Returns:\n        float: The average of even numbers up to the target.\n    \"\"\"\n    total = 0  # Initialize variable to store sum of even numbers\n    for num in range(2, target + 1, 2):  # Iterate over even numbers from 2 to target\n        total += num  # Add each number to the total\n    average = total / len(range(2, target + 1, 2))  # Calculate average by dividing sum by count of numbers\n    return average  # Return calculated average",
+  "explanation": "**Explanation**\nThis function calculates the sum of all even numbers up to a given even number and then divides by 2 to get the average. It starts from 2, checks if each number is even, and keeps adding it to the total until it reaches the target even number. The result is returned as the average.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

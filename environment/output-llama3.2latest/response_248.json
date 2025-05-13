@@ -1,0 +1,8 @@
+{
+  "task_id": 248,
+  "code": "# python\ndef candidate(n):\n    \"\"\"\n    Calculate the harmonic sum of n.\n\n    Args:\n        n (int): The upper limit for the harmonic sum calculation.\n\n    Returns:\n        float: The calculated harmonic sum.\n    \"\"\"\n    # Initialize the sum variable to 0\n    total_sum = 0\n    \n    # Loop through each number from 1 to n\n    for i in range(1, n + 1):\n        # Add the reciprocal of i to the sum\n        if i != 0:\n            total_sum += 1 / i\n    \n    # Return the calculated harmonic sum as a float\n    return round(total_sum,4)",
+  "explanation": "Explanation\n==========\n\nThe code provided attempts to calculate the harmonic sum of n-1 using a simple loop that adds the reciprocals of numbers from 1 to n-1. However, this approach is incorrect because it only considers up to n-1 terms and then returns a rounded value. To fix this, we need to modify the function to consider all numbers in the range.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 24, in <module>\n    assert candidate(7) == 2.5928571428571425\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

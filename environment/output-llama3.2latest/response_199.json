@@ -1,0 +1,8 @@
+{
+  "task_id": 199,
+  "code": "def candidate(n):\n    # Handle edge cases where n is less than or equal to 0\n    if n <= 0:\n        return 0\n    \n    # Initialize result with the most significant bit (the leftmost bit) being set\n    result = 1\n    \n    # Use bitwise shift operator to double the current result until it exceeds n\n    while (result << 1) <= n:\n        result <<= 1\n        \n    # Return the highest power of 2 if result equals n, otherwise return result - 1 is not needed as result will be correct in this case.\n    return result",
+  "explanation": "Explanation\n==========\n\nThe provided function attempts to find the highest power of 2 less than or equal to a given number. However, it contains an incorrect condition for returning the result when `result` equals `n`. The correct approach should be to return `result` directly if `result` is equal to `n`, as this ensures that we get the highest power of 2 when `n` itself is a power of 2.\n\nCode\n-----",
+  "num_iterations": 5,
+  "error_msg": null,
+  "success": true
+}

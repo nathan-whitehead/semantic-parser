@@ -1,0 +1,8 @@
+{
+  "task_id": 475,
+  "code": "def candidate(counter_list):\n    # Define a function to extract and return the value from each counter dictionary\n    def get_value(counter):\n        # Return the key-value pair as a tuple\n        return (counter[0], counter[1])\n\n    # Sort the list of counters based on their values\n    sorted_list = sorted(counter_list.items(), key=get_value, reverse=True)\n\n    # Return the sorted list of counters\n    return sorted_list",
+  "explanation": "Explanation\n------------\n\nThe provided code defines a function `candidate` that sorts a list of counter dictionaries based on their values. However, the issue lies in the fact that the `get_value` function is returning the value as an integer, but the test case is expecting it to be a string. The corrected code returns only the key-value pairs of the counters.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 13, in <module>\n    assert candidate({'Math':81, 'Physics':83, 'Chemistry':87})==[('Chemistry', 87), ('Physics', 83), ('Math', 81)]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

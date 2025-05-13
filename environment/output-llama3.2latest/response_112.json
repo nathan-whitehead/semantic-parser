@@ -1,0 +1,8 @@
+{
+  "task_id": 112,
+  "code": "import math\n\ndef candidate(radius, height):\n    # Calculate the circumference of the base (2\u03c0r)\n    base_circumference = 2 * math.pi * radius\n    \n    # Calculate the perimeter as the sum of the base circumference and twice the lateral surface area per unit height\n    return base_circumference + 2 * math.pi * radius * height",
+  "explanation": "Explanation\n-----------\n\nThe issue with the provided code is that it calculates the lateral surface area of a cylinder, which includes the height of the cylinder. However, the perimeter of a cylinder only includes the circumference of its base and the curve of its lateral surface. The correct formula for the perimeter of a cylinder should be `2\u03c0r + 2\u03c0rh`, where `h` is the height of the cylinder.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 10, in <module>\n    assert candidate(2,4) == 12\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

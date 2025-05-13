@@ -1,0 +1,8 @@
+{
+  "task_id": 499,
+  "code": "def candidate(radius):\n    \"\"\"\n    Calculate the diameter of a circle given its radius.\n\n    Args:\n        radius (float): The radius of the circle.\n\n    Returns:\n        float: The diameter of the circle.\n    \"\"\"\n    # Check if radius is a non-negative number\n    if radius < 0:\n        raise ValueError(\"Radius cannot be negative\")\n    \n    # Calculate diameter using formula\n    diameter = 2 * radius\n    \n    return diameter",
+  "explanation": "**Explanation**\nThe function will calculate the diameter of a circle given its radius. The formula for the diameter is `diameter = 2 * radius`. This function takes one argument, `radius`, and returns the calculated diameter as a float value. No input validation or error checking is performed.\n\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

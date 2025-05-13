@@ -1,0 +1,8 @@
+{
+  "task_id": 301,
+  "code": "def candidate(d, depth=1):\n    # Initialize max_depth if it doesn't exist\n    max_depth = depth\n    \n    # Iterate over each key-value pair in the dictionary\n    for k, v in d.items():\n        # If the value is also a dictionary, recursively call candidate on it\n        if isinstance(v, dict):\n            # Update max_depth if the current depth is greater\n            max_depth = max(max_depth, candidate(v, depth + 1))\n    \n    return max_depth",
+  "explanation": "**Explanation**\nThis function calculates the depth of a dictionary by recursively traversing its nested structure. It uses a recursive approach to check how many levels deep each key's value is, and keeps track of the maximum depth encountered so far.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

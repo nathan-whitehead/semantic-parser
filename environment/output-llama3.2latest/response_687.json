@@ -1,0 +1,8 @@
+{
+  "task_id": 687,
+  "code": "def candidate(a, b):\n    # Base case: if b is 0, return a (since a is now the gcd)\n    if b == 0:\n        return a\n    \n    # Recursive case: call the function with b and the remainder of a divided by b\n    else:\n        # Calculate the remainder of a divided by b\n        r = a % b\n        \n        # Call the function with b and r, and return the result\n        return candidate(b, r)",
+  "explanation": "Explanation\n================\n\nThis function uses recursion to find the greatest common divisor (GCD) of two integers. The GCD is calculated by recursively dividing the larger number by the smaller one, until the remainder becomes zero. The last non-zero remainder is the GCD.\n\nPython\n------",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

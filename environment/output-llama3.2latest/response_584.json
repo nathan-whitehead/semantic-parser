@@ -1,0 +1,8 @@
+{
+  "task_id": 584,
+  "code": "import re\n\ndef candidate(sentence):\n    # Regular expression pattern to match adverbs\n    pattern = r'\\b(an|very|well|extremely|really)\\b'\n    \n    # Find all matches of the pattern in the sentence\n    adverbs = re.findall(pattern, sentence)\n    \n    # Return a list of positions of the found adverbs\n    return [f\"{i+1}:{word}\" for i, word in enumerate(adverbs)]",
+  "explanation": "Explanation\n------------\n\nThe provided code has a naming conflict and contains incorrect variable names. The function `find_adverbs` should be used instead of `candidate`. Also, the variable `advers` should be corrected to `adverbs` in the list comprehension.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 13, in <module>\n    assert candidate(\"Clearly, he has no excuse for such behavior.\") == '0-7: Clearly'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

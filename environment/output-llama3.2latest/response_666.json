@@ -1,0 +1,8 @@
+{
+  "task_id": 666,
+  "code": "def candidate(string, character):\n    # Initialize a counter to keep track of occurrences\n    count = 0\n    \n    # Iterate through each character in the string\n    for char in string:\n        # Check if the current character matches the target character\n        if char == character:\n            # Increment the counter if it matches\n            count += 1\n            \n    # Return the final occurrence count\n    return count",
+  "explanation": "**Explanation**\nThe function will take two parameters: `string` and `character`. It will iterate through each character in the string, incrementing a counter whenever it encounters the specified character. The final count is then returned by the function.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

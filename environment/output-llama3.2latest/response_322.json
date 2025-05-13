@@ -1,0 +1,8 @@
+{
+  "task_id": 322,
+  "code": "def candidate(lst):\n    # Find the minimum value in the list\n    min_val = min(lst)\n    \n    # Use index() function to get the position(s) of min_val in lst\n    # If there are multiple positions, return them as a list\n    return [i for i, x in enumerate(lst) if x == min_val]",
+  "explanation": "**Explanation**\nThis function finds all index positions of the minimum value in a given list. It uses Python's built-in min() and index() functions to achieve this. The approach is simple and efficient, with a time complexity of O(n), where n is the length of the input list.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 868,
+  "code": "def candidate(s):\n    # Split the string into words\n    words = s.split()\n    \n    # Check if the list of words is not empty\n    if len(words) > 0:\n        # Return the length of the last word\n        return len(words[-1])\n    else:\n        # If the string is empty, return 0\n        return 0",
+  "explanation": "**Explanation**\nThis function takes a string as input and returns the length of the last word. It uses the `split()` method to split the string into words and then returns the length of the last word using indexing.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

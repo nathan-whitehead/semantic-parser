@@ -1,0 +1,8 @@
+{
+  "task_id": 818,
+  "code": "def candidate(s):\n    # Initialize counter for lowercase letters\n    count = 0\n    \n    # Iterate over each character in the string\n    for char in s:\n        # Check if character is a lowercase letter\n        if char.islower():\n            # Increment counter if it's a lowercase letter\n            count += 1\n            \n    # Return the count of lowercase letters\n    return count",
+  "explanation": "**Explanation**\nThis function takes a string as input and returns the number of lowercase letters in the string. It uses a simple approach by iterating over each character in the string and checking if it is a lowercase letter using Python's built-in `islower()` method. The count of lowercase letters is then returned.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

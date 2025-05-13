@@ -1,0 +1,8 @@
+{
+  "task_id": 422,
+  "code": "def candidate(n):\n    \"\"\"\n    Calculate the average of cubes of the first n natural numbers.\n    \n    Args:\n        n (int): The number of terms to calculate the average for.\n    \n    Returns:\n        float: The average of cubes of the first n natural numbers.\n    \"\"\"\n    # Initialize sum variable to store sum of cubes\n    total = 0\n    \n    # Generate cubes and sum them up using a loop\n    for i in range(1, n + 1):\n        # Calculate cube of current number and add it to total\n        total += i ** 3\n    \n    # Calculate average by dividing sum by n\n    average = total / n\n    \n    return average",
+  "explanation": "**Explanation**\nThis function calculates the average of cubes of the first n natural numbers. It uses a simple approach by generating the cubes and summing them up, then dividing by the number of terms (n). The result is returned as a float value.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

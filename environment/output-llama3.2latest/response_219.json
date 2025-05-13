@@ -1,0 +1,8 @@
+{
+  "task_id": 219,
+  "code": "def candidate(t, k):\n    \"\"\"\n    Extract maximum and minimum k elements from a given tuple.\n    \n    Args:\n        t (tuple): The input tuple.\n        k (int): The number of elements to extract.\n        \n    Returns:\n        list: A list containing the minimum and maximum k elements in sorted order.\n    \"\"\"\n    # Sort the tuple in ascending order\n    sorted_t = sorted(t)\n    \n    # Select the first k elements as min_k\n    min_k = sorted_t[:k]\n    \n    # Calculate the start index for selecting max_k\n    start_index = len(min_k)\n    \n    # If max_k is not enough to fill the tuple, fill it with the rest of the tuple\n    if len(sorted_t) - start_index < k:\n        max_k = sorted_t[start_index:]\n    else:\n        # Select the next k elements as max_k\n        max_k = sorted_t[start_index:start_index + k]\n    \n    return min_k + max_k[::-1]  # Reverse max_k to maintain order",
+  "explanation": "**EXPLANATION**\nThe code has several issues. It sorts the entire tuple and then selects the middle elements as min_k and max_k, but it doesn't handle the case where k is greater than half of the tuple length. Also, the selection process for max_k and min_k can result in duplicate values.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 30, in <module>\n    assert candidate((5, 20, 3, 7, 6, 8), 2) == (3, 5, 8, 20)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

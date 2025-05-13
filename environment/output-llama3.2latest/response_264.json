@@ -1,0 +1,8 @@
+{
+  "task_id": 264,
+  "code": "def candidate(breed_size, human_year):\n    \"\"\"\n    Calculates a dog's age in human years based on its breed and size.\n    \n    Args:\n        breed_size (str): The size of the dog ('small', 'medium', or 'large').\n        human_year (int): The number of human years to calculate dog age for.\n        \n    Returns:\n        int: The calculated dog age in human years.\n    \"\"\"\n    # Assign a multiplier based on the dog's breed\n    if breed_size == 'small':\n        return round(human_year * 7 / 2.5)\n    elif breed_size == 'medium':\n        return round(human_year * 2)\n    elif breed_size == 'large':\n        return round(human_year * 5)\n    else:\n        raise ValueError(\"Invalid breed size. Please enter 'small', 'medium', or 'large'.\")",
+  "explanation": "Explanation\n-----------\n\nThe generated code attempts to calculate a dog's age in human years based on its breed and size. However, the function requires two arguments: `breed_size` and `human_year`, but does not account for when these two variables are passed to the function.\n\nTo fix this issue, we need to modify the function to accept both `breed_size` and `human_year` as required positional arguments.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate(12)==61\n           ~~~~~~~~~^^^^\nTypeError: candidate() missing 1 required positional argument: 'human_year'\n\n",
+  "success": false
+}

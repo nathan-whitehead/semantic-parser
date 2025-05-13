@@ -1,0 +1,8 @@
+{
+  "task_id": 128,
+  "code": "def candidate(words, n):\n    # Validate if 'n' is a non-negative integer\n    if not isinstance(n, int) or n < 0:\n        raise ValueError(\"The 'n' parameter must be a non-negative integer.\")\n    \n    # Initialize an empty shortlist and a set of unique words for efficient lookup\n    shortlisted = []\n    word_set = set()\n    \n    # Iterate through each word in the list\n    for word in words:\n        # Check if the word is a string and its length is greater than n\n        if not isinstance(word, str) or len(word) <= n:\n            continue\n        \n        # Add the word to the shortlisted words\n        if word not in word_set:\n            shortlisted.append(word)\n            word_set.add(word)\n    \n    # Return the shortlisted words\n    return shortlisted",
+  "explanation": "**Explanation**\nThe original code attempts to shortlist words that are longer than `n` from a given list of words. However, it raises an error when the input `n` is not a non-negative integer. To fix this, we need to ensure that `n` is validated correctly and handle cases where `n` is less than 0.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 24, in <module>\n    assert candidate(3,\"python is a programming language\")==['python','programming','language']\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 4, in candidate\n    raise ValueError(\"The 'n' parameter must be a non-negative integer.\")\nValueError: The 'n' parameter must be a non-negative integer.\n\n",
+  "success": false
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 956,
+  "code": "import re\n\ndef candidate(s):\n    # Split the string into words using space as the delimiter\n    words = s.split()\n    \n    # Initialize an empty list to store the split words with uppercase letters replaced\n    result = []\n    \n    # Iterate over each word in the input string\n    for word in words:\n        # Check if the first character of the word is uppercase\n        if word[0].isupper():\n            # If it is, convert the rest of the word to lowercase and add it to the result list\n            result.append(word[0].lower() + word[1:].lower())\n        else:\n            # If not, just append the original word to the result list\n            result.append(word)\n    \n    # Return the resulting list of split words with uppercase letters replaced\n    return result",
+  "explanation": "Explanation\n-----------\n\nThe provided code attempts to split the input string at uppercase letters by using regex. However, it incorrectly uses the `sub` method, which replaces occurrences of a pattern in the string, rather than splitting the string into substrings separated by the pattern.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 23, in <module>\n    assert candidate(\"LearnToBuildAnythingWithGoogle\") == ['Learn', 'To', 'Build', 'Anything', 'With', 'Google']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

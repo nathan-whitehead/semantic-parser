@@ -1,0 +1,8 @@
+{
+  "task_id": 388,
+  "code": "def candidate(n):\n    # Handle edge cases\n    if n < 0:\n        raise ValueError(\"Input must be a non-negative integer.\")\n    \n    # Initialize the power of 2 to 1 (which is the lowest power of 2)\n    power = 1\n    \n    # Keep doubling the power until we exceed n\n    while power <= n:\n        power *= 2\n\n    # The highest power of 2 less than or equal to n is the last power before exceeding n\n    return power // 2 - 1",
+  "explanation": "**EXPLANATION**\nThe original code has a flaw in its logic for calculating the highest power of 2 less than or equal to n. It incorrectly returns different values based on whether the current power is divisible by 4, which is not a valid approach. A correct approach would be to continuously double the power until it exceeds n, and then return the previous power.\n\n**PYTHON**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(10) == 8\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

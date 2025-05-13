@@ -1,0 +1,8 @@
+{
+  "task_id": 354,
+  "code": "def candidate(a1, d, n):\n    \"\"\"\n    Calculate the nth term of an arithmetic progression.\n    \n    Parameters:\n    a1 (float): First term of the progression\n    d (float): Common difference between terms\n    n (int): Term number to calculate\n    \n    Returns:\n    float: The nth term of the arithmetic progression\n    \"\"\"\n    # Calculate the nth term using the formula: a_n = a_1 + (n - 1) * d\n    return a1 + (n-2)*d",
+  "explanation": "Explanation\n-----------\n\nThe code is attempting to calculate the nth term of an arithmetic progression using the formula a_n = a_1 + (n - 1) * d. However, there was an error in indexing. The correct function should return the value at index n-1 instead of just calculating the nth term.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(1,5,2)==9\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

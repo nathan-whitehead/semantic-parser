@@ -1,0 +1,8 @@
+{
+  "task_id": 745,
+  "code": "def candidate(lower, upper):\n    \"\"\"\n    Find numbers within a given range where every number is divisible by every digit it contains.\n    \n    Args:\n        lower (int): The lower limit of the range (inclusive).\n        upper (int): The upper limit of the range (inclusive).\n        \n    Returns:\n        list: A list of numbers in the range from `lower` to `upper` that are divisible by all their digits.\n    \"\"\"\n    \n    # Define a helper function to check if a number is divisible by all its digits\n    def is_divisible(num):\n        for digit in str(num):\n            # Skip division by zero and negative values\n            if int(digit) <= 0:\n                return False\n            if num % int(digit) != 0:\n                return False\n        return True\n    \n    # Initialize an empty list to store the result\n    result = []\n    \n    # Check numbers in the range from lower to upper (inclusive)\n    for i in range(lower, upper+1):\n        if is_divisible(i):\n            result.append(i)\n    \n    return result",
+  "explanation": "**Explanation**\nThe original code has a logical error in the `candidate` function. The function should take two arguments (lower and upper limits) instead of just one, to specify the range. Also, there's an incorrect assumption about the divisibility check, which can lead to incorrect results.\n\n**python**",
+  "num_iterations": 4,
+  "error_msg": null,
+  "success": true
+}

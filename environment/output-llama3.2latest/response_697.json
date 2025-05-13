@@ -1,0 +1,8 @@
+{
+  "task_id": 697,
+  "code": "def candidate(lst):\n    # Use filter to get only even numbers from the list\n    even_nums = list(filter(lambda x: x % 2 == 0, lst))\n    \n    # Count the number of elements in the filtered list\n    count_even = len(even_nums)\n    \n    return count_even",
+  "explanation": "**Explanation**\nThe provided problem requires writing a Python function that takes a list as input and returns the count of even numbers present in it. The solution utilizes lambda functions, which are small anonymous functions that can be defined inline within a larger expression. This approach is concise and efficient for solving such problems.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 805,
+  "code": "def candidate(lst):\n    \"\"\"\n    Find the list in a list of lists whose sum of elements is the highest.\n    \n    Parameters:\n    lst (list): A list of lists\n    \n    Returns:\n    list: The sublist with the highest sum\n    \"\"\"\n    # Calculate the sum of each sublist and store them in a dictionary\n    sublst_sums = {i: sum(sublst) for i, sublst in enumerate(lst)}\n    \n    # Find the maximum sum that is greater than or equal to the initial max_sum\n    if not lst:\n        return None  # Return None instead of an empty list\n    else:\n        max_sum = max(sublst_sums.values())\n    \n    # Return all corresponding sublists with the highest sum\n    for i, total in sublst_sums.items():\n        if total == max_sum and total != min(sublst_sums.values()):\n            return lst[i]\n\n    return None",
+  "explanation": "**Explanation**\nThe original code calculates the sum of each sublist and stores them in a dictionary. It then finds the maximum sum that is greater than or equal to the initial max_sum, but it does not handle the case where all sublists have the same maximum sum correctly. The test case provided indicates that this issue causes the function to return an empty list when it should return the sublists with the highest sum.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 29, in <module>\n    assert candidate([[2,3,1]])==[2,3,1]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

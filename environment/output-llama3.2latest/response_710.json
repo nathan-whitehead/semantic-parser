@@ -1,0 +1,8 @@
+{
+  "task_id": 710,
+  "code": "def candidate(record):\n    # Check if the record has at least two elements to avoid index errors\n    if len(record) < 2:\n        raise ValueError(\"Record must have at least two elements\")\n    \n    # Return the initial and last values of the record\n    return record[0], record[-1]",
+  "explanation": "**Explanation**\nThis function takes a tuple as an argument, representing a database record. It returns two values: the first element of the tuple (representing the initial value) and the last element of the tuple (representing the final value). This is useful for accessing metadata or other non-actual data within a tuple.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

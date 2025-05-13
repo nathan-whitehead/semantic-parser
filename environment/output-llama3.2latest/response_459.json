@@ -1,0 +1,8 @@
+{
+  "task_id": 459,
+  "code": "import re\n\ndef candidate(input_string):\n    \"\"\"\n    Removes all uppercase substrings from the input string.\n    \n    Args:\n        input_string (str): The string from which to remove uppercase substrings.\n    \n    Returns:\n        str: The input string with all uppercase substrings removed.\n    \"\"\"\n    # Use sub() from re module to replace all occurrences of uppercase substrings\n    output_string = re.sub(r'[A-Z]+', '', input_string)\n    return output_string",
+  "explanation": "Explanation\n-----------\n\n\nThe code provided attempts to remove all uppercase substrings from the input string, but it does not handle the case where the entire input string is uppercase. The current implementation only removes single characters, and when applied to an entire uppercase string, results in an empty output.\n\n\nCode\n----",
+  "num_iterations": 3,
+  "error_msg": null,
+  "success": true
+}

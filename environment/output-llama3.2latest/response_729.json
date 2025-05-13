@@ -1,0 +1,8 @@
+{
+  "task_id": 729,
+  "code": "def candidate(list1, list2):\n    # Use map to apply the addition operation to each pair of elements from the input lists\n    added_list = list(map(lambda x, y: x + y, list1, list2))\n    \n    # Return the resulting list with summed elements\n    return added_list",
+  "explanation": "**Explanation**\nThis function uses Python's built-in `map` function in combination with a lambda function to add corresponding elements from two lists. The approach is to use `map` to apply the addition operation to each pair of elements from the input lists, effectively creating a new list with the summed results.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

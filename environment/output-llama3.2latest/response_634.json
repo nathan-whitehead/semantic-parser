@@ -1,0 +1,8 @@
+{
+  "task_id": 634,
+  "code": "def candidate(n):\n    # Initialize sum variable to zero\n    total_sum = 0\n    \n    # Loop through the first n even natural numbers\n    for i in range(2, 2*n+1, 2):\n        # Calculate fourth power of current number and add it to total sum\n        total_sum += i ** 4\n        \n    # Return total sum\n    return total_sum",
+  "explanation": "**Explanation**\nThis function calculates the sum of the fourth power of the first n even natural numbers. It uses a for loop to iterate over the range of even numbers from 2 to 2n, calculates their fourth power using the exponentiation operator (**), and adds it to the total sum.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

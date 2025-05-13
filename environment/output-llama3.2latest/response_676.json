@@ -1,0 +1,8 @@
+{
+  "task_id": 676,
+  "code": "import re\n\ndef candidate(s):\n    # Use re.sub to replace all non-alphanumeric characters with an empty string\n    return re.sub('[^a-zA-Z0-9_]', '', s)",
+  "explanation": "**Explanation**\nThe provided function uses regular expressions to filter out non-alphanumeric characters from a given string. It returns a new string containing only alphanumeric characters and underscores. The approach is to use the `re.sub` method with a regular expression pattern that matches any character that is not alphanumeric or an underscore.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

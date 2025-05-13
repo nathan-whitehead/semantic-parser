@@ -1,0 +1,8 @@
+{
+  "task_id": 64,
+  "code": "def candidate(tuples_list):\n    \"\"\"\n    Sorts a list of tuples using Python's sorted function with a custom key.\n    \n    Args:\n        tuples_list (list): A list of tuples to be sorted.\n    \n    Returns:\n        list: The sorted list of tuples.\n    \"\"\"\n\n    # Define a lambda expression that returns the first element for comparison\n    def get_tuple_first_component(tup):\n        return tup[0]\n\n    # Use the built-in sorted function with the custom key to sort in ascending order\n    return sorted(tuples_list, key=get_tuple_first_component)",
+  "explanation": "Explanation\n================\n\nThe original code was attempting to sort a list of tuples using Python's built-in `sorted` function with a custom key defined by a lambda expression. However, the lambda expression was returning two values (the first and second elements of each tuple) instead of one value for comparison, causing the sorting to be unstable.\n\nCode\n------",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate([('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])==[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

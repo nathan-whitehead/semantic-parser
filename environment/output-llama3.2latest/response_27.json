@@ -1,0 +1,8 @@
+{
+  "task_id": 27,
+  "code": "def candidate(strings):\n    # Use list comprehension to filter out digits from each string\n    return [''.join([c for c in s if not c.isdigit()]) \n            for s in strings]",
+  "explanation": "**Explanation**\nThe `candidate` function takes a list of strings as input and returns a new list with all digits removed. It uses a list comprehension to iterate over each string in the input list, and for each string, it uses another list comprehension to create a new list that only includes characters that are not digits. This approach ensures that the original input is not modified.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

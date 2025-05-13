@@ -1,0 +1,8 @@
+{
+  "task_id": 92,
+  "code": "def candidate(seq):\n    \"\"\"\n    Checks if the given number is undulating or not.\n    \n    Args:\n        seq (list or str): A sequence of integers or characters to check.\n    \n    Returns:\n        bool: True if the sequence is undulating, False otherwise.\n    \"\"\"\n\n    # Convert input to list if it's a string and filter out non-numeric values\n    seq = [x for x in seq if isinstance(x, (int, float))]\n\n    # Check if the sequence has less than 3 elements, it's considered undulating\n    if len(seq) < 3:\n        return True\n\n    # Calculate the absolute differences between consecutive numbers\n    diffs = [abs(x - y) for x, y in zip(seq, seq[1:]) if isinstance(x, (int, float)) and isinstance(y, (int, float))]\n\n    # Check if all differences are equal and not zero\n    return len(set(diffs)) == 1 and 0 not in diffs",
+  "explanation": "**EXPLANATION**\nThe original code has a logic error. It tries to calculate the absolute differences between consecutive elements of the sequence, but it fails when the sequence contains characters instead of integers. We need to add input validation to ensure that only sequences of numbers are processed.\n\nTo fix this issue, we can modify the function to check if all elements in the sequence are numbers before attempting to calculate their differences.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 26, in <module>\n    assert candidate(\"1991\") == False\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

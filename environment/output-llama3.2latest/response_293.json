@@ -1,0 +1,8 @@
+{
+  "task_id": 293,
+  "code": "# python\n\ndef candidate(a, b):\n    \"\"\"\n    Calculate the length of the third side of a right-angled triangle.\n    \n    Parameters:\n    a (int or float): The length of one side of the triangle.\n    b (int or float): The length of the other side of the triangle.\n    \n    Returns:\n    int or float: The length of the third side of the triangle.\n    \"\"\"\n    # Check if the inputs are valid numbers\n    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):\n        raise ValueError(\"Both inputs must be numbers\")\n    \n    # Calculate the third side using the Pythagorean theorem\n    c = ((a**2 + b**2)**0.5)\n    \n    return c",
+  "explanation": "Explanation\n------------\n\nThe code provided attempts to calculate the third side of a right-angled triangle using the Pythagorean theorem. However, it does not meet the required naming convention for the function and raises an error because the function `candidate` is not defined.\n\nCode\n-----",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

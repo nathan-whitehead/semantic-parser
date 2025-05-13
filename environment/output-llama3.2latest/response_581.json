@@ -1,0 +1,8 @@
+{
+  "task_id": 581,
+  "code": "import math\n\ndef candidate(base_side_length, height):\n    \"\"\"\n    Calculate the surface area of a square pyramid.\n    \n    Parameters:\n    base_side_length (float): The length of the side of the square base.\n    height (float): The height of the pyramid.\n    \n    Returns:\n    float: The total surface area of the pyramid.\n    \"\"\"\n\n    # Calculate the slant height of one triangular side using Pythagorean theorem\n    slant_height = math.sqrt((base_side_length ** 2) / 4 + height ** 2)\n    \n    # Calculate the area of one triangular side\n    triangular_area = (base_side_length * slant_height) / 2\n    \n    # Calculate the total surface area by adding the areas of four triangular sides to the square base\n    total_surface_area = 4 * triangular_area + base_side_length ** 2\n    \n    return total_surface_area",
+  "explanation": "Explanation\n-----------\n\nThe original code had several issues: it imported the math module twice, used an unnecessary import statement for the slant height calculation, and did not properly calculate the total surface area. The corrected version of the function calculates the slant height using the Pythagorean theorem correctly and then multiplies it by half to get the area of one triangular side. It adds this value to the square base area multiplied by 4 to get the total surface area.\n\nPython",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 26, in <module>\n    assert candidate(3,4) == 33\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

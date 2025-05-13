@@ -1,0 +1,8 @@
+{
+  "task_id": 777,
+  "code": "# python\ndef candidate(arr):\n    \"\"\"\n    This function calculates the sum of non-repeated elements in a given array.\n    \n    Parameters:\n    arr (list): A list of integers.\n    \n    Returns:\n    int: The sum of non-repeated elements in the array.\n    \"\"\"\n    # Check if input is valid\n    if not isinstance(arr, list) or len(arr) != len(set(arr)):\n        raise ValueError(\"Input must be a list of unique integers.\")\n        \n    seen = set()\n    total_sum = 0\n    \n    for num in arr:\n        if num not in seen:\n            total_sum += num\n            seen.add(num)\n    \n    return total_sum\n\n# Example usage: \narr = [1,2,3,1,1,4,5,6]\nprint(candidate(arr))  # Output: 21",
+  "explanation": "Explanation\n-----------\n\nThe code was attempting to solve the problem of finding the sum of non-repeated elements in an array. However, it had several issues, including a lack of input validation and incorrect usage of sets. The error message indicates that the function is being called with two arguments (the array and the expected output), but the function definition only accepts one argument (the array).\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 28, in <module>\n    print(candidate(arr))  # Output: 21\n          ~~~~~~~~~^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 14, in candidate\n    raise ValueError(\"Input must be a list of unique integers.\")\nValueError: Input must be a list of unique integers.\n\n",
+  "success": false
+}

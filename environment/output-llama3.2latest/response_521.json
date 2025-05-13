@@ -1,0 +1,8 @@
+{
+  "task_id": 521,
+  "code": "def candidate(a, b, c):\n    # Check if all sides are different\n    if len(set([a, b, c])) == 3:\n        # Return True if it's a scalene triangle, False otherwise\n        return len(set([a, b, c])) == 3\n    else:\n        # If not all sides are different, check for other properties of triangles\n        # and return accordingly\n        return False",
+  "explanation": "**Explanation**\nThis function takes three sides of a triangle as input and checks if it's a scalene triangle (all sides different) by comparing them. It uses simple conditional statements to make the comparison. The result is returned as a boolean value indicating whether the triangle is scalene or not.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

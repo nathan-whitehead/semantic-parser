@@ -1,0 +1,8 @@
+{
+  "task_id": 391,
+  "code": "python\ndef candidate(*lists):\n    # Initialize an empty dictionary to store the result\n    result = {}\n    \n    # Iterate over each list in pairs\n    for i, (key, value) in enumerate(zip(lists[::2], lists[1::2])):\n        # If the current key is not a string, convert it to a string\n        if not isinstance(key, str):\n            key = ''.join(map(str, key))\n        \n        # If the current key does not exist in the result, create it as an empty dictionary\n        if key not in result:\n            result[key] = {}\n        \n        # Iterate over each element in the current list\n        for j, elem in enumerate(value):\n            # Assign the element to its corresponding index in the outer dictionary\n            result[key][j] = elem\n    \n    return result",
+  "explanation": "Explanation\n-----------\n\nThe original code attempts to convert multiple lists to a nested dictionary by iterating over the input lists in pairs. However, it contains an error where it tries to iterate over `zip(lists[::2], lists[1::2])` which will throw an error because `lists[1::2]` is empty when there is only one list provided as input.\n\nThe corrected code fixes this by iterating over each pair of input lists separately and handling the case where there are multiple lists.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
+  "success": false
+}

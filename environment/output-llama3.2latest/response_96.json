@@ -1,0 +1,8 @@
+{
+  "task_id": 96,
+  "code": "def candidate(n):\n    # Initialize a dictionary to store the count of divisors\n    divisors_count = {}\n    \n    # Iterate through all numbers from 1 to the square root of n\n    for i in range(1, int(n**0.5) + 1):\n        # Check if i is a divisor of n\n        if n % i == 0:\n            # If i is a divisor, increment its count in the dictionary\n            divisors_count[i] = divisors_count.get(i, 0) + 1\n            \n            # Also increment the count of its corresponding divisor (n // i)\n            if i != n // i:  \n                divisors_count[n // i] = divisors_count.get(n // i, 0) + 1\n    \n    # Return the total number of divisors\n    return sum(divisors_count.values())",
+  "explanation": "**Explanation**\nThe function `candidate` calculates the number of divisors of a given integer by iterating through all numbers from 1 to the square root of the input and checking for divisibility. It uses a dictionary to store the count of each divisor and returns the sum of these counts. This approach is efficient as it reduces the search space with each iteration.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

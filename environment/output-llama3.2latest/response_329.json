@@ -1,0 +1,8 @@
+{
+  "task_id": 329,
+  "code": "def candidate(lst):\n    # Initialize a counter to keep track of negative numbers\n    count = 0\n    \n    # Iterate over each number in the input list\n    for num in lst:\n        # Check if the current number is less than zero\n        if num < 0:\n            # If it's negative, increment the counter\n            count += 1\n    \n    # Return the total count of negative numbers found\n    return count",
+  "explanation": "**Explanation**\nThe provided Python function will take as input a list of integers and return the count of negative numbers within that list. It uses a simple approach by iterating through each element in the list, checking if it is less than zero, and incrementing a counter variable whenever such an element is found.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

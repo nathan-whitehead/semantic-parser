@@ -1,0 +1,27 @@
+Processing results
+Generating statistics
+Results Statistics:
+success_rate: 0.4548254620123203
+total_problems: 974
+successful_problems: 443
+avg_iterations: 4.166324435318275
+median_iterations: 6.0
+max_iterations: 6
+min_iterations: 1
+avg_successful_iterations: 1.9683972911963883
+median_successful_iterations: 1.0
+proportion_one_iteration: 0.5936794582392777
+proportion_more_than_one_iteration: 0.40632054176072235
+avg_failed_iterations: 6.0
+median_failed_iterations: 6.0
+successful_in_one: 0.27002053
+successful_in_more_than_one: 0.18480493
+
+
+Generating visualizations
+
+Processed 974 problems
+Success rate: 45.48%
+Average iterations: 4.17
+Proportion of cases with one iteration: 59.37%
+Proportion of cases with >1 iteration: 40.63%

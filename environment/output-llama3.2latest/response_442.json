@@ -1,0 +1,8 @@
+{
+  "task_id": 442,
+  "code": "python\ndef candidate(nums):\n    # Check if input is a list\n    if not isinstance(nums, list):\n        raise ValueError(\"Input must be a list\")\n    \n    # Use filter and len to count positive numbers in a more Pythonic way\n    pos_count = len(list(filter(lambda x: x > 0, nums)))\n    total_count = len(nums)\n    \n    # Return ratio of positives to total, or 1.0 if no positives found\n    return pos_count / total_count if total_count > 0 else 1.0",
+  "explanation": "Explanation\n----------\n\nThe original code attempts to calculate the ratio of positive numbers in a list by initializing two counters, `pos_count` and `total_count`, to zero. It then iterates through each number in the input list, incrementing either `pos_count` or `total_count` depending on whether the number is positive. However, this approach does not account for cases where the input list might be empty.\n\nThe error message indicates that the function fails when the input list contains zeros and the ratio of positives to total should be zero.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
+  "success": false
+}

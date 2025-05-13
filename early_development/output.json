@@ -1,0 +1,4 @@
+{
+  "explanation": "This function is a simple implementation of the Return 1 When Condition Is True idiom.",
+  "code": "def candidate():\n\tif True:\n\t\treturn 1\n\telse:\n\t\t# This branch will never be taken\n\t\tpass"
+}

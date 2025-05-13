@@ -1,0 +1,8 @@
+{
+  "task_id": 123,
+  "code": "def candidate(n):\n    def get_divisor_sum(num):\n        \"\"\"Return the sum of proper divisors of a number.\"\"\"\n        return sum(i for i in range(1, num) if num % i == 0)\n\n    def is_amicable(num):\n        \"\"\"Check if a number is amicable to another number.\"\"\"\n        divisor_sum = get_divisor_sum(num)\n        return get_divisor_sum(divisor_sum) == num and num != divisor_sum\n\n    total_sum = 0\n    for i in range(1, n + 1):\n        if is_amicable(i):\n            total_sum += i\n    return total_sum",
+  "explanation": "**Explanation**\nThe provided function uses an approach based on finding the sum of divisors for each number and checking if that sum is within the range. It will return the total sum of all amicable numbers up to the given limit.",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

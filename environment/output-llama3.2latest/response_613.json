@@ -1,0 +1,8 @@
+{
+  "task_id": 613,
+  "code": "def candidate(tuples_list):\n    \"\"\"\n    Return the maximum value in record list as tuple attribute in the given tuple list.\n    \n    The function filters out tuples that don't have at least one numeric value,\n    then uses the max function with a custom key to find the maximum total value.\n    \"\"\"\n    # Define a function to calculate the total value of each tuple\n    def get_total_value(tup):\n        \"\"\"Return the sum of numeric values in the tuple.\"\"\"\n        return sum(val for val in tup[1] if isinstance(val, (int, float)))\n    \n    # Filter tuples with at least one numeric value and use max with custom key\n    filtered_tuples = [tup for tup in tuples_list if all(isinstance(x, (int, float)) for x in tup[1])]\n    return max(filtered_tuples, key=get_total_value)",
+  "explanation": "**Explanation**\nThe generated code has a logical error. The line `any(isinstance(x, (int, float)) for x in tup[1])` is used to filter tuples with at least one numeric value. However, this approach doesn't work correctly when there are multiple non-numeric values in a tuple. To fix this issue, we need to modify the filtering condition to allow only tuples with all numeric values.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 17, in <module>\n    assert candidate([('key1', [3, 4, 5]), ('key2', [1, 4, 2]), ('key3', [9, 3])]) == [('key1', 5), ('key2', 4), ('key3', 9)]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

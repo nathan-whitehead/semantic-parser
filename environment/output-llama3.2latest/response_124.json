@@ -1,0 +1,8 @@
+{
+  "task_id": 124,
+  "code": "# python\nimport cmath\n\ndef candidate(a, b):\n    \"\"\"\n    Calculate the angle of a complex number.\n    \n    Parameters:\n    a (float): The real part of the complex number.\n    b (float): The imaginary part of the complex number.\n    \n    Returns:\n    float: The angle of the complex number in radians.\n    \"\"\"\n    # Create a complex number from the given parts\n    z = complex(a, b)\n    # Use cmath library's phase function to get the angle in radians\n    # and add pi/2 for negative imaginary part\n    if b < 0:\n        angle_radians = cmath.phase(z) + cmath.pi / 2\n    else:\n        angle_radians = cmath.phase(z)\n    return angle_radians",
+  "explanation": "**Explanation**\nThe provided code is close to correct but does not handle the case when `b` is zero or negative. In such cases, the angle function from the cmath library will return `0`. We need to add a condition to handle these cases.\n\n**Code**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 25, in <module>\n    assert candidate(0,1j)==1.5707963267948966\n           ~~~~~~~~~^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in candidate\n    if b < 0:\n       ^^^^^\nTypeError: '<' not supported between instances of 'complex' and 'int'\n\n",
+  "success": false
+}

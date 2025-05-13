@@ -1,0 +1,8 @@
+{
+  "task_id": 628,
+  "code": "def candidate(s):\n    # Initialize an empty list to store the result\n    result = []\n    \n    # Iterate over each character in the input string\n    for char in s:\n        # If the character is a space, replace it with the specified sequence\n        if char == ' ':\n            result.append('%20')\n        else:\n            # Otherwise, just append the character to the result list\n            result.append(char)\n    \n    # Join all characters in the result list into a single string\n    return ''.join(result)",
+  "explanation": "**EXPLANATION**\nThis function uses a simple substitution approach to replace all spaces in the input string with the specified sequence of characters. It iterates over each character in the string, and if it encounters a space, replaces it with the specified sequence. The result is then returned as a new string.\n\n**PYTHON**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

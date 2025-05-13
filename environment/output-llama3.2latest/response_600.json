@@ -1,0 +1,8 @@
+{
+  "task_id": 600,
+  "code": "def candidate(n):\n    # Perform bitwise AND operation between n and 1\n    # If result is 0, then n is even\n    return n & 1 == 0",
+  "explanation": "**Explanation**\nThis function uses bitwise operators to determine if a number is even. It works by performing a bitwise AND operation between the number and 1, then checking if the result is 0 (which it will be for even numbers).\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 217,
+  "code": "def candidate(s):\n    # Create an empty dictionary to store characters we've seen and their last indices\n    char_set = {}\n\n    # Iterate over the characters in the string\n    for i, char in enumerate(s):\n        # If this is not the first character and we've seen this character before\n        if char in char_set:\n            return char  # Return the repeating character immediately\n        else:\n            char_set[char] = i  # Mark this character as seen with its index\n\n    # If no repeats are found, return a sentinel value\n    return '\\0'",
+  "explanation": "Explanation\n-----------\n\nThe provided code attempts to find the first repeated character in a given string by iterating over each character and checking if it's already in the `char_set`. However, the issue lies in the fact that the function raises an error when no repeats are found, whereas the problem requires returning a specific value (in this case, '\\0') instead.\n\nCode\n----",
+  "num_iterations": 4,
+  "error_msg": null,
+  "success": true
+}

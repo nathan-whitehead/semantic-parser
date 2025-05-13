@@ -1,0 +1,8 @@
+{
+  "task_id": 383,
+  "code": "def candidate(n):\n    \"\"\"\n    Toggles all odd bits of a given number.\n    \n    Args:\n        n (int): The input number.\n    \n    Returns:\n        int: The result after toggling all odd bits.\n    \"\"\"\n    # Initialize the mask as 1 for each bit position\n    mask = 1\n    \n    # Loop through each bit position in the binary representation of n\n    while n > 0:\n        # Check if the current bit is set (1)\n        if n & 1:\n            # Toggle the corresponding bit in the mask\n            mask = ~mask\n        \n        # Shift both n and mask to the right by one bit\n        n >>= 1\n        mask <<= 1\n    \n    # Use bitwise XOR operator (^) to toggle all odd bits\n    result = n ^ mask\n    \n    return result",
+  "explanation": "Explanation\n-----------\n\nThe code is attempting to implement a function that toggles all odd bits of a given number. However, the implementation has several issues, including incorrect use of bitwise operators and an inefficient approach.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 30, in <module>\n    assert candidate(10) == 15\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

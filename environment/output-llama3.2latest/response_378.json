@@ -1,0 +1,8 @@
+{
+  "task_id": 378,
+  "code": "def candidate(input_list):\n    # Check if the input list is not empty\n    if len(input_list) > 0:\n        # Create a new list with the first element of the original list\n        new_list = [input_list[-1]]\n        \n        # Add all elements except the last one to the new list\n        for i in range(len(input_list) - 1):\n            new_list.append(input_list[i])\n    \n    return new_list",
+  "explanation": "Explanation\n-----------\n\nThe code was attempting to shift the last element of a list to the first position. However, the function was named `shift_last_to_first` but there was no corresponding `candidate` function defined anywhere in the script. The `candidate` function was needed to make the test pass.\n\nCode\n-----",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 839,
+  "code": "def candidate(tuples):\n    \"\"\"\n    Sorts a list of tuples alphabetically by their first item.\n    \n    Args:\n        tuples (list): A list of tuples to be sorted.\n    \n    Returns:\n        list: A new list with the tuples sorted alphabetically by their first item.\n    \"\"\"\n    return sorted(tuples, key=lambda x: x[0])",
+  "explanation": "**Explanation**\nThe function will take a list of tuples as input, and return a new list with the tuples sorted alphabetically by their first item. This is achieved using Python's built-in sorting functionality, which sorts elements in ascending order by default. The `key` parameter is used to specify that the tuples should be sorted based on the first item.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

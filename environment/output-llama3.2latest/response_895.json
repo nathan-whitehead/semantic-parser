@@ -1,0 +1,8 @@
+{
+  "task_id": 895,
+  "code": "def candidate(nums):\n    # Handle edge case where input list is empty\n    if not nums:\n        return 0\n\n    max_sum_left = [num for num in nums]\n    max_sum_right = [-num for num in nums]\n\n    # Dynamic programming loop to fill up dp arrays\n    for i in range(1, len(nums)):\n        max_sum_left[i] = max(max_sum_left[i-1], max_sum_right[i-1] + nums[i])\n\n    # Calculate maximum sum including any subsequence from either end\n    return max(sum(nums))  # this should always be greater than or equal to the result",
+  "explanation": "Explanation\n------------\n\nThe code provided attempts to solve the problem by using dynamic programming. However, it has several issues. The main problem is that when filling up the dp arrays for `max_sum_right`, it tries to access an index that does not exist because the list indices start at 0. Also, there's incorrect calculation in `max_inclusive` and `max_exclusive`. Finally, `max_sum_left[i]` should be max of `max_sum_left[i-1]` or `max_sum_right[i-1] + nums[i]`, not both.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate([1, 2, 9, 4, 5, 0, 4, 11, 6]) == 26\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/sandbox/temp_code.py\", line 14, in candidate\n    return max(sum(nums))  # this should always be greater than or equal to the result\nTypeError: 'int' object is not iterable\n\n",
+  "success": false
+}

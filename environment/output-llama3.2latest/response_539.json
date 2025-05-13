@@ -1,0 +1,8 @@
+{
+  "task_id": 539,
+  "code": "def candidate(bases, exponents):\n    \"\"\"\n    This function calculates the power of said number in bases raised to the corresponding number \n    in the index using map function.\n\n    Args:\n        bases (list): A list of numbers.\n        exponents (list): A list of exponents.\n\n    Returns:\n        list: A list containing the calculated powers.\n    \"\"\"\n    # Use zip to iterate over two lists simultaneously and apply exponentiation\n    return [b ** i for b, i in zip(bases, exponents)]",
+  "explanation": "Explanation\n----------\n\nThe issue with the provided code is that it's missing a clear separation between function parameters and the list comprehension. The `enumerate` function returns both the index and value of each element in the `bases` list, which can cause confusion when using it within a list comprehension.\n\nThe corrected version will use `zip` to iterate over two lists simultaneously and apply exponentiation on each pair. Additionally, docstrings are added to describe the purpose and functionality of the function.\n\n\npython",
+  "num_iterations": 4,
+  "error_msg": null,
+  "success": true
+}

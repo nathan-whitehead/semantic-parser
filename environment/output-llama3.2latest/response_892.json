@@ -1,0 +1,8 @@
+{
+  "task_id": 892,
+  "code": "import re\n\ndef candidate(s):\n    # Use regular expression to replace one or more spaces with a single space\n    return re.sub(' +', ' ', s)",
+  "explanation": "**EXPLANATION**\nThe function will take a string as input and use regular expressions to replace one or more whitespace characters with a single space. This approach is efficient because it uses built-in Python functionality rather than manual iteration over the string. The result will be a string with minimal extra spaces.\n\n**PYTHON**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

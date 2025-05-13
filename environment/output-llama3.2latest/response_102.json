@@ -1,0 +1,8 @@
+{
+  "task_id": 102,
+  "code": "def candidate(s):\n    \"\"\"\n    Convert snake case string to camel case string.\n    \n    Args:\n        s (str): The input string in snake case.\n    \n    Returns:\n        str: The equivalent camel case representation of the input string.\n    \"\"\"\n    # Split the input string into words and capitalize each word except the first one\n    words = [word.capitalize() for word in s.split('_')]\n    # Join the words together without any separators\n    return ''.join(words)",
+  "explanation": "**Explanation**\nThe function `candidate` takes a string as input and returns its equivalent camel case representation. It uses list comprehension to split the input string into words, capitalize each word except the first one, and join them together without any separators.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 424,
+  "code": "def candidate(strings):\n    # Use list comprehension to create a new list with only the rear index element of each string\n    return [s[-1] for s in strings]",
+  "explanation": "**Explanation**\nThis function takes a tuple of strings as input and returns a list containing the last character of each string. It iterates over the input tuple, for each string it extracts the last character using slicing (`string[-1]`) and adds it to the output list.",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 212,
+  "code": "def candidate(n):\n    # Initialize sum variable to zero\n    total_sum = 0\n    \n    # Loop through numbers from 1 to n (inclusive)\n    for i in range(1, n + 1):\n        # Raise current number to the power of 4 and add to total sum\n        total_sum += i ** 4\n        \n    # Return the final result\n    return total_sum",
+  "explanation": "**Explanation**\nThis function calculates the sum of the fourth power of all natural numbers from 1 to n. It uses a loop to iterate over each number, raises it to the power of 4, and accumulates the result in a variable. The final result is then returned by the function.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

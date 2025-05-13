@@ -1,0 +1,8 @@
+{
+  "task_id": 852,
+  "code": "def candidate(nums):\n    # Filter out negative numbers from the input list\n    return [num for num in nums if num >= 0]",
+  "explanation": "**Explanation**\nThe provided Python function removes negative numbers from a given list. It iterates through each element in the list, checks if the number is negative, and returns a new list with only the non-negative numbers. The approach used here is simple and efficient, making it suitable for most use cases.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

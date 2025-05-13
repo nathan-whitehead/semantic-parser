@@ -1,0 +1,8 @@
+{
+  "task_id": 932,
+  "code": "def candidate(strings):\n    # Create an empty set to store unique words\n    unique_words = set()\n\n    # Initialize an empty list to store result\n    result = []\n\n    # Iterate over each string in the input list\n    for string in strings:\n        # Split the string into words\n        words = string.split()\n\n        # Iterate over each word in the string\n        for word in words:\n            # If the word is not in the set, add it to the set and result\n            if word not in unique_words:\n                unique_words.add(word)\n                result.append(word)\n\n    # Return the list of unique words\n    return result",
+  "explanation": "**Explanation**\nThe function uses a set data structure to keep track of unique words. It iterates over each string in the input list, splits the string into words, and adds them to the set. If the word is already in the set, it means we've seen this word before and we can skip it.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

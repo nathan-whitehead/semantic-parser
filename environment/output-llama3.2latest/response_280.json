@@ -1,0 +1,8 @@
+{
+  "task_id": 280,
+  "code": "def candidate(arr, target):\n    \"\"\"\n    Searches for an element in the given array using sequential search.\n    \n    Args:\n        arr (list): The input list to be searched.\n        target: The value to be searched in the list.\n    \n    Returns:\n        tuple: A tuple containing a boolean value indicating whether the target is found and the index of the target if found, otherwise -1.\n    \"\"\"\n    # Iterate through each element in the array\n    for i in range(len(arr)):\n        # Check if the current element matches the target value\n        if arr[i] == target:\n            # Return a tuple containing True (indicating the target is found) and the index of the matched element\n            return (True, i)\n    # If no match is found, return (-1, False)\n    return (-1, False)",
+  "explanation": "# Explanation\nThe given code implements a sequential search algorithm to find an element in a list. However, the problem lies in the return type of the function. The function is expected to return a tuple containing a boolean value and the index of the target element if found. But currently, it only returns the index when the target element is found and -1 otherwise. \n\n# python",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

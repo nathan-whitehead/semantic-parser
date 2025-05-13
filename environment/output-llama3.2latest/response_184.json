@@ -1,0 +1,8 @@
+{
+  "task_id": 184,
+  "code": "def candidate(lst, target):\n    # Initialize a variable to store the count of numbers greater than the target\n    count = 0\n    \n    # Iterate through each element in the list\n    for num in lst:\n        # Check if the current number is strictly greater than the target\n        if num > target:\n            # If it is, increment the count\n            count += 1\n            \n    # Return False if no number is greater than the target and True otherwise\n    return count == 0",
+  "explanation": "**Explanation**\nThe provided code is missing a return statement when no number is greater than the target. Also, it should be checking if count equals zero or not to return False when no number is greater than the target.\n \n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 15, in <module>\n    assert candidate([220, 330, 500],200)==True\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

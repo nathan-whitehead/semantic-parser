@@ -1,0 +1,8 @@
+{
+  "task_id": 452,
+  "code": "def candidate(amount, original_price):\n    # Check if the given amount has lost value compared to the original price\n    if amount < original_price:\n        # Calculate and return the loss amount\n        return original_price - amount\n    else:\n        # Return None if no loss is found\n        return None",
+  "explanation": "**Explanation**\nThis function will determine whether the input amount has lost value (i.e., it's less than its original price) or not. If the amount is greater than or equal to its original price, the function returns `None`. The approach used here is a simple comparison of the current amount with its original price.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

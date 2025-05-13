@@ -1,0 +1,8 @@
+{
+  "task_id": 365,
+  "code": "def candidate(n):\n    # Initialize counter variable\n    count = 0\n    \n    # Convert integer to string to easily iterate over digits\n    str_n = str(abs(n))  # Use abs to handle negative numbers\n    \n    # Iterate over each character (digit) in the string and increment counter\n    for _ in str_n:\n        count += 1\n        \n    return count",
+  "explanation": "**Explanation**\nThe function `candidate` takes an integer as input and returns its digit count. The approach is to convert the integer into a string, iterate over each character (digit) in the string, and increment a counter variable for each digit found. This method is straightforward and efficient.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

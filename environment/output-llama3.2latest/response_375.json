@@ -1,0 +1,8 @@
+{
+  "task_id": 375,
+  "code": "def candidate(num, multiple):\n    # Calculate the difference between num and the next lower multiple of multiple\n    remainder = num % multiple\n    \n    # If the remainder is greater than zero, round up; otherwise, round down\n    if remainder > 0:\n        return (num + multiple) - multiple\n    else:\n        return num",
+  "explanation": "Explanation\n-----------\nThe given function is designed to round a number to the nearest multiple of a specific number. However, there are issues with the remainder calculation and the logic for rounding down or up. The current implementation does not correctly handle cases where the remainder is exactly half the multiple.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 11, in <module>\n    assert candidate(4722,10)==4720\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

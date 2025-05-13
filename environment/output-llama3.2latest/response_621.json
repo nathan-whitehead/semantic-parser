@@ -1,0 +1,8 @@
+{
+  "task_id": 621,
+  "code": "def candidate(s, k):\n    # Initialize an empty list to store the numeric values\n    nums = []\n    \n    # Iterate over each character in the input string\n    for char in s:\n        # Check if the character is a digit\n        if char.isdigit():\n            # If it's a digit, convert it to an integer and add it to the list\n            nums.append(int(char))\n        else:\n            # If it's not a digit, check if it's a numeric value (e.g., '98')\n            if any(c.isdigit() for c in char):\n                # Extract the numeric value from the string\n                num = ''.join(filter(str.isdigit, char)).lstrip('0') or 0\n                # Add the numeric value to the list\n                nums.append(num)\n    \n    # Increment each number by k and join them back into a single string\n    return ''.join(map(str, [i + k for i in nums]))",
+  "explanation": "Explanation\n-----------\n\nThe provided code attempts to increment the numeric values in a given string by a specified amount. However, it fails when encountering non-numeric characters in the input string. The issue lies in the fact that the `isdigit()` function only returns True for digits, and False otherwise.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate([\"MSM\", \"234\", \"is\", \"98\", \"123\", \"best\", \"4\"] , 6) == ['MSM', '240', 'is', '104', '129', 'best', '10']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

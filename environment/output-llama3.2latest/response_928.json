@@ -1,0 +1,8 @@
+{
+  "task_id": 928,
+  "code": "def candidate(date_str):\n    # Split the date string into year, month, and day components\n    year, month, day = date_str.split('-')\n    \n    # Return the formatted date string in \"dd-mm-yyyy\" format\n    return f\"{day}-{month}-{year}\"",
+  "explanation": "**Explanation**\nThe problem requires a simple function that takes a date string in the format \"yyyy-mm-dd\" and returns it in the format \"dd-mm-yyyy\". The approach is to use string slicing and concatenation to manipulate the input string. This function assumes that the input date is well-formed and does not contain any invalid characters.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

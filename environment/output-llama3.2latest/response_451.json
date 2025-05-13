@@ -1,0 +1,8 @@
+{
+  "task_id": 451,
+  "code": "import re\n\ndef candidate(s):\n    # Replace one or more whitespace characters with an empty string\n    return re.sub('\\s+', '', s)",
+  "explanation": "**Explanation**\nThe function removes all whitespaces from a given string using regular expressions. It uses the `sub()` function from Python's built-in `re` module, which replaces substrings matching a pattern with another substring. The pattern `\\s` matches any whitespace character.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

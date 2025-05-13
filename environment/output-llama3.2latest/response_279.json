@@ -1,0 +1,8 @@
+{
+  "task_id": 279,
+  "code": "def candidate(n):\n    \"\"\"\n    Calculate the nth decagonal number.\n    \n    Parameters:\n    n (int): The position of the decagonal number to calculate.\n    \n    Returns:\n    int: The nth decagonal number.\n    \"\"\"\n    # Check if input is a positive integer\n    if not isinstance(n, int) or n <= 0:\n        raise ValueError(\"Input must be a positive integer.\")\n        \n    # Calculate the nth decagonal number using the correct formula\n    return (10*n - 4)//3",
+  "explanation": "**Explanation**\nThe original code provided calculates the nth decagonal number using a formula that is mathematically incorrect. The correct formula for the nth decagonal number is given by (10n - 4)/3, where n is a positive integer.\n\nTo solve this problem, we will define a new function named `candidate` that takes an integer `n` as input and returns the nth decagonal number calculated using the correct formula.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 18, in <module>\n    assert candidate(3) == 27\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

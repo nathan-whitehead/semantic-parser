@@ -1,0 +1,8 @@
+{
+  "task_id": 717,
+  "code": "import math\n\ndef candidate(numbers):\n    # Check if the input list is empty\n    if not numbers:\n        raise ValueError(\"Input list cannot be empty\")\n\n    # Calculate the mean of the numbers\n    mean = sum(numbers) / len(numbers)\n    \n    # Initialize variables for variance calculation\n    sum_squared_diffs = 0\n    \n    # Iterate over each number in the list\n    for num in numbers:\n        # Check if the number is not numeric\n        if not isinstance(num, (int, float)):\n            raise ValueError(\"Input list must contain only numbers\")\n        \n        # Calculate the squared difference from the mean and add to sum\n        sum_squared_diffs += (num - mean) ** 2\n    \n    # Calculate the sample standard deviation as the square root of variance divided by n-1\n    return math.sqrt(sum_squared_diffs / (len(numbers) - 1))",
+  "explanation": "Explanation\n-----------\n\nThe code provided attempts to calculate the standard deviation of a list of numbers by first calculating the mean and then using it to find the variance. However, there seems to be an incorrect formula used for population standard deviation.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": null,
+  "success": true
+}

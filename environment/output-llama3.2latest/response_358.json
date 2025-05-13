@@ -1,0 +1,8 @@
+{
+  "task_id": 358,
+  "code": "def candidate(list1, list2):\n    # Use map() to apply the modulo operation to corresponding elements in both lists\n    result = list(map(lambda x: x[0] % x[1], zip(list1, list2)))\n    \n    return result\n\n# Example usage:\nlist1 = [17, 12, 22]\nlist2 = [11, 8, 10]\nprint(candidate(list1, list2))",
+  "explanation": "**Explanation**\nThe function uses the built-in `map()` and `lambda` functions in Python to apply the modulo operation to corresponding elements in two input lists. The `map()` function applies a given function to each item of an iterable (such as a list), effectively reducing it to a single output value. This approach is concise and expressive.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

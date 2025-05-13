@@ -1,0 +1,8 @@
+{
+  "task_id": 736,
+  "code": "def candidate(sorted_list, target):\n    \"\"\"\n    Locate the left insertion point for a specified value in sorted order.\n    \n    Parameters:\n    - sorted_list (list): A list of values in sorted order.\n    - target: The target value to find the insertion point for.\n    \n    Returns:\n    - int: The index where the target value can be inserted to maintain the sorted order.\n    \"\"\"\n    left, right = 0, len(sorted_list) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        if sorted_list[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n            \n    return left",
+  "explanation": "**Explanation**\nThe `candidate` function takes two parameters: a sorted list and a target value. It uses binary search to find the leftmost index where the target value can be inserted to maintain the sorted order.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

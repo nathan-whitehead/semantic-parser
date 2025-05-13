@@ -1,0 +1,8 @@
+{
+  "task_id": 905,
+  "code": "import math\n\ndef candidate(n):\n    \"\"\"\n    Calculate the sum of squares of binomial coefficients.\n    \n    Args:\n        n (int): The maximum exponent in the binomial expansion.\n    \n    Returns:\n        int: The sum of squares of binomial coefficients.\n    \"\"\"\n    # Initialize a variable to store the sum of squares\n    total = 0\n    \n    # Calculate sum of squares of binomial coefficients using comb and a more efficient approach\n    for i in range(n + 1):\n        # Binomial coefficient (n choose k) is n! / (k!(n-k)!)\n        # We can use the identity (1+x)^n = \u2211(n choose k)*x^k to simplify this calculation\n        total += math.comb(n, i) ** 2\n    \n    return total",
+  "explanation": "**Explanation**\nThe original code was missing the necessary import statement for the `math` module, which contains the `comb` function used to calculate binomial coefficients. The code also contained unnecessary calculations and variables.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": null,
+  "success": true
+}

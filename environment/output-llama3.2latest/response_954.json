@@ -1,0 +1,8 @@
+{
+  "task_id": 954,
+  "code": "def candidate(amount, rate=0):\n    \"\"\"\n    Calculate the profit of a given amount.\n\n    Args:\n        amount (float): The amount for which the profit needs to be calculated.\n        rate (float, optional): The rate at which the profit is calculated. Defaults to 0%.\n\n    Returns:\n        float or None: The calculated profit if the amount is positive, otherwise None.\n    \"\"\"\n    # Check if the amount is greater than 0\n    if amount > 0:\n        # Calculate and return the profit as a percentage of the rate plus the amount\n        return (amount * rate / 100) + amount\n    else:\n        # Return None if the amount is not positive\n        return None",
+  "explanation": "**Explanation**\nThe given code attempts to calculate the profit amount by multiplying the given amount with the rate. However, it does not correctly apply the formula for calculating profit which is: Profit = (Amount * Rate)/100 + Amount. The main issue lies in the calculation part where only Amount*Rate/100 was being calculated leaving out Addition of Amount from the equation. Also, 10% was taken as the default rate.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 20, in <module>\n    assert candidate(1500,1200)==300\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

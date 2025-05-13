@@ -1,0 +1,8 @@
+{
+  "task_id": 577,
+  "code": "def candidate(n):\n    # Create a dictionary to store calculated factorials for memoization\n    memo = {0: 1, 1: 1}\n\n    def factorial(x):\n        # If the factorial is already calculated, return it from the memo dictionary\n        if x in memo:\n            return memo[x]\n        \n        # Otherwise, calculate the factorial recursively and store it in the memo dictionary\n        result = 1\n        for i in range(2, x + 1):\n            result *= i\n            memo[i] = result\n        return result\n\n    # Calculate the factorial of n and convert it to a string to extract the last digit\n    fact_n = str(factorial(n))\n    \n    # Return the last digit by taking the remainder when divided by 10\n    return int(fact_n[-1])",
+  "explanation": "**Explanation**\nThis function calculates the factorial of a given number and returns the last digit. It uses a recursive approach with memoization to improve efficiency. The result is then converted to a string to easily extract the last character, which represents the last digit.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

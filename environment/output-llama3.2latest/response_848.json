@@ -1,0 +1,8 @@
+{
+  "task_id": 848,
+  "code": "def candidate(base1, base2, height):\n    # Calculate the area of the trapezium using the formula\n    area = (base1 + base2) * height / 2\n    return area",
+  "explanation": "**Explanation**\nThe function will calculate the area of a trapezium given its bases and height. The approach used is the formula for the area of a trapezium, which is (base1 + base2) * height / 2. This function takes three parameters: `base1`, `base2` and `height`.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 323,
+  "code": "def candidate(nums):\n    # Separate the positive and negative numbers into two lists\n    pos_nums = sorted([num for num in nums if num > 0], reverse=True)\n    neg_nums = sorted([num for num in nums if num < 0])\n\n    # Initialize an empty list to store the result\n    result = []\n\n    # Alternate between the positive and negative lists, adding elements to the result\n    while pos_nums and neg_nums:\n        result.append(pos_nums.pop(0))\n        result.append(neg_nums.pop(0))\n\n    # If there are remaining numbers in either list, append them to the result\n    if pos_nums:\n        result.extend(pos_nums)\n    if neg_nums:\n        result.extend(neg_nums)\n\n    return result",
+  "explanation": "Explanation\n-----------\n\nThe code generated does not include any input parameters for the function. However, in this case, a test case was provided that included an extra argument (10) which is causing the error.\n\nTo fix the issue, we need to add an input parameter to the function so it can accept both the array and the expected output value.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate([-5, -2, 5, 2, 4,\t7, 1, 8, 0, -8], 10) == [-5, 5, -2, 2, -8, 4, 7, 1, 8, 0]\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: candidate() takes 1 positional argument but 2 were given\n\n",
+  "success": false
+}

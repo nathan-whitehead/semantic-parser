@@ -1,0 +1,8 @@
+{
+  "task_id": 671,
+  "code": "def candidate(n):\n    # Initialize the result as 0\n    result = 0\n    \n    # Find the position of the rightmost unset bit\n    i = 0\n    while (n & (1 << i)) == 0:\n        i += 1\n    \n    # Calculate the value of the rightmost unset bit\n    mask = 1 << i  # Fix: no need to subtract 1\n    result = n & mask\n    \n    return result",
+  "explanation": "**EXPLANATION**\nThe code has an off-by-one error. The mask calculation `mask = (1 << i) - 1` will result in a value that is one less than the actual rightmost unset bit. This causes the function to return incorrect results.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(21) == 23\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

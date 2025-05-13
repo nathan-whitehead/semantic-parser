@@ -1,0 +1,8 @@
+{
+  "task_id": 532,
+  "code": "def candidate(str1, str2):\n    # Check if both inputs are strings\n    if not isinstance(str1, str) or not isinstance(str2, str):\n        raise TypeError(\"Both inputs must be strings\")\n    \n    # Remove any whitespace and convert to lowercase for comparison\n    str1 = ''.join(e for e in str1 if e.isalnum()).lower()\n    str2 = ''.join(e for e in str2 if e.isalnum()).lower()\n\n    # Check if both strings have the same length\n    if len(str1) != len(str2):\n        return False\n\n    # Sort both strings and compare them\n    return sorted(str1) == sorted(str2)",
+  "explanation": "**Explanation**\nThis function checks if two given strings are permutations of each other. A permutation is an arrangement of characters that can be formed by rearranging the characters of another string. The function uses Python's built-in sorting functionality to compare the two strings, which has a time complexity of O(n log n).\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

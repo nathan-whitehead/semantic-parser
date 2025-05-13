@@ -1,0 +1,8 @@
+{
+  "task_id": 137,
+  "code": "def candidate(nums):\n    \"\"\"\n    Calculate the ratio of zeroes in an array of integers.\n    \n    Args:\n        nums (list): A list of integers.\n    \n    Returns:\n        float: The ratio of zeroes in the input array.\n    \"\"\"\n    # Check for edge cases where the array is empty or contains only non-zero elements\n    if not nums:\n        return 0.0\n    \n    # Initialize counters for zeros and non-zeros\n    total_count = len(nums)\n    zeros = sum(1 for num in nums if num == 0)\n    \n    # Calculate and return the ratio of zeroes, avoiding division by zero\n    return float(zeros) / total_count if total_count > 0 else 0.0",
+  "explanation": "Explanation\n-----------\n\n\nThe provided code is close to the correct solution but has some issues with edge cases and return values.\n\n\nThe function `candidate` counts the number of zeros in the input array, but it does not correctly calculate the ratio when there are non-zero elements present. It also returns 0.0 when there are no zeros, even if there are non-zero elements, which is incorrect.\n\n\nTo fix these issues, we can modify the code to handle edge cases more accurately and ensure that the function always returns a valid result.\n\n\npython",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.15\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

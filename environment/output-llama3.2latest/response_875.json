@@ -1,0 +1,8 @@
+{
+  "task_id": 875,
+  "code": "def candidate(tuples):\n    # Initialize the minimum difference to infinity\n    min_diff = float('inf')\n    \n    # Iterate over each pair of tuples in the list\n    for i in range(len(tuples)):\n        for j in range(i + 1, len(tuples)):  # Change here\n            # Calculate the difference between each pair of tuples\n            diff = abs(tuples[i][0] - tuples[j][0]) + abs(tuples[i][1] - tuples[j][1])\n            \n            # Update the minimum difference if a smaller one is found\n            min_diff = min(min_diff, diff)\n    \n    return min_diff",
+  "explanation": "Explanation\n================\n\nThe code provided has a logical error in the inner loop of the function. It should iterate over each pair of tuples in the list, but instead it's iterating from `i + 1` to the end of the list, which means it's only considering pairs where the first tuple is greater than or equal to the second tuple. This is why the test case with tuples `(3, 5)`, `(1, 7)`, `(10, 3)`, and `(1, 2)` fails.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate([(3, 5), (1, 7), (10, 3), (1, 2)]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 332,
+  "code": "# Define a dictionary to store character frequencies\ndef candidate(s):\n    # Initialize an empty dictionary to store character frequencies\n    freq_dict = {}\n\n    # Iterate over each character in the string\n    for char in s:\n        # Check if the character is already in the dictionary\n        if char in freq_dict:\n            # If it is, increment its counter by 1\n            freq_dict[char] += 1\n        else:\n            # If not, add it to the dictionary with a counter of 1\n            freq_dict[char] = 1\n\n    return freq_dict",
+  "explanation": "Explanation\n-----------\n\nThe purpose of this function is to calculate the frequency of each character in a given string. It achieves this by iterating over each character, incrementing its corresponding counter whenever it encounters the same character again.\n\nPython",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

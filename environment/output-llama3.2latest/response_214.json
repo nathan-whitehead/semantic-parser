@@ -1,0 +1,8 @@
+{
+  "task_id": 214,
+  "code": "import math\n\ndef candidate(radians):\n    # Check if input is a number\n    if not isinstance(radians, (int, float)):\n        raise TypeError(\"Input must be a number\")\n\n    # Calculate the angle in degrees using the correct formula: degrees = radians * 180 / \u03c0\n    degrees = radians * 180 / math.pi\n\n    # Return the calculated value with comments for better understanding\n    return degrees",
+  "explanation": "Explanation\n-----------\n\nThe provided code is attempting to convert radians to degrees but contains a logical error and uses an incorrect formula for the conversion. The `if` statement in the return clause is not necessary because the calculation already considers negative values correctly.\n\nAdditionally, the function does not handle the case where the input `radians` is zero correctly, as dividing by zero will raise a ZeroDivisionError.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 15, in <module>\n    assert candidate(60)==3437.746770784939\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

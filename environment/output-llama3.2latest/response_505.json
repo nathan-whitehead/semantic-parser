@@ -1,0 +1,8 @@
+{
+  "task_id": 505,
+  "code": "# python\ndef candidate(arr):\n    \"\"\"\n    Move all zeroes to the end of the given array.\n    \n    Args:\n        arr (list): The input list containing integers.\n    \n    Returns:\n        list: The modified list with all zeroes at the end.\n    \"\"\"\n\n    # Initialize two pointers, one at the beginning and one at the end of the array\n    non_zero_ptr = 0\n    zero_ptr = len(arr) - 1\n\n    # Iterate over the array until the two pointers meet\n    while non_zero_ptr <= zero_ptr:\n        # If the left element is zero, move the zero pointer to the left\n        if arr[non_zero_ptr] == 0:\n            non_zero_ptr += 1\n        # If the right element is non-zero, swap it with the next available position on the left side\n        elif arr[zero_ptr] != 0:\n            arr[non_zero_ptr], arr[zero_ptr] = arr[zero_ptr], arr[non_zero_ptr]\n            # Move the zero pointer to the previous element\n            zero_ptr -= 1\n\n    return arr",
+  "explanation": "Explanation\n------------\n\nThe provided code attempts to solve the problem of moving all zeroes to the end of a given array by using two pointers, one at the beginning and one at the end. However, there is an issue with the swapping logic that can lead to an infinite loop. The issue lies in the fact that the left pointer moves forward as soon as it encounters a zero element, but the right pointer also moves backward to find the first non-zero element on the left side of the current index. This can cause the pointers to meet prematurely if all elements are zeroes.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Execution timed out after 15 seconds. The code may contain an infinite loop or faulty recursion.",
+  "success": false
+}

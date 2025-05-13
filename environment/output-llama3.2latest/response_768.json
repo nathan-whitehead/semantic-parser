@@ -1,0 +1,8 @@
+{
+  "task_id": 768,
+  "code": "def candidate(n):\n    # Check if the number has odd parity using the modulus operator\n    return n % 2 != 0",
+  "explanation": "**Explanation**\nThe function will take an integer as input and return True if the number has odd parity, False otherwise. It uses the modulus operator to find the remainder of the division of the number by 2, which will be 0 for even numbers and 1 for odd numbers.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

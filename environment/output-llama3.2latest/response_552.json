@@ -1,0 +1,8 @@
+{
+  "task_id": 552,
+  "code": "def candidate(sequence):\n    # Check for invalid input (less than 2 elements)\n    if len(sequence) < 2:\n        return False\n\n    def calculate_slope(x0, y0, x1, y1):\n        # Calculate slope using two points\n        if x1 - x0 == 0:  # Avoid division by zero\n            return float('inf')\n        return (y1 - y0) / (x1 - x0)\n\n    has_infinite_slope = False\n    for i in range(1, len(sequence)):\n        slope = calculate_slope(sequence[i-1], sequence[i-1], sequence[i], sequence[i])\n        if slope == float('inf'):\n            has_infinite_slope = True\n        elif slope != 1:\n            return False\n\n    # If no non-inf slope found, check if constant slope of 1\n    if not has_infinite_slope and all(calculate_slope(sequence[i-1], sequence[i-1], sequence[i], sequence[i]) == 1 for i in range(2, len(sequence))):\n        return True\n\n    # Check if the sequence is linear with an infinite slope\n    for i in range(len(sequence)-1):\n        if calculate_slope(sequence[0], sequence[0], sequence[i+1], sequence[i+1]) != float('inf'):\n            return False\n    return has_infinite_slope",
+  "explanation": "Explanation\n----------\n\nThe original code attempts to check if a given sequence is linear by checking for a constant slope of 1 and an infinite slope. However, the approach has logical flaws and incorrect checks.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 30, in <module>\n    assert candidate([0,2,4,6,8,10]) == \"Linear Sequence\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

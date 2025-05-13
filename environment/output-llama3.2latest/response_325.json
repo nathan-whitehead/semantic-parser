@@ -1,0 +1,8 @@
+{
+  "task_id": 325,
+  "code": "def candidate(n):\n    # Initialize an empty list to store the squares used\n    squares_used = []\n    \n    # Start with the largest possible square\n    i = int(n ** 0.5)\n    \n    # Keep subtracting the current square from n until we cannot do so anymore\n    while i >= 1:\n        if i * i <= n:\n            squares_used.append(i * i)\n            n -= i * i\n        else:\n            i -= 1\n    \n    return len(squares_used)",
+  "explanation": "Explanation\n=====================================\n\nThe provided problem can be solved using a simple greedy algorithm. The idea is to start with the largest square and keep subtracting it from the remaining sum until we reach zero or cannot subtract any more. This approach ensures that we use the minimum number of squares.\n\n`python`",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

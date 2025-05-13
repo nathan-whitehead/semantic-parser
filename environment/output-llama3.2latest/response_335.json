@@ -1,0 +1,8 @@
+{
+  "task_id": 335,
+  "code": "def candidate(first_term, common_difference, num_terms):\n    \"\"\"\n    Calculate the sum of an arithmetic progression.\n    \n    Args:\n    first_term (int): The first term of the progression.\n    common_difference (int): The difference between each term in the progression.\n    num_terms (int): The number of terms in the progression.\n    \n    Returns:\n    int: The sum of the arithmetic progression.\n    \"\"\"\n    # Check for valid input\n    if num_terms <= 0 or common_difference == 0:\n        raise ValueError(\"Invalid input. Number of terms must be positive and common difference must not be zero.\")\n    \n    # Calculate the sum using the formula for the sum of an arithmetic progression\n    total = int((num_terms / 2) * (2 * first_term + (num_terms - 1) * common_difference))\n    \n    return total",
+  "explanation": "Explanation\n-----------\n\nThe code is attempting to calculate the sum of an arithmetic progression. However, it contains a logical error that causes it to produce incorrect results for certain inputs. The issue lies in the calculation of the total sum using the formula `total = (num_terms / 2) * (2 * first_term + (num_terms - 1) * common_difference)`. This formula is correct, but the code does not handle cases where the division by 2 results in a fractional number. \n\nAdditionally, the function name and docstring do not match the required output of the function, which should be an integer.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate(1,5,2)==25\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

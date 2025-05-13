@@ -1,0 +1,8 @@
+{
+  "task_id": 80,
+  "code": "def candidate(n):\n    \"\"\"\n    Calculate the nth tetrahedral number.\n\n    Args:\n        n (int): A positive integer representing the position of the tetrahedral number.\n\n    Returns:\n        int: The nth tetrahedral number.\n    \"\"\"\n    # Check if input is a positive integer\n    if not isinstance(n, int) or n <= 0:\n        raise ValueError(\"Input must be a positive integer.\")\n    \n    # Calculate the nth tetrahedral number using the formula\n    result = n * (n + 1) * (n + 2) // 6\n    \n    return result",
+  "explanation": "**Explanation**\nThe `candidate` function calculates the nth tetrahedral number. A tetrahedral number is the sum of all positive integers up to n, which can be calculated using the formula `n*(n+1)*(n+2)/6`. This function uses this mathematical approach to find the nth tetrahedral number.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

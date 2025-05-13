@@ -1,0 +1,8 @@
+{
+  "task_id": 931,
+  "code": "def candidate(n):\n    # Initialize sum variable to 0\n    total_sum = 0\n    \n    # Loop through each number from 1 to n\n    for i in range(1, n+1):\n        # Add cube of current number to the sum\n        total_sum += i ** 3\n    \n    # Return the final sum\n    return total_sum",
+  "explanation": "**Explanation**\nThis function calculates the sum of cubes of numbers from 1 to n. It uses a simple iterative approach, where it sums up the cubes of all numbers in the range. The time complexity is O(n), making it efficient for large values of n.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

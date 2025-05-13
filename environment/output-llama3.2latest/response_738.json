@@ -1,0 +1,8 @@
+{
+  "task_id": 738,
+  "code": "def candidate(a: float, r: float = 0, n: int = 1) -> float:\n    \"\"\"\n    Calculates the geometric sum of 'n-1' terms.\n    \n    Parameters:\n    a (float): The first term.\n    r (float, optional): The common ratio between consecutive terms. Defaults to 0.\n    n (int, optional): Number of terms. Defaults to 1.\n    \n    Returns:\n    float: The geometric sum of 'n-1' terms.\n    \"\"\"\n    # Check if a and r are numbers\n    if not isinstance(a, (int, float)) or not isinstance(r, (int, float)):\n        raise TypeError(\"a and r must be numbers\")\n    \n    # Check if n is a positive integer\n    if not isinstance(n, int) or n <= 0:\n        raise ValueError(\"n must be a positive integer\")\n\n    # Calculate geometric sum for general case\n    return a * (r**n - 1) / (r - 1)",
+  "explanation": "**Explanation**\nThe given code attempts to calculate the geometric sum of n-1 terms but is incorrect due to the usage of `n` in the formula `(1 - r**n) / (1 - r)`. This formula calculates the sum of n terms, not n-1. To fix this issue, we need to adjust the exponent and the number of terms.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 24, in <module>\n    assert candidate(7) == 1.9921875\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

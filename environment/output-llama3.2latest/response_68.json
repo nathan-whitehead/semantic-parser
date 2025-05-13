@@ -1,0 +1,8 @@
+{
+  "task_id": 68,
+  "code": "def candidate(arr):\n    \"\"\"\n    Checks if an array is monotonic.\n    \n    Args:\n        arr (list): The input array to check.\n    \n    Returns:\n        bool: True if the array is monotonic, False otherwise.\n    \"\"\"\n    \n    # Initialize a flag to track if the array is increasing or decreasing\n    is_increasing = is_decreasing = True\n    \n    # Iterate over the array from the second element to the end\n    for i in range(1, len(arr)):\n        # Check if the current element is greater than the previous one\n        if arr[i] > arr[i-1]:\n            is_increasing = False\n        \n        # Check if the current element is less than the previous one\n        if arr[i] < arr[i-1]:\n            is_decreasing = False\n    \n    # Return True if the array is either increasing or decreasing, False otherwise\n    return is_increasing or is_decreasing",
+  "explanation": "**Explanation**\nThe problem requires us to write a Python function that checks if an array is monotonic. A monotonic array is one where every element on the left side of the array is less than or equal to the corresponding element on the right side, or vice versa. This can be achieved by checking for the presence of any pair of elements where the first element is greater than the second.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

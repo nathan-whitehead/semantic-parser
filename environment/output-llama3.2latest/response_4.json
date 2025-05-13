@@ -1,0 +1,8 @@
+{
+  "task_id": 4,
+  "code": "import heapq\n\ndef candidate(nums, n):\n    \"\"\"\n    Returns the n largest numbers in descending order.\n    \n    :param nums: A list of numbers\n    :type nums: list\n    :param n: The number of largest elements to return\n    :type n: int\n    :return: A list of the n largest numbers in descending order\n    :rtype: list\n    \"\"\"\n    # Use heapq.nlargest(n, nums) to find the n largest numbers\n    return heapq.nlargest(n, nums)",
+  "explanation": "**Explanation**\nThe code provided attempts to find the largest integers from a given list of numbers using the heap queue algorithm. However, there are several issues with the code: it does not take into account the number of elements required as an input, and the `while` loop condition is incorrect. The function should use `heapq.nlargest(n, nums)` to find the largest n integers from a list.\n\n**python**",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

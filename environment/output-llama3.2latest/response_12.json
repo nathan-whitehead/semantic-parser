@@ -1,0 +1,8 @@
+{
+  "task_id": 12,
+  "code": "def candidate(matrix):\n    # Calculate the sum of each row and store it along with the row in a list of tuples\n    row_sums = [(sum(row), row) for row in matrix]\n    \n    # Sort the rows based on their sums\n    sorted_row_sums = sorted(row_sums, key=lambda x: x[0])\n    \n    # Return the sorted rows\n    return [row[1] for row in sorted_row_sums]",
+  "explanation": "**Explanation**\nThis function solves the problem by defining a helper function to calculate the sum of each row, and then using the built-in `sorted` function with a custom sorting key.\n\nThe approach is to use Python's built-in `sum` function to calculate the sum of each row in the matrix. The `sorted` function is used with a lambda function as the key to sort the rows based on their sums.\n\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

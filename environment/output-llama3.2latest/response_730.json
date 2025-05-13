@@ -1,0 +1,8 @@
+{
+  "task_id": 730,
+  "code": "def candidate(lst):\n    \"\"\"\n    Removes consecutive duplicates from a given list.\n    \n    Args:\n        lst (list): The input list with potential duplicates.\n    \n    Returns:\n        list: The input list with all consecutive duplicates removed.\n    \"\"\"\n    # If the list is empty, return it immediately\n    if not lst:\n        return []\n    \n    result = [lst[0]]\n    for i in range(1, len(lst)):\n        # If we find two consecutive equal elements, add the next element to 'result'\n        if lst[i] != lst[i - 1]:\n            result.append(lst[i])\n    \n    return result",
+  "explanation": "Explanation\nThe original code attempts to remove consecutive duplicates from a list by iterating through the list and incrementing an index `i` when encountering non-consecutive elements. However, this approach has a flaw: it incorrectly returns the entire list up to but not including the first unique element, causing the last element of the original list to be missed.\n\nCode",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

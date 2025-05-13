@@ -1,0 +1,8 @@
+{
+  "task_id": 232,
+  "code": "def candidate(dataset, n):\n    # Check if n is not larger than the dataset size\n    if n > len(dataset):\n        raise ValueError(\"n cannot be larger than the dataset size\")\n\n    # Sort the dataset in descending order\n    sorted_dataset = sorted(dataset, reverse=True)\n    \n    # Return the first n elements of the sorted dataset\n    return sorted_dataset[:n]",
+  "explanation": "**Explanation**\nThis function takes in a dataset and an integer n as input. It returns the n largest items from the dataset. The approach used is to sort the dataset in descending order, then use slicing to return the first n elements.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 168,
+  "code": "def candidate(nums, target):\n    # Create an empty dictionary to store the frequency of each element\n    freq_dict = {}\n    \n    # Iterate over each number in the list\n    for num in nums:\n        # If the number is already a key in the dictionary, increment its value\n        if num in freq_dict:\n            freq_dict[num] += 1\n        # Otherwise, add it to the dictionary with a frequency of 1\n        else:\n            freq_dict[num] = 1\n    \n    # Return the frequency of the target number\n    return freq_dict.get(target, 0)",
+  "explanation": "**Explanation**\nThe `candidate` function is designed to calculate the frequency of a target number within a given list. It uses a dictionary to store each element as a key and its frequency as the value, then checks if the target number exists in the dictionary. This approach ensures a time complexity of O(n), where n is the size of the input array.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

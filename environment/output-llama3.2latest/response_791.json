@@ -1,0 +1,8 @@
+{
+  "task_id": 791,
+  "code": "def candidate(tup):\n    \"\"\"\n    Removes all nested records from the given tuple.\n    \n    Args:\n        tup: A tuple containing elements that may be nested tuples.\n    \n    Returns:\n        A new tuple with all nested records removed.\n    \"\"\"\n    def _remove_nested_records(item):\n        # Check if the item is a tuple\n        if isinstance(item, tuple):\n            # If it's a tuple and has non-nested elements, use tuple unpacking to separate them\n            non_nest, *nest = item\n            return (non_nest,) + (_remove_nested_records(n) for n in nest)\n        else:\n            # If it's not a tuple, return the item as is\n            return item\n    \n    # Recursively apply the `_remove_nested_records` function to each element of the input tuple\n    cleaned_up_list = [item for item in tup if isinstance(item, (tuple, int, float))]\n    \n    # Return the resulting list as a new tuple\n    return tuple(cleaned_up_list)",
+  "explanation": "Explanation\n-----------\n\nThe provided code attempts to remove nested records from a given tuple by recursively applying a function that checks if each element is a tuple. However, the approach is incorrect because it tries to concatenate a generator expression with a tuple directly.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 27, in <module>\n    assert candidate((1, 5, 7, (4, 6), 10)) == (1, 5, 7, 10)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

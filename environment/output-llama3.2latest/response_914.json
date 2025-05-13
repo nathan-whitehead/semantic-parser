@@ -1,0 +1,8 @@
+{
+  "task_id": 914,
+  "code": "def candidate(s):\n    # Check if the length of the string is even or odd.\n    if len(s) % 2 == 0:\n        return any(c1 != c2 for c1, c2 in zip(s[::2], s[1::2]))\n    else:\n        return False",
+  "explanation": "**Explanation**\nThis function checks if a given string consists of two alternating characters. It iterates through the string, comparing each character with its adjacent one. If it finds more than two different characters in a row, it returns False; otherwise, it returns True.\n\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

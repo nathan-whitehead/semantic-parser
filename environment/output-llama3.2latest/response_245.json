@@ -1,0 +1,8 @@
+{
+  "task_id": 245,
+  "code": "def candidate(nums):\n    # If input array is empty or has only one element, return 0\n    if not nums:\n        return 0\n    if len(nums) == 1:\n        return nums[0]\n\n    n = len(nums)\n    up = [nums[0]] * n\n    down = [nums[0]] * n\n\n    # Calculate the length of bi-tonic subsequences in both directions\n    for i in range(1, n):\n        for j in range(i - 1):\n            if nums[i] == nums[j] + 2:\n                up[i] = max(up[i], down[j] + 1)\n            elif nums[i] == nums[j] + 1:\n                up[i] = max(up[i], down[j])\n            down[i] = max(down[i], up[j])\n\n    # Calculate the maximum sum of bi-tonic subsequences\n    return max(max(up), max(down))",
+  "explanation": "Explanation\n-----------\n\nThe given code is attempting to find the maximum sum of bi-tonic subsequences in a given array. However, there are several issues with the code that cause it to fail. The main problem is that the variable `j` is not properly updated when calculating the lengths of bi-tonic subsequences using dynamic programming.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 24, in <module>\n    assert candidate([1, 15, 51, 45, 33, 100, 12, 18, 9], 9) == 194\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: candidate() takes 1 positional argument but 2 were given\n\n",
+  "success": false
+}

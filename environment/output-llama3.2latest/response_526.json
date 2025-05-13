@@ -1,0 +1,8 @@
+{
+  "task_id": 526,
+  "code": "def candidate(s):\n    \"\"\"\n    Capitalize first and last letters of each word in a given string.\n    \n    Args:\n        s (str): Input string.\n    \n    Returns:\n        str: String with capitalized first and last letters of each word.\n    \"\"\"\n    def capitalize_word(word):\n        return word[0].upper() + word[1:-1] + word[-1].upper()\n\n    words = [capitalize_word(word) for word in s.split()]\n    return ' '.join(words)",
+  "explanation": "Explanation\n----------\n\nThe generated code attempts to capitalize the first and last letters of each word in a given string by iterating over each word, checking its length, and modifying it accordingly. However, this approach fails when the input string contains words with an even number of characters, as the `capitalize()` method does not change the case of the second-to-last character.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 387,
+  "code": "def candidate(hex_num):\n    \"\"\"\n    Checks whether a given hexadecimal number is even or odd.\n\n    Args:\n        hex_num (str): A string representing a hexadecimal number.\n\n    Returns:\n        str: Either 'even' or 'odd', depending on the parity of the input hexadecimal number.\n    \"\"\"\n    # Convert hexadecimal number to integer\n    decimal = int(hex_num, 16)\n\n    # Check if number is negative and raise ValueError\n    if decimal < 0:\n        raise ValueError(\"Input hexadecimal number cannot be negative\")\n\n    # Check if number is even or odd\n    result = \"even\" if decimal % 2 == 0 else \"odd\"\n    return result",
+  "explanation": "**EXPLANATION**\nThe original code attempted to check if a hexadecimal number is even or odd. However, it incorrectly handled negative numbers and did not accurately determine the parity of the input hexadecimal number. The error occurred because the function returned \"negative\" when the decimal equivalent was less than 0, which is not a valid output for this problem.\n\n**PYTHON**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 22, in <module>\n    assert candidate(\"AB3454D\") ==\"Odd\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

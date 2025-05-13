@@ -1,0 +1,8 @@
+{
+  "task_id": 309,
+  "code": "def candidate(num1, num2):\n    # Check if num1 is greater than num2\n    if num1 > num2:\n        # If true, return num1\n        return num1\n    else:\n        # Otherwise, return num2\n        return num2",
+  "explanation": "**Explanation**\nThe function will take two arguments, `num1` and `num2`, which are the two numbers to compare. It will use a simple if-else statement to determine which number is greater. The result will be returned as an output.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

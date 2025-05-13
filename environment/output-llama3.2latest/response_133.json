@@ -1,0 +1,8 @@
+{
+  "task_id": 133,
+  "code": "def candidate(numbers):\n    # Use a lambda function to filter out non-negative numbers\n    negative_numbers = filter(lambda x: x < 0, numbers)\n    \n    # Calculate the sum of the negative numbers using built-in sum function\n    total_sum = sum(negative_numbers)\n    \n    return total_sum",
+  "explanation": "**Explanation**\nThis function calculates the sum of the negative numbers in a given list. It uses a lambda function to filter out non-negative numbers and then sums up the remaining ones. This approach is concise and efficient, making it suitable for large lists.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

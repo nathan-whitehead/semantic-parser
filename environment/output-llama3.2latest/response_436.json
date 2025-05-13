@@ -1,0 +1,8 @@
+{
+  "task_id": 436,
+  "code": "def candidate(nums):\n    # Filter out non-negative numbers from the list\n    negative_nums = [num for num in nums if num < 0]\n    \n    # Return a sorted list of negative numbers\n    return sorted(negative_nums)",
+  "explanation": "Explanation\n----------\n\nThe code provided does not print negative numbers as required. Instead of printing the values directly, it returns the smallest absolute value in the list after iterating over all elements. The test case is failing because the function is returning a single value instead of a list of negative numbers.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 8, in <module>\n    assert candidate([-1,4,5,-6]) == -1,-6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: -6\n\n",
+  "success": false
+}

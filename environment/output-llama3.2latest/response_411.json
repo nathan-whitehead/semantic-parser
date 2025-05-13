@@ -1,0 +1,8 @@
+{
+  "task_id": 411,
+  "code": "import re\n\ndef candidate(s):\n    # Use a regular expression to split the string into words, treating \n    # underscores before lowercase letters as word boundaries\n    words = re.split('(?<=[A-Z])[a-zA-Z]+', s)\n\n    # Capitalize each word except the first one and remove leading underscore\n    return words[0].lower() + ''.join(word.capitalize() for word in words[1:])",
+  "explanation": "**EXPLANATION**\nThe original code attempts to use regex to split the input string into words and capitalize each word except the first one. However, the approach is incorrect because it doesn't account for the case of the letters before the underscore. Additionally, the `re.split` function returns an empty list if no match is found, causing the program to fail when trying to access the first element of the list.\n\n**PYTHON**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 11, in <module>\n    assert candidate('android_tv') == 'AndroidTv'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

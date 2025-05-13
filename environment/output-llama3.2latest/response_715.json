@@ -1,0 +1,8 @@
+{
+  "task_id": 715,
+  "code": "def candidate(s):\n    # Split the string into individual numbers\n    nums = s.split(',')\n    \n    # Convert each number to an integer and store it in a list\n    num_list = [int(num) for num in nums]\n    \n    # Return the list as a tuple\n    return tuple(num_list)",
+  "explanation": "Explanation:\nThe problem is asking us to create a Python function that takes a string of comma-separated integers as input and returns a tuple. We can solve this by splitting the string into individual numbers, converting them to integers, and then storing them in a tuple.\n\nPython",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 922,
+  "code": "def candidate(nums):\n    # Check if the input array has less than 2 elements, in which case we cannot form a pair\n    if len(nums) < 2:\n        return None\n\n    max_product = float('-inf')\n    min_product = float('inf')\n\n    for num in nums:\n        temp_max_product = num * max_product\n        temp_min_product = num * min_product\n        \n        # Update max_product and min_product correctly\n        if abs(temp_max_product) > abs(max_product):\n            max_product = temp_max_product\n            min_product = min(min_product, max_product)\n        elif abs(num) < min_product:\n            min_product = min(min_product, num)\n\n        if abs(temp_min_product) > abs(min_product):\n            min_product = temp_min_product\n\n    return (max_product // 1 if max_product >= 0 else max_product * -1,\n            min_product // 1 if min_product >= 0 else min_product * -1)",
+  "explanation": "**Explanation**\nThe original code sorts the array and then uses two variables to keep track of the minimum and maximum products found so far. However, this approach is inefficient because it updates these variables inside the loop. Instead, we can use a single pass through the array and update our variables whenever we find a smaller or larger product.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 26, in <module>\n    assert candidate([1, 2, 3, 4, 7, 0, 8, 4])==(7, 8)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

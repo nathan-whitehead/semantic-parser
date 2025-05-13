@@ -1,0 +1,8 @@
+{
+  "task_id": 869,
+  "code": "def candidate(lst, start, end):\n    \"\"\"\n    Remove sublists from a given list of lists that are outside a given range.\n    \n    Args:\n        lst (list): The input list of lists.\n        start (int): The start of the range (inclusive).\n        end (int): The end of the range (inclusive).\n    \n    Returns:\n        list: A new list containing only the sublists within the given range.\n    \"\"\"\n    return [sublist for sublist in lst if all(start <= elem <= end for elem in sublist)]",
+  "explanation": "**EXPLANATION**\nThe original code attempts to filter out sublists that are outside a given range. However, it incorrectly uses the length of the sublist as an index, resulting in incorrect filtering. The correct approach is to check if each element in the sublist falls within the given range.\n\n**python**",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 319,
+  "code": "import re\n\ndef candidate(string):\n    # Compile the pattern\n    pattern = re.compile(r'\\b\\w{5}\\b')\n    \n    # Find all occurrences of the pattern in the string\n    matches = pattern.findall(string)\n    \n    return matches",
+  "explanation": "**Explanation**\nThis function uses regular expressions (regex) to search for words of length 5 within a given string. It utilizes Python's built-in `re` module, which provides support for regular expressions. The function returns a list of all found matches.\n\n**Python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

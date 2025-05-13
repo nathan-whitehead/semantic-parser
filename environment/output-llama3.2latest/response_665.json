@@ -1,0 +1,8 @@
+{
+  "task_id": 665,
+  "code": "def candidate(input_list):\n    \"\"\"\n    Shifts the first element to the end of the given list.\n    \n    Args:\n        input_list (list): The list to be modified.\n    \n    Returns:\n        list: The modified list with the first element shifted to the end.\n    \"\"\"\n    # Check if the input is a list\n    if not isinstance(input_list, list):\n        raise TypeError(\"Input must be a list.\")\n    \n    # If the list has only one element, return it as is\n    if len(input_list) == 1:\n        return input_list\n    \n    # Create a new list that excludes the first element\n    new_list = input_list[1:]\n    \n    # Add the first element to the end of the new list\n    new_list.append(input_list[0])\n    \n    return new_list",
+  "explanation": "**Explanation**\nThis function takes a list as an argument and uses slicing to achieve the desired result. It creates a new list that excludes the first element, then adds it to the end of the list.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

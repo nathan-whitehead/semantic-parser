@@ -1,0 +1,8 @@
+{
+  "task_id": 946,
+  "code": "from collections import Counter\n\ndef candidate(text, count):\n    # Convert text to lowercase and split it into elements (words)\n    elements = set(text.lower().split())\n\n    # Count the occurrences of each unique element using Counter\n    counts = Counter(elements)\n\n    # Find all elements with their maximum counts\n    max_count = max(counts.values())\n    \n    most_common = [(element, freq) for element, freq in counts.items() if freq == max_count]\n\n    return list(most_common)",
+  "explanation": "**Explanation**\nThe original code is attempting to find the most common elements and their counts in a specified text. However, it has an error in its logic. The code is splitting the text into individual characters instead of words, which causes it to miss many occurrences of certain letters. Additionally, it's returning all elements with the maximum count, but the task requires finding the most common elements.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 17, in <module>\n    assert candidate('lkseropewdssafsdfafkpwe',3)==[('s', 4), ('e', 3), ('f', 3)]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

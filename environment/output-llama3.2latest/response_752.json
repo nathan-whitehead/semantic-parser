@@ -1,0 +1,8 @@
+{
+  "task_id": 752,
+  "code": "def candidate(n):\n    \"\"\"\n    Calculate the nth Jacobsthal number.\n    \n    Args:\n        n (int): The position of the Jacobsthal number to calculate.\n    \n    Returns:\n        int: The nth Jacobsthal number.\n    \"\"\"\n    # Dictionary to store previously computed Jacobsthal numbers for memoization\n    jacobsthal_nums = {0: 0, 1: 1}\n    \n    def calculate_jacobsthal(i):\n        if i < 2:\n            return jacobsthal_nums[i]\n        \n        # Calculate the next Jacobsthal number using the previous two numbers\n        next_jacobsthal_num = (jacobsthal_nums[i-1] + jacobsthal_nums[i-2])\n        jacobsthal_nums[i] = next_jacobsthal_num\n        return next_jacobsthal_num\n    \n    # Call the helper function to get the nth Jacobsthal number\n    if n not in jacobsthal_nums:\n        for i in range(2, n+1):\n            calculate_jacobsthal(i)\n    return jacobsthal_nums.get(n, 0)  # Return default value for missing key",
+  "explanation": "Explanation\n-----------\n\nThe code provided attempts to calculate the nth Jacobsthal number using memoization. However, it has a bug in its calculation logic. The issue lies in the line where it calculates the next Jacobsthal number: `next_jacobsthal_num = (jacobsthal_nums[i-1] * (jacobsthal_nums[i-1] + 2*jacobsthal_nums[i-2]))`. \n\nIn this formula, the correct calculation should be `(jacobsthal_nums[i-1] + jacobsthal_nums[i-2])` without the multiplication by `jacobsthal_nums[i-1]`.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 29, in <module>\n    assert candidate(5) == 11\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

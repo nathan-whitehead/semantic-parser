@@ -1,0 +1,8 @@
+{
+  "task_id": 260,
+  "code": "def candidate(n):\n    \"\"\"\n    Find the nth Newman-Shanks-Williams prime number.\n    \n    Args:\n        n (int): The index of the prime to find.\n        \n    Returns:\n        int: The nth Newman-Shanks-Williams prime number, or None if no such prime exists.\n    \"\"\"\n\n    # Function to check if a number is a Newman-Shanks-Williams prime\n    def is_newman_shanks_williams_prime(num):\n        \"\"\"Check if a number is a Newman-Shanks-Williams prime.\"\"\"\n        return num % 3 == (num - 1) % 3 and num // 2 != ((num + 1) // 2)\n\n    # Initialize the prime candidate\n    prime_candidate = 2\n    \n    while n > 0:\n        # Check if the current number is a Newman-Shanks-Williams prime\n        if is_newman_shanks_williams_prime(prime_candidate):\n            # If so, return it and decrement n\n            n -= 1\n            # Return the first found prime for efficiency\n            return prime_candidate\n        else:\n            prime_candidate += 1\n\n    # Return None if no nth prime was found\n    return None",
+  "explanation": "**Explanation**\nThe provided code attempts to find the nth Newman-Shanks-Williams prime number. However, it contains an incorrect function definition and a missing return statement. The `is_newman_shanks_williams_prime` function checks if a number is a Newman-Shanks-Williams prime, but it's not used correctly in the main function.\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Execution timed out after 15 seconds. The code may contain an infinite loop or faulty recursion.",
+  "success": false
+}

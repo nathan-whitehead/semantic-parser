@@ -1,0 +1,8 @@
+{
+  "task_id": 297,
+  "code": "def candidate(nested_list):\n    # Initialize empty list to store result\n    flat_list = []\n    \n    # Iterate over each element in nested list\n    for element in nested_list:\n        # If element is a list, recursively call function and extend result\n        if isinstance(element, list):\n            flat_list.extend(candidate(element))\n        # If element is not a list, append it to result\n        else:\n            flat_list.append(element)\n    \n    return flat_list",
+  "explanation": "**Explanation**\nThe provided Python function will recursively iterate over each element in the input list. If an element is a list itself, it calls itself with that sublist as argument. The flattened elements are returned after recursion stops.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

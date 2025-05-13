@@ -1,0 +1,8 @@
+{
+  "task_id": 553,
+  "code": "def candidate(tup):\n    # Initialize a variable to store the first non-numeric element\n    non_numeric_element = None\n    \n    # Iterate over each element in the tuple\n    for i in tup:\n        # Check if the current element is not numeric\n        if not isinstance(i, (int, float)):\n            # If this is the first non-numeric element, store its index and break out of the loop\n            non_numeric_element = i\n            break\n    \n    # If a non-numeric element was found, return 0.0; otherwise, try to convert all elements to float\n    if non_numeric_element is not None:\n        return 0.0\n    else:\n        return sum(i for i in tup if isinstance(i, (int, float)))",
+  "explanation": "Explanation\n-----------\n\n\nThe function `candidate` converts the first non-numeric element in the given tuple to its square and returns this value. However, it incorrectly calculates the square of the numeric elements instead of converting them to a floating-point number.\n\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 19, in <module>\n    assert candidate((4, 56)) == 4.56\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

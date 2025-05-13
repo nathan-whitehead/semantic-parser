@@ -1,0 +1,8 @@
+{
+  "task_id": 412,
+  "code": "def candidate(nums):\n    # Filter out odd numbers from the given list\n    even_nums = [num for num in nums if num % 2 == 0]\n    return even_nums",
+  "explanation": "**Explanation**\nThis function removes all odd numbers from a given list of integers. It iterates over each number in the list, checks if it's even or odd, and returns a new list containing only the even numbers. This approach is simple and efficient as it avoids the need for conditional statements or loops.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

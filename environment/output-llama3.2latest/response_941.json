@@ -1,0 +1,8 @@
+{
+  "task_id": 941,
+  "code": "def candidate(lst):\n    # Initialize counter to keep track of elements until tuple is found\n    count = 0\n    \n    # Iterate over each element in the list\n    for elem in lst:\n        # Check if element is not a tuple and is either int or float\n        if isinstance(elem, (int, float)):\n            # Increment counter\n            count += 1\n        # If element is a tuple, break out of loop\n        elif isinstance(elem, tuple):\n            break\n    \n    return count",
+  "explanation": "Explanation:\nThe `candidate` function takes a list of elements as input and returns the number of elements until it encounters a tuple. It iterates over each element in the list, checks if it's a tuple using the `isinstance()` function, and increments a counter variable whenever it finds an integer or float element.\n\nPython:",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

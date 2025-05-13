@@ -1,0 +1,8 @@
+{
+  "task_id": 655,
+  "code": "def candidate(n):\n    # Initialize the sum variable to 0\n    total = 0\n    \n    # Loop through each natural number from 1 to n\n    for i in range(1, n+1):\n        # Raise the current number to the power of 5 and add it to the total\n        total += i**5\n\n    return total",
+  "explanation": "**Explanation**\nThis function calculates the sum of the fifth power of all natural numbers from 1 to n. It uses a simple loop to iterate through each number, raises it to the power of 5, and accumulates the results in a variable.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

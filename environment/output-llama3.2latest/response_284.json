@@ -1,0 +1,8 @@
+{
+  "task_id": 284,
+  "code": "def candidate(lst, target):\n    # Check if all items in the list are equal to the target value\n    for item in lst:\n        # If any item is not equal to the target, return False\n        if item != target:\n            return False\n    # If no mismatches were found, return True\n    return True",
+  "explanation": "**Explanation**\nThis function takes two parameters: `lst` (the input list) and `target` (the target value). It checks each item in the list against the target value using the equality operator (`==`). If any item is not equal to the target, it immediately returns `False`. \n\nThe approach used here is a simple iterative approach. The function iterates over each element in the input list and compares it with the target value. If a mismatch is found, the function immediately returns `False`.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 495,
+  "code": "import re\n\ndef candidate(s):\n    # Create a regex pattern that matches any lowercase substring\n    pattern = re.compile('[a-z]+')\n    \n    # Replace all occurrences of the pattern with an empty string\n    return pattern.sub('', s)",
+  "explanation": "**Explanation**\nThis function uses regular expressions (regex) to remove all occurrences of lowercase substrings from a given string. It utilizes Python's built-in `sub` function, which replaces specified patterns in a string with other specified values. The pattern for matching any lowercase substring is created using `re.escape()` to escape special characters and square brackets `[]` to denote character classes.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

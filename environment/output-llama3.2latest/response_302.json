@@ -1,0 +1,8 @@
+{
+  "task_id": 302,
+  "code": "def candidate(n):\n    # Check if the number has more than one set bit\n    if bin(n).count('1') < 2:\n        return -1\n    \n    # Initialize position counter\n    position = -1\n    \n    # Loop through each bit from right to left\n    while n:\n        # Check if the current bit is set\n        if n & 1:\n            # Update the position\n            position = bin(n).count('1') - 1\n        \n        # Move to the next bit\n        n >>= 1\n    \n    return position",
+  "explanation": "Explanation\n-----------\nThe generated code attempts to find the most significant bit number that is also a set bit by iterating through each bit of the input number from right to left. However, there are two main issues with this approach: it returns the index of the least significant set bit instead of the most significant one, and it does not handle numbers with only one set bit correctly.\n\nCode\n-----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 21, in <module>\n    assert candidate(6) == 4\n           ^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

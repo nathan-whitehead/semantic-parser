@@ -1,0 +1,8 @@
+{
+  "task_id": 725,
+  "code": "import re\n\ndef candidate(s):\n    # Use a regular expression pattern that matches a quotation mark followed by any characters except a new line,\n    # then capture one or more alphanumeric characters (including underscores), and finally another quotation mark\n    pattern = r'\"([^\"]+)\"'\n\n    # Find all matches in the input string\n    matches = re.findall(pattern, s)\n\n    # Return the extracted values without the quotation marks\n    return [match[0] for match in matches]",
+  "explanation": "Explanation\n=====================================\n\nThe original code is attempting to use a regular expression pattern that matches a quotation mark followed by any characters except a new line, then captures one or more alphanumeric characters (including underscores), and finally another quotation mark. However, the code has an off-by-one error in its indexing while extracting the values.\n\nCode\n=====================================",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 14, in <module>\n    assert candidate('Cortex \"A53\" Based \"multi\" tasking \"Processor\"') == ['A53', 'multi', 'Processor']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

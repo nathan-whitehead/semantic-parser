@@ -1,0 +1,8 @@
+{
+  "task_id": 606,
+  "code": "import math\n\ndef candidate(degrees):\n    # Conversion factor from degrees to radians\n    pi = math.pi\n    \n    # Calculate radians using the conversion formula\n    radians = degrees * pi / 180\n    \n    return radians",
+  "explanation": "Explanation:\nThe function converts degrees to radians using the conversion formula `radians = degrees * pi / 180`. This approach is straightforward and accurate. The function does not handle any potential errors or invalid inputs.\n\npython",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": 15,
+  "code": "python\ndef candidate(s):\n    # Initialize an empty list to store the substrings\n    result = []\n    \n    # Initialize an empty substring\n    substring = \"\"\n    \n    # Iterate over each character in the input string\n    for char in s:\n        # If the character is a lowercase letter, add the current substring to the result and reset it\n        if char.islower():\n            if substring:\n                result.append(substring)\n            substring = \"\"\n        \n        # Otherwise, append the character to the current substring\n        else:\n            substring += char\n    \n    # Add the last substring to the result\n    if substring:\n        result.append(substring)\n    \n    return result",
+  "explanation": "Explanation\n-----------\n\nThe code attempts to split a string at lowercase letters by iterating over each character and maintaining a current substring. However, the issue arises when trying to append characters to the `substring` variable because the variable is only defined within the scope of the if statement condition (`if char.islower():`). To fix this, we need to define `substring` as a global variable or encapsulate it within a function.\n\nCode",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 1, in <module>\n    python\nNameError: name 'python' is not defined\n\n",
+  "success": false
+}

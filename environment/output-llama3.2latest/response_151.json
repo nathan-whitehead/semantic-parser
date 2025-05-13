@@ -1,0 +1,8 @@
+{
+  "task_id": 151,
+  "code": "def candidate(a, b):\n    \"\"\"\n    Checks if two numbers are co-prime.\n    \n    Parameters:\n    a (int): The first number.\n    b (int): The second number.\n    \n    Returns:\n    bool: True if the numbers are coprime, False otherwise.\n    \"\"\"\n    # Base case: If either number is 0, they are not coprime\n    if a == 0 or b == 0:\n        return False\n    \n    # Recursive case: Use the Euclidean algorithm to find the GCD\n    def gcd(x, y):\n        while y != 0:\n            x, y = y, x % y\n        return abs(x)\n    \n    # Check if the numbers are coprime\n    return gcd(a, b) == 1",
+  "explanation": "**Explanation**\nThis function checks if two numbers are coprime (i.e., their greatest common divisor is 1). It uses the Euclidean algorithm to find the GCD of the two input numbers. The function returns True if the numbers are coprime and False otherwise.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

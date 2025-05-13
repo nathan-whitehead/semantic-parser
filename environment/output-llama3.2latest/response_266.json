@@ -1,0 +1,8 @@
+{
+  "task_id": 266,
+  "code": "def candidate(a):\n    # Calculate the lateral surface area of a cube\n    lateral_surface_area = 4 * (a ** 2)\n    return lateral_surface_area\n\n# Test the function\nside_length = 5\nlateral_area = candidate(side_length)\nprint(f\"The lateral surface area of the cube with side length {side_length} is: {lateral_area}\")",
+  "explanation": "**Explanation**\nThe function calculates the lateral surface area of a cube by multiplying the length of one side of the cube with the total number of sides that are not faces (i.e., 4 for a cube). This is based on the formula for the lateral surface area of a cube, which is 4a^2, where 'a' represents the length of a side. The function returns this calculated value.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

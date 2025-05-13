@@ -1,0 +1,8 @@
+{
+  "task_id": 460,
+  "code": "def candidate(lst):\n    # Use list comprehension to create a new list with the first element of each sublist\n    return [sublist[0] for sublist in lst]",
+  "explanation": "**Explanation**\nThis function takes a list of lists as input and returns a new list containing the first element of each sublist. It uses a list comprehension to achieve this in a concise and readable way.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

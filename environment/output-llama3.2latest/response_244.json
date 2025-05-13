@@ -1,0 +1,8 @@
+{
+  "task_id": 244,
+  "code": "def candidate(n):\n    # Calculate the square root of n\n    sqrt_n = n ** 0.5\n    \n    # Round up to the nearest whole number\n    next_sqrt = int(sqrt_n) + 1\n    \n    # Return the square of the rounded-up value\n    return next_sqrt * next_sqrt",
+  "explanation": "**Explanation**\nThe `candidate` function takes an integer as input and returns the smallest perfect square greater than the given number. It does this by first calculating the square root of the input number, then rounding up to the nearest whole number and squaring it again. This approach ensures that the returned value is indeed a perfect square.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

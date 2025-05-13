@@ -1,0 +1,8 @@
+{
+  "task_id": 501,
+  "code": "def candidate(a, b):\n    # Define subfunction to calculate remainder\n    def get_remainder(x, y):\n        return x % y\n\n    # Handle both cases where a is greater than or less than b\n    if a > b:\n        larger = a\n        smaller = b\n    else:\n        larger = b\n        smaller = a\n\n    while True:\n        # Replace 'larger' with the smaller number and update it only if necessary\n        mid = (larger + smaller) // 2\n        remainder1 = get_remainder(larger, mid)\n        remainder2 = get_remainder(smaller, mid)\n\n        # If either remainder is zero, return the corresponding value\n        if remainder1 == 0:\n            return mid\n        elif remainder2 == 0:\n            return mid\n\n        # Update 'larger' or 'smaller' based on which one has a larger remainder\n        if (remainder1 > remainder2 and remainder1 != 0) or (remainder1 == 0 and remainder2 != 0):\n            larger = mid\n        else:\n            smaller = mid\n\n    # Ensure the returned value is not zero\n    return max(a, b)",
+  "explanation": "Explanation\n-----------\n\nThe original code attempts to find the common divisor between two numbers using a binary search approach. However, it contains several logical errors and inconsistencies that lead to an incorrect result.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 35, in <module>\n    assert candidate(2,4) == 2\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

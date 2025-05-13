@@ -1,0 +1,8 @@
+{
+  "task_id": 479,
+  "code": "def candidate(n: int) -> int:\n    # Check if n is an integer\n    if not isinstance(n, int):\n        raise TypeError(\"Input must be an integer.\")\n    \n    # If n is 0 or negative, return 0 because there's no digit to extract\n    if n <= 0:\n        return 0\n    \n    # Convert the number to a string and access the first character (digit)\n    str_n = str(abs(n))  # Use abs() to handle negative numbers\n    first_digit = int(str_n[0])\n    \n    # Return the extracted digit\n    return first_digit",
+  "explanation": "**Explanation**\nThe original code attempts to find the first digit of a number by using integer division and modulus operations. However, this approach is flawed because it does not correctly handle cases where the input number has multiple digits or is negative. \n\nA correct approach would be to convert the number to a string, access the first character (which represents the first digit), and then convert it back to an integer.\n\n**python**",
+  "num_iterations": 2,
+  "error_msg": null,
+  "success": true
+}

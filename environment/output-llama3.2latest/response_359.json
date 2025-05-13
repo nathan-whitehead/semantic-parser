@@ -1,0 +1,8 @@
+{
+  "task_id": 359,
+  "code": "def candidate(root1, root2, root3):\n    \"\"\"\n    Checks whether one root of the quadratic equation is twice of the other or not.\n    \n    Parameters:\n    root1 (float): The first root of the quadratic equation.\n    root2 (float): The second root of the quadratic equation.\n    root3 (float): The third root of the quadratic equation.\n    \n    Returns:\n    bool: True if at least one pair of roots satisfies the condition, False otherwise.\n    \"\"\"\n    # Check if all inputs are numbers\n    if not isinstance(root1, (int, float)) or not isinstance(root2, (int, float)) or not isinstance(root3, (int, float)):\n        raise TypeError(\"All roots must be numbers\")\n    \n    # Generate all possible pairs of roots and check if either pair satisfies the condition\n    return (root1 * 2 == root2) or (root1 * 2 == root3) or (root2 * 2 == root3)",
+  "explanation": "Explanation\n================\n\nThe code provided attempts to solve the problem of checking whether one root of a quadratic equation is twice another. However, it has several issues. The main problem lies in its complexity and incorrect approach. The function does not correctly handle all cases and can return unexpected results.\n\nTo fix this issue, we need to simplify our approach and make sure it handles all possible combinations of roots correctly. We will use a more straightforward method to check if any pair of roots satisfies the condition.\n\n\nPython",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 20, in <module>\n    assert candidate(1,3,2) == \"Yes\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

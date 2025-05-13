@@ -1,0 +1,8 @@
+{
+  "task_id": 642,
+  "code": "def candidate(matrix):\n    # Convert the input tuple matrix into a list for easier manipulation\n    matrix_list = [list(row) for row in matrix]\n    \n    # Initialize an empty set to store unique rows\n    result = set()\n    \n    # Iterate over each row in the input matrix\n    for i, row in enumerate(matrix_list):\n        # Convert the current row into a tuple and sort it\n        sorted_row = tuple(sorted(row))\n        \n        # Check if the sorted row is not already in the result\n        if sorted_row not in result:\n            # If not, add it to the result set\n            result.add(sorted_row)\n    \n    # Return the resulting matrix with similar rows removed as a list of tuples\n    return [tuple(row) for row in result]",
+  "explanation": "Explanation\n-----------\nThe code attempts to remove similar rows from a given tuple matrix by converting each row into a sorted tuple, checking if it's already in the result set, and adding it if not. However, this approach does not consider the order of elements in tuples as hashable, which causes the issue.\n\nCode\n----",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 21, in <module>\n    assert candidate([[(4, 5), (3, 2)], [(2, 2), (4, 6)], [(3, 2), (4, 5)]] ) == {((2, 2), (4, 6)), ((3, 2), (4, 5))}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}

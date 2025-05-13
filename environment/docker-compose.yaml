@@ -1,0 +1,14 @@
+services:
+  sandbox:
+    build: .
+    container_name: human-eval-sandbox
+    user: "1000:1000"
+    working_dir: /home/runner
+    read_only: true
+    stdin_open: true
+    tty: true
+    mem_limit: 100m
+    cpus: "0.5"
+    network_mode: "none"
+    volumes:
+      - ./sandbox:/home/runner/sandbox:ro

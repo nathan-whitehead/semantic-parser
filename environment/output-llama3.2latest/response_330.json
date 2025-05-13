@@ -1,0 +1,8 @@
+{
+  "task_id": 330,
+  "code": "import re\n\ndef candidate(s):\n    # Use a regex pattern to find all words of lengths 3, 4, or 5\n    pattern = r'\\b\\w{3,5}\\b'\n    \n    # Find all matches and return them as a list\n    matches = re.findall(pattern, s)\n    \n    return matches",
+  "explanation": "**Explanation**\nThis function takes a string as input and uses regular expressions to find all words of lengths 3, 4, or 5. The `findall` method from the `re` module is used to search for substrings that match the specified length pattern in the input string.\n\n**python**",
+  "num_iterations": 1,
+  "error_msg": null,
+  "success": true
+}

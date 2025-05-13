@@ -1,0 +1,8 @@
+{
+  "task_id": 48,
+  "code": "def candidate(n):\n    \"\"\"\n    Sets all odd bits of a given number.\n    \n    :param n: The input number.\n    :return: A new number with all odd bits set.\n    \"\"\"\n    result = 0\n    for i in range(32):\n        # If the bit is 1, add a power of 2 to the result with its sign flipped (2^i) \n        if (n >> i) & 1 == 1:\n            result += 2 ** i\n    \n    return ~n & ((1 << 32) - 1)",
+  "explanation": "**Explanation**\nThe code attempts to set all odd bits of a given number by iterating over each bit position and adding the corresponding power of 2 to the result if the bit is 1. However, it incorrectly adds powers of 2 instead of powers of 2 with the opposite sign (2^i) to flip the bit when calculating ~n & ((1 << 32) - 1).\n\n**python**",
+  "num_iterations": 6,
+  "error_msg": "Traceback (most recent call last):\n  File \"/home/runner/sandbox/temp_code.py\", line 16, in <module>\n    assert candidate(10) == 15\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n",
+  "success": false
+}
