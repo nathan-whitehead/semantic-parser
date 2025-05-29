@@ -159,13 +159,13 @@ return FAILURE
         <p>
           <strong>Correctness:</strong> Out of the 974 tasks, the framework successfully generated correct solutions for 45.5% of the tasks. The remaining 54.5% failed mainly due to the weakness of the model being used. However, when comparing the results to the baseline of using the LLM without refinement, the framework improved correctness by 46%. The model was able to generate correct solutions for 27% of tasks without refinement, and 45.5% with refinement. It's also possible that more correct solutions could be generated with more rounds of refinement, but we limited the number of iterations to 5 to avoid excessive computation.</p>
         <figure>
-          <img src="/assets/images/iteration_results_hist.pdf" alt="Iteration results for the iterative code refinement framework."/>
+          <img src="/assets/images/iteration_results_hist.svg" alt="Iteration results for the iterative code refinement framework."/>
           <figcaption>Iteration results for the iterative code refinement framework.</figcaption>
         </figure>
         <p>
           <strong>Convergence Rate:</strong> On average for problems where a solution was found, the framework required 1.97 iterations to produce a correct solution. Tasks with well-defined test cases and detailed prompts converged faster, while tasks with edge cases or ambiguous specifications required more iterations.</p>
         <figure>
-          <img src="/assets/images/iterations_distribution_box_plot.pdf" alt="Iteration results for the iterative code refinement framework."/>
+          <img src="/assets/images/iterations_distribution_box_plot.svg" alt="Iteration results for the iterative code refinement framework."/>
           <figcaption>Iteration results for the iterative code refinement framework.</figcaption>
         </figure>
         <p>
